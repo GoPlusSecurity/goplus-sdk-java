@@ -26,7 +26,7 @@ import java.io.IOException;
  * ResponseWrapperJSONObject59da6cfeB2f246e4936a6968cc97141b
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-04-22T20:54:09.886394932Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-04-22T21:23:54.513879011Z[Etc/UTC]")
 public class ResponseWrapperJSONObject59da6cfeB2f246e4936a6968cc97141b {
   @SerializedName("code")
   private Integer code = null;

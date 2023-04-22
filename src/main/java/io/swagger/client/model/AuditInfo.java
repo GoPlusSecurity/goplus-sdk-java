@@ -25,7 +25,7 @@ import java.io.IOException;
  * AuditInfo
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-04-22T20:54:09.886394932Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-04-22T21:23:54.513879011Z[Etc/UTC]")
 public class AuditInfo {
   @SerializedName("audit_firm")
   private String auditFirm = null;

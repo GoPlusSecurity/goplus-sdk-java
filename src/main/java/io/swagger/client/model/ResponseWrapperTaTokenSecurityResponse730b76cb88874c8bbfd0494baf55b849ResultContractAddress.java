@@ -29,7 +29,7 @@ import java.util.List;
  * contarct address
  */
 @Schema(description = "contarct address")
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-04-22T20:54:09.886394932Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-04-22T21:23:54.513879011Z[Etc/UTC]")
 public class ResponseWrapperTaTokenSecurityResponse730b76cb88874c8bbfd0494baf55b849ResultContractAddress {
   @SerializedName("note")
   private String note = null;

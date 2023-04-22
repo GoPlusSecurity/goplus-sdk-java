@@ -27,7 +27,7 @@ import java.util.List;
  * Response result
  */
 @Schema(description = "Response result")
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-04-22T20:54:09.886394932Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-04-22T21:23:54.513879011Z[Etc/UTC]")
 public class ResponseWrapperMapstringstringa9a4024ae50a4a3aa475dba457d7c10eResult {
   @SerializedName("website_contract_security")
   private List<String> websiteContractSecurity = null;

@@ -26,7 +26,7 @@ import java.io.IOException;
  * ResponseWrapperMapstringstringA9a4024aE50a4a3aA475Dba457d7c10e
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-04-22T20:54:09.886394932Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-04-22T21:23:54.513879011Z[Etc/UTC]")
 public class ResponseWrapperMapstringstringA9a4024aE50a4a3aA475Dba457d7c10e {
   @SerializedName("code")
   private Integer code = null;
