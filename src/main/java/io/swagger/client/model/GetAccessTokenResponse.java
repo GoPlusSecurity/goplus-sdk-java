@@ -25,7 +25,7 @@ import java.io.IOException;
  * GetAccessTokenResponse
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-04-22T21:23:54.513879011Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-04-23T08:20:55.649750533Z[Etc/UTC]")
 public class GetAccessTokenResponse {
   @SerializedName("access_token")
   private String accessToken = null;
@@ -39,10 +39,10 @@ public class GetAccessTokenResponse {
   }
 
    /**
-   * Get accessToken
+   * access_token
    * @return accessToken
   **/
-  @Schema(description = "")
+  @Schema(description = "access_token")
   public String getAccessToken() {
     return accessToken;
   }
@@ -57,10 +57,10 @@ public class GetAccessTokenResponse {
   }
 
    /**
-   * Get expiresIn
+   * expires_in
    * @return expiresIn
   **/
-  @Schema(description = "")
+  @Schema(description = "expires_in")
   public Long getExpiresIn() {
     return expiresIn;
   }

@@ -55,9 +55,9 @@ public class TokenControllerApi {
 
     /**
      * Build call for getAccessTokenUsingPOST
-     * @param appKey  (optional)
-     * @param sign  (optional)
-     * @param time  (optional)
+     * @param appKey app_key (required)
+     * @param sign Concatenate app_key, time, app_secret in turn, and do sha1().app_key &#x3D; mBOMg20QW11BbtyH4Zh0 \\n\&quot; +             \&quot;time &#x3D; 1647847498 \\n\&quot; +             \&quot;app_secret &#x3D; V6aRfxlPJwN3ViJSIFSCdxPvneajuJsh \\n\&quot; +             \&quot;sign &#x3D; sha1(mBOMg20QW11BbtyH4Zh01647847498V6aRfxlPJwN3ViJSIFSCdxPvneajuJsh)\\n\&quot; +             \&quot;        &#x3D; 7293d385b9225b3c3f232b76ba97255d0e21063e (required)
+     * @param time Quest timestamp (Second) (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -72,7 +72,7 @@ public class TokenControllerApi {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
         if (appKey != null)
-        localVarQueryParams.addAll(apiClient.parameterToPair("app_key", appKey));
+        localVarQueryParams.addAll(apiClient.parameterToPair("appKey", appKey));
         if (sign != null)
         localVarQueryParams.addAll(apiClient.parameterToPair("sign", sign));
         if (time != null)
@@ -112,6 +112,18 @@ public class TokenControllerApi {
     
     @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call getAccessTokenUsingPOSTValidateBeforeCall(String appKey, String sign, Long time, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        // verify the required parameter 'appKey' is set
+        if (appKey == null) {
+            throw new ApiException("Missing the required parameter 'appKey' when calling getAccessTokenUsingPOST(Async)");
+        }
+        // verify the required parameter 'sign' is set
+        if (sign == null) {
+            throw new ApiException("Missing the required parameter 'sign' when calling getAccessTokenUsingPOST(Async)");
+        }
+        // verify the required parameter 'time' is set
+        if (time == null) {
+            throw new ApiException("Missing the required parameter 'time' when calling getAccessTokenUsingPOST(Async)");
+        }
         
         com.squareup.okhttp.Call call = getAccessTokenUsingPOSTCall(appKey, sign, time, progressListener, progressRequestListener);
         return call;
@@ -123,11 +135,11 @@ public class TokenControllerApi {
     }
 
     /**
-     * get Access Token Using POST
+     * get token
      * 
-     * @param appKey  (optional)
-     * @param sign  (optional)
-     * @param time  (optional)
+     * @param appKey app_key (required)
+     * @param sign Concatenate app_key, time, app_secret in turn, and do sha1().app_key &#x3D; mBOMg20QW11BbtyH4Zh0 \\n\&quot; +             \&quot;time &#x3D; 1647847498 \\n\&quot; +             \&quot;app_secret &#x3D; V6aRfxlPJwN3ViJSIFSCdxPvneajuJsh \\n\&quot; +             \&quot;sign &#x3D; sha1(mBOMg20QW11BbtyH4Zh01647847498V6aRfxlPJwN3ViJSIFSCdxPvneajuJsh)\\n\&quot; +             \&quot;        &#x3D; 7293d385b9225b3c3f232b76ba97255d0e21063e (required)
+     * @param time Quest timestamp (Second) (required)
      * @return ResponseWrapperGetAccessTokenResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -137,11 +149,11 @@ public class TokenControllerApi {
     }
 
     /**
-     * get Access Token Using POST
+     * get token
      * 
-     * @param appKey  (optional)
-     * @param sign  (optional)
-     * @param time  (optional)
+     * @param appKey app_key (required)
+     * @param sign Concatenate app_key, time, app_secret in turn, and do sha1().app_key &#x3D; mBOMg20QW11BbtyH4Zh0 \\n\&quot; +             \&quot;time &#x3D; 1647847498 \\n\&quot; +             \&quot;app_secret &#x3D; V6aRfxlPJwN3ViJSIFSCdxPvneajuJsh \\n\&quot; +             \&quot;sign &#x3D; sha1(mBOMg20QW11BbtyH4Zh01647847498V6aRfxlPJwN3ViJSIFSCdxPvneajuJsh)\\n\&quot; +             \&quot;        &#x3D; 7293d385b9225b3c3f232b76ba97255d0e21063e (required)
+     * @param time Quest timestamp (Second) (required)
      * @return ApiResponse&lt;ResponseWrapperGetAccessTokenResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -152,11 +164,11 @@ public class TokenControllerApi {
     }
 
     /**
-     * get Access Token Using POST (asynchronously)
+     * get token (asynchronously)
      * 
-     * @param appKey  (optional)
-     * @param sign  (optional)
-     * @param time  (optional)
+     * @param appKey app_key (required)
+     * @param sign Concatenate app_key, time, app_secret in turn, and do sha1().app_key &#x3D; mBOMg20QW11BbtyH4Zh0 \\n\&quot; +             \&quot;time &#x3D; 1647847498 \\n\&quot; +             \&quot;app_secret &#x3D; V6aRfxlPJwN3ViJSIFSCdxPvneajuJsh \\n\&quot; +             \&quot;sign &#x3D; sha1(mBOMg20QW11BbtyH4Zh01647847498V6aRfxlPJwN3ViJSIFSCdxPvneajuJsh)\\n\&quot; +             \&quot;        &#x3D; 7293d385b9225b3c3f232b76ba97255d0e21063e (required)
+     * @param time Quest timestamp (Second) (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
