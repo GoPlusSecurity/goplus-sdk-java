@@ -56,7 +56,7 @@ public class WebsiteControllerApi {
     /**
      * Build call for phishingSiteUsingGET
      * @param url Url (required)
-     * @param authorization Authorization (test：Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW1zQ9cCv8WrbB1) (optional)
+     * @param authorization Authorization example：Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW... (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -127,7 +127,7 @@ public class WebsiteControllerApi {
      * Check if the the url is a phishing site
      * 
      * @param url Url (required)
-     * @param authorization Authorization (test：Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW1zQ9cCv8WrbB1) (optional)
+     * @param authorization Authorization example：Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW... (optional)
      * @return ResponseWrapperMapstringstringA9a4024aE50a4a3aA475Dba457d7c10e
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -140,7 +140,7 @@ public class WebsiteControllerApi {
      * Check if the the url is a phishing site
      * 
      * @param url Url (required)
-     * @param authorization Authorization (test：Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW1zQ9cCv8WrbB1) (optional)
+     * @param authorization Authorization example：Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW... (optional)
      * @return ApiResponse&lt;ResponseWrapperMapstringstringA9a4024aE50a4a3aA475Dba457d7c10e&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -154,7 +154,7 @@ public class WebsiteControllerApi {
      * Check if the the url is a phishing site (asynchronously)
      * 
      * @param url Url (required)
-     * @param authorization Authorization (test：Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW1zQ9cCv8WrbB1) (optional)
+     * @param authorization Authorization example：Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW... (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object

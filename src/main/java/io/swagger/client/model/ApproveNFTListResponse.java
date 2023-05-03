@@ -28,7 +28,7 @@ import java.util.List;
  * ApproveNFTListResponse
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-04-23T08:20:55.649750533Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-05-03T14:50:35.366778228Z[Etc/UTC]")
 public class ApproveNFTListResponse {
   @SerializedName("approved_list")
   private List<ApproveResult> approvedList = null;

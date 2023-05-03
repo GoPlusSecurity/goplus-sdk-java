@@ -25,7 +25,7 @@ import java.io.IOException;
  * ResponseWrapperTaTokenSecurityResponse730b76cb88874c8bbfd0494baf55b849ResultContractAddressDex
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-04-23T08:20:55.649750533Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-05-03T14:50:35.366778228Z[Etc/UTC]")
 public class ResponseWrapperTaTokenSecurityResponse730b76cb88874c8bbfd0494baf55b849ResultContractAddressDex {
   @SerializedName("name")
   private String name = null;

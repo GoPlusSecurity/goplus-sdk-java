@@ -59,7 +59,7 @@ public class ApproveControllerV2Api {
      * Build call for addressNFT1155ApproveListUsingGET1
      * @param addresses contract address (required)
      * @param chainId chain id (required)
-     * @param authorization Authorization (test：Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW1zQ9cCv8WrbB1) (optional)
+     * @param authorization Authorization example：Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW... (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -132,11 +132,11 @@ public class ApproveControllerV2Api {
     }
 
     /**
-     * AuthorizationAuthorizedAddressListNFT1155
+     * Check risk of all erc1155 approvals under one EOA.
      * 
      * @param addresses contract address (required)
      * @param chainId chain id (required)
-     * @param authorization Authorization (test：Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW1zQ9cCv8WrbB1) (optional)
+     * @param authorization Authorization example：Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW... (optional)
      * @return ResponseWrapperListApproveNFT1155ListResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -146,11 +146,11 @@ public class ApproveControllerV2Api {
     }
 
     /**
-     * AuthorizationAuthorizedAddressListNFT1155
+     * Check risk of all erc1155 approvals under one EOA.
      * 
      * @param addresses contract address (required)
      * @param chainId chain id (required)
-     * @param authorization Authorization (test：Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW1zQ9cCv8WrbB1) (optional)
+     * @param authorization Authorization example：Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW... (optional)
      * @return ApiResponse&lt;ResponseWrapperListApproveNFT1155ListResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -161,11 +161,11 @@ public class ApproveControllerV2Api {
     }
 
     /**
-     * AuthorizationAuthorizedAddressListNFT1155 (asynchronously)
+     * Check risk of all erc1155 approvals under one EOA. (asynchronously)
      * 
      * @param addresses contract address (required)
      * @param chainId chain id (required)
-     * @param authorization Authorization (test：Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW1zQ9cCv8WrbB1) (optional)
+     * @param authorization Authorization example：Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW... (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -200,7 +200,7 @@ public class ApproveControllerV2Api {
      * Build call for addressNFT721ApproveListUsingGET1
      * @param addresses contract address (required)
      * @param chainId chain id (required)
-     * @param authorization Authorization (test：Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW1zQ9cCv8WrbB1) (optional)
+     * @param authorization Authorization example：Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW... (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -273,11 +273,11 @@ public class ApproveControllerV2Api {
     }
 
     /**
-     * AuthorizationAuthorizedAddressListNFT721
+     * Check risk of all erc721 approvals under one EOA.
      * 
      * @param addresses contract address (required)
      * @param chainId chain id (required)
-     * @param authorization Authorization (test：Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW1zQ9cCv8WrbB1) (optional)
+     * @param authorization Authorization example：Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW... (optional)
      * @return ResponseWrapperListApproveNFTListResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -287,11 +287,11 @@ public class ApproveControllerV2Api {
     }
 
     /**
-     * AuthorizationAuthorizedAddressListNFT721
+     * Check risk of all erc721 approvals under one EOA.
      * 
      * @param addresses contract address (required)
      * @param chainId chain id (required)
-     * @param authorization Authorization (test：Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW1zQ9cCv8WrbB1) (optional)
+     * @param authorization Authorization example：Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW... (optional)
      * @return ApiResponse&lt;ResponseWrapperListApproveNFTListResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -302,11 +302,11 @@ public class ApproveControllerV2Api {
     }
 
     /**
-     * AuthorizationAuthorizedAddressListNFT721 (asynchronously)
+     * Check risk of all erc721 approvals under one EOA. (asynchronously)
      * 
      * @param addresses contract address (required)
      * @param chainId chain id (required)
-     * @param authorization Authorization (test：Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW1zQ9cCv8WrbB1) (optional)
+     * @param authorization Authorization example：Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW... (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -341,7 +341,7 @@ public class ApproveControllerV2Api {
      * Build call for addressTokenApproveListUsingGET1
      * @param addresses contract address (required)
      * @param chainId chain id (required)
-     * @param authorization Authorization (test：Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW1zQ9cCv8WrbB1) (optional)
+     * @param authorization Authorization example：Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW... (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -414,11 +414,11 @@ public class ApproveControllerV2Api {
     }
 
     /**
-     * AuthorizationERC20AuthorizedAddressList
+     * Check risk of all erc20 approvals under one EOA.
      * 
      * @param addresses contract address (required)
      * @param chainId chain id (required)
-     * @param authorization Authorization (test：Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW1zQ9cCv8WrbB1) (optional)
+     * @param authorization Authorization example：Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW... (optional)
      * @return ResponseWrapperListApproveTokenOutListResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -428,11 +428,11 @@ public class ApproveControllerV2Api {
     }
 
     /**
-     * AuthorizationERC20AuthorizedAddressList
+     * Check risk of all erc20 approvals under one EOA.
      * 
      * @param addresses contract address (required)
      * @param chainId chain id (required)
-     * @param authorization Authorization (test：Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW1zQ9cCv8WrbB1) (optional)
+     * @param authorization Authorization example：Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW... (optional)
      * @return ApiResponse&lt;ResponseWrapperListApproveTokenOutListResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -443,11 +443,11 @@ public class ApproveControllerV2Api {
     }
 
     /**
-     * AuthorizationERC20AuthorizedAddressList (asynchronously)
+     * Check risk of all erc20 approvals under one EOA. (asynchronously)
      * 
      * @param addresses contract address (required)
      * @param chainId chain id (required)
-     * @param authorization Authorization (test：Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW1zQ9cCv8WrbB1) (optional)
+     * @param authorization Authorization example：Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW... (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
