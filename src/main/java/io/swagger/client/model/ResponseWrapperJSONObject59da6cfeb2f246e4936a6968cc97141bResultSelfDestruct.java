@@ -25,7 +25,7 @@ import java.io.IOException;
  * { value: owner_address: owner_type }It describes whether this NFT contract can self destruct. (Notice:When the self-destruct function is triggered, this contract will be destroyed, all functions will be unavailable, and all related assets will be erased.)
  */
 @Schema(description = "{ value: owner_address: owner_type }It describes whether this NFT contract can self destruct. (Notice:When the self-destruct function is triggered, this contract will be destroyed, all functions will be unavailable, and all related assets will be erased.)")
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-04-23T08:20:55.649750533Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-05-03T14:50:35.366778228Z[Etc/UTC]")
 public class ResponseWrapperJSONObject59da6cfeb2f246e4936a6968cc97141bResultSelfDestruct {
   @SerializedName("owner_address")
   private String ownerAddress = null;
