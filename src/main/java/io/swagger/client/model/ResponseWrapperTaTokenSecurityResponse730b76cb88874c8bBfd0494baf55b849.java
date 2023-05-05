@@ -22,11 +22,14 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.client.model.ResponseWrapperTaTokenSecurityResponse730b76cb88874c8bbfd0494baf55b849Result;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 /**
  * ResponseWrapperTaTokenSecurityResponse730b76cb88874c8bBfd0494baf55b849
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-05-03T14:50:35.366778228Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-05-05T10:27:06.045046614Z[Etc/UTC]")
 public class ResponseWrapperTaTokenSecurityResponse730b76cb88874c8bBfd0494baf55b849 {
   @SerializedName("code")
   private Integer code = null;
@@ -35,7 +38,7 @@ public class ResponseWrapperTaTokenSecurityResponse730b76cb88874c8bBfd0494baf55b
   private String message = null;
 
   @SerializedName("result")
-  private ResponseWrapperTaTokenSecurityResponse730b76cb88874c8bbfd0494baf55b849Result result = null;
+  private Map<String, ResponseWrapperTaTokenSecurityResponse730b76cb88874c8bbfd0494baf55b849Result> result = null;
 
   public ResponseWrapperTaTokenSecurityResponse730b76cb88874c8bBfd0494baf55b849 code(Integer code) {
     this.code = code;
@@ -73,21 +76,29 @@ public class ResponseWrapperTaTokenSecurityResponse730b76cb88874c8bBfd0494baf55b
     this.message = message;
   }
 
-  public ResponseWrapperTaTokenSecurityResponse730b76cb88874c8bBfd0494baf55b849 result(ResponseWrapperTaTokenSecurityResponse730b76cb88874c8bbfd0494baf55b849Result result) {
+  public ResponseWrapperTaTokenSecurityResponse730b76cb88874c8bBfd0494baf55b849 result(Map<String, ResponseWrapperTaTokenSecurityResponse730b76cb88874c8bbfd0494baf55b849Result> result) {
     this.result = result;
     return this;
   }
 
+  public ResponseWrapperTaTokenSecurityResponse730b76cb88874c8bBfd0494baf55b849 putResultItem(String key, ResponseWrapperTaTokenSecurityResponse730b76cb88874c8bbfd0494baf55b849Result resultItem) {
+    if (this.result == null) {
+      this.result = new HashMap<String, ResponseWrapperTaTokenSecurityResponse730b76cb88874c8bbfd0494baf55b849Result>();
+    }
+    this.result.put(key, resultItem);
+    return this;
+  }
+
    /**
-   * Get result
+   * Response result
    * @return result
   **/
-  @Schema(description = "")
-  public ResponseWrapperTaTokenSecurityResponse730b76cb88874c8bbfd0494baf55b849Result getResult() {
+  @Schema(description = "Response result")
+  public Map<String, ResponseWrapperTaTokenSecurityResponse730b76cb88874c8bbfd0494baf55b849Result> getResult() {
     return result;
   }
 
-  public void setResult(ResponseWrapperTaTokenSecurityResponse730b76cb88874c8bbfd0494baf55b849Result result) {
+  public void setResult(Map<String, ResponseWrapperTaTokenSecurityResponse730b76cb88874c8bbfd0494baf55b849Result> result) {
     this.result = result;
   }
 
