@@ -26,7 +26,7 @@ import java.io.IOException;
  * ApproveTokenResult
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-05-03T14:50:35.366778228Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-05-05T10:27:06.045046614Z[Etc/UTC]")
 public class ApproveTokenResult {
   @SerializedName("address_info")
   private ApproveAddressInfo addressInfo = null;

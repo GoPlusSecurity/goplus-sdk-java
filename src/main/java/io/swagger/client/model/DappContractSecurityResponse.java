@@ -29,7 +29,7 @@ import java.util.List;
  * DappContractSecurityResponse
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-05-03T14:50:35.366778228Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-05-05T10:27:06.045046614Z[Etc/UTC]")
 public class DappContractSecurityResponse {
   @SerializedName("audit_info")
   private List<AuditInfo> auditInfo = null;
