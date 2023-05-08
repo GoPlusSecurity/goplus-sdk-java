@@ -57,14 +57,14 @@ public class ApproveControllerV1Api {
     /**
      * Build call for addressContractUsingGET1
      * @param address address (required)
-     * @param chainId The chain_id of the blockchain. \&quot;1\&quot; means Ethereum;  \&quot;10\&quot; means Optimism; “25” means Cronos; \&quot;56\&quot; means BSC;  “66” means OKC; \&quot;100\&quot; means Gnosis; \&quot;128\&quot; means HECO;  \&quot;137\&quot; means Polygon;  \&quot;250\&quot; means Fantom; \&quot;321\&quot; means KCC; \&quot;324\&quot; means zkSync Era; \&quot;10001\&quot; means ETHW; \&quot;201022\&quot; means FON; \&quot;42161\&quot; means Arbitrum;  \&quot;43114\&quot; means Avalanche; \&quot;59140\&quot; means Linea; \&quot;1666600000\&quot; means Harmony; \&quot;tron\&quot; means Tron. (required)
      * @param authorization Authorization (test：Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW...) (optional)
+     * @param chainId The chain_id of the blockchain. \&quot;1\&quot; means Ethereum;  \&quot;10\&quot; means Optimism; “25” means Cronos; \&quot;56\&quot; means BSC;  “66” means OKC; \&quot;100\&quot; means Gnosis; \&quot;128\&quot; means HECO;  \&quot;137\&quot; means Polygon;  \&quot;250\&quot; means Fantom; \&quot;321\&quot; means KCC; \&quot;324\&quot; means zkSync Era; \&quot;10001\&quot; means ETHW; \&quot;201022\&quot; means FON; \&quot;42161\&quot; means Arbitrum;  \&quot;43114\&quot; means Avalanche; \&quot;59140\&quot; means Linea; \&quot;1666600000\&quot; means Harmony; \&quot;tron\&quot; means Tron. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call addressContractUsingGET1Call(String address, String chainId, String authorization, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call addressContractUsingGET1Call(String address, String authorization, String chainId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -111,17 +111,13 @@ public class ApproveControllerV1Api {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call addressContractUsingGET1ValidateBeforeCall(String address, String chainId, String authorization, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call addressContractUsingGET1ValidateBeforeCall(String address, String authorization, String chainId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         // verify the required parameter 'address' is set
         if (address == null) {
             throw new ApiException("Missing the required parameter 'address' when calling addressContractUsingGET1(Async)");
         }
-        // verify the required parameter 'chainId' is set
-        if (chainId == null) {
-            throw new ApiException("Missing the required parameter 'chainId' when calling addressContractUsingGET1(Async)");
-        }
         
-        com.squareup.okhttp.Call call = addressContractUsingGET1Call(address, chainId, authorization, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = addressContractUsingGET1Call(address, authorization, chainId, progressListener, progressRequestListener);
         return call;
 
         
@@ -134,13 +130,13 @@ public class ApproveControllerV1Api {
      * Check if the address is malicious
      * 
      * @param address address (required)
-     * @param chainId The chain_id of the blockchain. \&quot;1\&quot; means Ethereum;  \&quot;10\&quot; means Optimism; “25” means Cronos; \&quot;56\&quot; means BSC;  “66” means OKC; \&quot;100\&quot; means Gnosis; \&quot;128\&quot; means HECO;  \&quot;137\&quot; means Polygon;  \&quot;250\&quot; means Fantom; \&quot;321\&quot; means KCC; \&quot;324\&quot; means zkSync Era; \&quot;10001\&quot; means ETHW; \&quot;201022\&quot; means FON; \&quot;42161\&quot; means Arbitrum;  \&quot;43114\&quot; means Avalanche; \&quot;59140\&quot; means Linea; \&quot;1666600000\&quot; means Harmony; \&quot;tron\&quot; means Tron. (required)
      * @param authorization Authorization (test：Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW...) (optional)
+     * @param chainId The chain_id of the blockchain. \&quot;1\&quot; means Ethereum;  \&quot;10\&quot; means Optimism; “25” means Cronos; \&quot;56\&quot; means BSC;  “66” means OKC; \&quot;100\&quot; means Gnosis; \&quot;128\&quot; means HECO;  \&quot;137\&quot; means Polygon;  \&quot;250\&quot; means Fantom; \&quot;321\&quot; means KCC; \&quot;324\&quot; means zkSync Era; \&quot;10001\&quot; means ETHW; \&quot;201022\&quot; means FON; \&quot;42161\&quot; means Arbitrum;  \&quot;43114\&quot; means Avalanche; \&quot;59140\&quot; means Linea; \&quot;1666600000\&quot; means Harmony; \&quot;tron\&quot; means Tron. (optional)
      * @return ResponseWrapperobject545a2ceaB58741b4Aae7F3d73df91255
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ResponseWrapperobject545a2ceaB58741b4Aae7F3d73df91255 addressContractUsingGET1(String address, String chainId, String authorization) throws ApiException {
-        ApiResponse<ResponseWrapperobject545a2ceaB58741b4Aae7F3d73df91255> resp = addressContractUsingGET1WithHttpInfo(address, chainId, authorization);
+    public ResponseWrapperobject545a2ceaB58741b4Aae7F3d73df91255 addressContractUsingGET1(String address, String authorization, String chainId) throws ApiException {
+        ApiResponse<ResponseWrapperobject545a2ceaB58741b4Aae7F3d73df91255> resp = addressContractUsingGET1WithHttpInfo(address, authorization, chainId);
         return resp.getData();
     }
 
@@ -148,13 +144,13 @@ public class ApproveControllerV1Api {
      * Check if the address is malicious
      * 
      * @param address address (required)
-     * @param chainId The chain_id of the blockchain. \&quot;1\&quot; means Ethereum;  \&quot;10\&quot; means Optimism; “25” means Cronos; \&quot;56\&quot; means BSC;  “66” means OKC; \&quot;100\&quot; means Gnosis; \&quot;128\&quot; means HECO;  \&quot;137\&quot; means Polygon;  \&quot;250\&quot; means Fantom; \&quot;321\&quot; means KCC; \&quot;324\&quot; means zkSync Era; \&quot;10001\&quot; means ETHW; \&quot;201022\&quot; means FON; \&quot;42161\&quot; means Arbitrum;  \&quot;43114\&quot; means Avalanche; \&quot;59140\&quot; means Linea; \&quot;1666600000\&quot; means Harmony; \&quot;tron\&quot; means Tron. (required)
      * @param authorization Authorization (test：Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW...) (optional)
+     * @param chainId The chain_id of the blockchain. \&quot;1\&quot; means Ethereum;  \&quot;10\&quot; means Optimism; “25” means Cronos; \&quot;56\&quot; means BSC;  “66” means OKC; \&quot;100\&quot; means Gnosis; \&quot;128\&quot; means HECO;  \&quot;137\&quot; means Polygon;  \&quot;250\&quot; means Fantom; \&quot;321\&quot; means KCC; \&quot;324\&quot; means zkSync Era; \&quot;10001\&quot; means ETHW; \&quot;201022\&quot; means FON; \&quot;42161\&quot; means Arbitrum;  \&quot;43114\&quot; means Avalanche; \&quot;59140\&quot; means Linea; \&quot;1666600000\&quot; means Harmony; \&quot;tron\&quot; means Tron. (optional)
      * @return ApiResponse&lt;ResponseWrapperobject545a2ceaB58741b4Aae7F3d73df91255&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ResponseWrapperobject545a2ceaB58741b4Aae7F3d73df91255> addressContractUsingGET1WithHttpInfo(String address, String chainId, String authorization) throws ApiException {
-        com.squareup.okhttp.Call call = addressContractUsingGET1ValidateBeforeCall(address, chainId, authorization, null, null);
+    public ApiResponse<ResponseWrapperobject545a2ceaB58741b4Aae7F3d73df91255> addressContractUsingGET1WithHttpInfo(String address, String authorization, String chainId) throws ApiException {
+        com.squareup.okhttp.Call call = addressContractUsingGET1ValidateBeforeCall(address, authorization, chainId, null, null);
         Type localVarReturnType = new TypeToken<ResponseWrapperobject545a2ceaB58741b4Aae7F3d73df91255>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -163,13 +159,13 @@ public class ApproveControllerV1Api {
      * Check if the address is malicious (asynchronously)
      * 
      * @param address address (required)
-     * @param chainId The chain_id of the blockchain. \&quot;1\&quot; means Ethereum;  \&quot;10\&quot; means Optimism; “25” means Cronos; \&quot;56\&quot; means BSC;  “66” means OKC; \&quot;100\&quot; means Gnosis; \&quot;128\&quot; means HECO;  \&quot;137\&quot; means Polygon;  \&quot;250\&quot; means Fantom; \&quot;321\&quot; means KCC; \&quot;324\&quot; means zkSync Era; \&quot;10001\&quot; means ETHW; \&quot;201022\&quot; means FON; \&quot;42161\&quot; means Arbitrum;  \&quot;43114\&quot; means Avalanche; \&quot;59140\&quot; means Linea; \&quot;1666600000\&quot; means Harmony; \&quot;tron\&quot; means Tron. (required)
      * @param authorization Authorization (test：Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW...) (optional)
+     * @param chainId The chain_id of the blockchain. \&quot;1\&quot; means Ethereum;  \&quot;10\&quot; means Optimism; “25” means Cronos; \&quot;56\&quot; means BSC;  “66” means OKC; \&quot;100\&quot; means Gnosis; \&quot;128\&quot; means HECO;  \&quot;137\&quot; means Polygon;  \&quot;250\&quot; means Fantom; \&quot;321\&quot; means KCC; \&quot;324\&quot; means zkSync Era; \&quot;10001\&quot; means ETHW; \&quot;201022\&quot; means FON; \&quot;42161\&quot; means Arbitrum;  \&quot;43114\&quot; means Avalanche; \&quot;59140\&quot; means Linea; \&quot;1666600000\&quot; means Harmony; \&quot;tron\&quot; means Tron. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call addressContractUsingGET1Async(String address, String chainId, String authorization, final ApiCallback<ResponseWrapperobject545a2ceaB58741b4Aae7F3d73df91255> callback) throws ApiException {
+    public com.squareup.okhttp.Call addressContractUsingGET1Async(String address, String authorization, String chainId, final ApiCallback<ResponseWrapperobject545a2ceaB58741b4Aae7F3d73df91255> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -190,7 +186,7 @@ public class ApproveControllerV1Api {
             };
         }
 
-        com.squareup.okhttp.Call call = addressContractUsingGET1ValidateBeforeCall(address, chainId, authorization, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = addressContractUsingGET1ValidateBeforeCall(address, authorization, chainId, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ResponseWrapperobject545a2ceaB58741b4Aae7F3d73df91255>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
