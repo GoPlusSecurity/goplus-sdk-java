@@ -19,17 +19,15 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import io.swagger.client.model.ResponseWrapperMapstringstring2a740de0be5a4eb3b6e4a2cf0a2d8bf8Result;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 /**
- * ResponseWrapperMapstringstring
+ * ResponseWrapperMapstringstring2a740de0Be5a4eb3B6e4A2cf0a2d8bf8
  */
 
 @javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-05-08T09:37:56.615797436Z[Etc/UTC]")
-public class ResponseWrapperMapstringstring {
+public class ResponseWrapperMapstringstring2a740de0Be5a4eb3B6e4A2cf0a2d8bf8 {
   @SerializedName("code")
   private Integer code = null;
 
@@ -37,9 +35,9 @@ public class ResponseWrapperMapstringstring {
   private String message = null;
 
   @SerializedName("result")
-  private Map<String, String> result = null;
+  private ResponseWrapperMapstringstring2a740de0be5a4eb3b6e4a2cf0a2d8bf8Result result = null;
 
-  public ResponseWrapperMapstringstring code(Integer code) {
+  public ResponseWrapperMapstringstring2a740de0Be5a4eb3B6e4A2cf0a2d8bf8 code(Integer code) {
     this.code = code;
     return this;
   }
@@ -57,7 +55,7 @@ public class ResponseWrapperMapstringstring {
     this.code = code;
   }
 
-  public ResponseWrapperMapstringstring message(String message) {
+  public ResponseWrapperMapstringstring2a740de0Be5a4eb3B6e4A2cf0a2d8bf8 message(String message) {
     this.message = message;
     return this;
   }
@@ -75,29 +73,21 @@ public class ResponseWrapperMapstringstring {
     this.message = message;
   }
 
-  public ResponseWrapperMapstringstring result(Map<String, String> result) {
+  public ResponseWrapperMapstringstring2a740de0Be5a4eb3B6e4A2cf0a2d8bf8 result(ResponseWrapperMapstringstring2a740de0be5a4eb3b6e4a2cf0a2d8bf8Result result) {
     this.result = result;
     return this;
   }
 
-  public ResponseWrapperMapstringstring putResultItem(String key, String resultItem) {
-    if (this.result == null) {
-      this.result = new HashMap<String, String>();
-    }
-    this.result.put(key, resultItem);
-    return this;
-  }
-
    /**
-   * Response result
+   * Get result
    * @return result
   **/
-  @Schema(description = "Response result")
-  public Map<String, String> getResult() {
+  @Schema(description = "")
+  public ResponseWrapperMapstringstring2a740de0be5a4eb3b6e4a2cf0a2d8bf8Result getResult() {
     return result;
   }
 
-  public void setResult(Map<String, String> result) {
+  public void setResult(ResponseWrapperMapstringstring2a740de0be5a4eb3b6e4a2cf0a2d8bf8Result result) {
     this.result = result;
   }
 
@@ -110,10 +100,10 @@ public class ResponseWrapperMapstringstring {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ResponseWrapperMapstringstring responseWrapperMapstringstring = (ResponseWrapperMapstringstring) o;
-    return Objects.equals(this.code, responseWrapperMapstringstring.code) &&
-        Objects.equals(this.message, responseWrapperMapstringstring.message) &&
-        Objects.equals(this.result, responseWrapperMapstringstring.result);
+    ResponseWrapperMapstringstring2a740de0Be5a4eb3B6e4A2cf0a2d8bf8 responseWrapperMapstringstring2a740de0Be5a4eb3B6e4A2cf0a2d8bf8 = (ResponseWrapperMapstringstring2a740de0Be5a4eb3B6e4A2cf0a2d8bf8) o;
+    return Objects.equals(this.code, responseWrapperMapstringstring2a740de0Be5a4eb3B6e4A2cf0a2d8bf8.code) &&
+        Objects.equals(this.message, responseWrapperMapstringstring2a740de0Be5a4eb3B6e4A2cf0a2d8bf8.message) &&
+        Objects.equals(this.result, responseWrapperMapstringstring2a740de0Be5a4eb3B6e4A2cf0a2d8bf8.result);
   }
 
   @Override
@@ -125,7 +115,7 @@ public class ResponseWrapperMapstringstring {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ResponseWrapperMapstringstring {\n");
+    sb.append("class ResponseWrapperMapstringstring2a740de0Be5a4eb3B6e4A2cf0a2d8bf8 {\n");
     
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("    message: ").append(toIndentedString(message)).append("\n");

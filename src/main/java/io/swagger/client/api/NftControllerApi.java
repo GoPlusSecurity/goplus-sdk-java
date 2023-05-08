@@ -26,7 +26,7 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import io.swagger.client.model.ResponseWrapperJSONObject59da6cfeB2f246e4936a6968cc97141b;
+import io.swagger.client.model.ResponseWrapperJSONObject5c459c547a184b1880671fad2eb60d6c;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -57,7 +57,7 @@ public class NftControllerApi {
      * Build call for getNftInfoUsingGET1
      * @param chainId Chain id, (eth: 1, bsc: 56, Polygon: 137, Avalanche: 43114) (required)
      * @param contractAddresses NFT contract address (required)
-     * @param authorization Authorization example：Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW... (optional)
+     * @param authorization Authorization (test：Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW...) (optional)
      * @param tokenId tokenId (optional, default to NFT token id)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -137,13 +137,13 @@ public class NftControllerApi {
      * 
      * @param chainId Chain id, (eth: 1, bsc: 56, Polygon: 137, Avalanche: 43114) (required)
      * @param contractAddresses NFT contract address (required)
-     * @param authorization Authorization example：Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW... (optional)
+     * @param authorization Authorization (test：Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW...) (optional)
      * @param tokenId tokenId (optional, default to NFT token id)
-     * @return ResponseWrapperJSONObject59da6cfeB2f246e4936a6968cc97141b
+     * @return ResponseWrapperJSONObject5c459c547a184b1880671fad2eb60d6c
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ResponseWrapperJSONObject59da6cfeB2f246e4936a6968cc97141b getNftInfoUsingGET1(String chainId, String contractAddresses, String authorization, String tokenId) throws ApiException {
-        ApiResponse<ResponseWrapperJSONObject59da6cfeB2f246e4936a6968cc97141b> resp = getNftInfoUsingGET1WithHttpInfo(chainId, contractAddresses, authorization, tokenId);
+    public ResponseWrapperJSONObject5c459c547a184b1880671fad2eb60d6c getNftInfoUsingGET1(String chainId, String contractAddresses, String authorization, String tokenId) throws ApiException {
+        ApiResponse<ResponseWrapperJSONObject5c459c547a184b1880671fad2eb60d6c> resp = getNftInfoUsingGET1WithHttpInfo(chainId, contractAddresses, authorization, tokenId);
         return resp.getData();
     }
 
@@ -152,14 +152,14 @@ public class NftControllerApi {
      * 
      * @param chainId Chain id, (eth: 1, bsc: 56, Polygon: 137, Avalanche: 43114) (required)
      * @param contractAddresses NFT contract address (required)
-     * @param authorization Authorization example：Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW... (optional)
+     * @param authorization Authorization (test：Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW...) (optional)
      * @param tokenId tokenId (optional, default to NFT token id)
-     * @return ApiResponse&lt;ResponseWrapperJSONObject59da6cfeB2f246e4936a6968cc97141b&gt;
+     * @return ApiResponse&lt;ResponseWrapperJSONObject5c459c547a184b1880671fad2eb60d6c&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ResponseWrapperJSONObject59da6cfeB2f246e4936a6968cc97141b> getNftInfoUsingGET1WithHttpInfo(String chainId, String contractAddresses, String authorization, String tokenId) throws ApiException {
+    public ApiResponse<ResponseWrapperJSONObject5c459c547a184b1880671fad2eb60d6c> getNftInfoUsingGET1WithHttpInfo(String chainId, String contractAddresses, String authorization, String tokenId) throws ApiException {
         com.squareup.okhttp.Call call = getNftInfoUsingGET1ValidateBeforeCall(chainId, contractAddresses, authorization, tokenId, null, null);
-        Type localVarReturnType = new TypeToken<ResponseWrapperJSONObject59da6cfeB2f246e4936a6968cc97141b>(){}.getType();
+        Type localVarReturnType = new TypeToken<ResponseWrapperJSONObject5c459c547a184b1880671fad2eb60d6c>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -168,13 +168,13 @@ public class NftControllerApi {
      * 
      * @param chainId Chain id, (eth: 1, bsc: 56, Polygon: 137, Avalanche: 43114) (required)
      * @param contractAddresses NFT contract address (required)
-     * @param authorization Authorization example：Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW... (optional)
+     * @param authorization Authorization (test：Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW...) (optional)
      * @param tokenId tokenId (optional, default to NFT token id)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getNftInfoUsingGET1Async(String chainId, String contractAddresses, String authorization, String tokenId, final ApiCallback<ResponseWrapperJSONObject59da6cfeB2f246e4936a6968cc97141b> callback) throws ApiException {
+    public com.squareup.okhttp.Call getNftInfoUsingGET1Async(String chainId, String contractAddresses, String authorization, String tokenId, final ApiCallback<ResponseWrapperJSONObject5c459c547a184b1880671fad2eb60d6c> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -196,7 +196,7 @@ public class NftControllerApi {
         }
 
         com.squareup.okhttp.Call call = getNftInfoUsingGET1ValidateBeforeCall(chainId, contractAddresses, authorization, tokenId, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<ResponseWrapperJSONObject59da6cfeB2f246e4936a6968cc97141b>(){}.getType();
+        Type localVarReturnType = new TypeToken<ResponseWrapperJSONObject5c459c547a184b1880671fad2eb60d6c>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

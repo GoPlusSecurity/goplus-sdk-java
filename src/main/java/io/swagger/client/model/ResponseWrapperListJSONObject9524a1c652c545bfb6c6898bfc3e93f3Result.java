@@ -21,42 +21,52 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 /**
- * TaTokenSecurityResponse
+ * ResponseWrapperListJSONObject9524a1c652c545bfb6c6898bfc3e93f3Result
  */
 
 @javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-05-08T09:37:56.615797436Z[Etc/UTC]")
-public class TaTokenSecurityResponse {
-  @SerializedName("data")
-  private Map<String, Map<String, Object>> data = null;
+public class ResponseWrapperListJSONObject9524a1c652c545bfb6c6898bfc3e93f3Result {
+  @SerializedName("name")
+  private String name = null;
 
-  public TaTokenSecurityResponse data(Map<String, Map<String, Object>> data) {
-    this.data = data;
-    return this;
-  }
+  @SerializedName("id")
+  private String id = null;
 
-  public TaTokenSecurityResponse putDataItem(String key, Map<String, Object> dataItem) {
-    if (this.data == null) {
-      this.data = new HashMap<String, Map<String, Object>>();
-    }
-    this.data.put(key, dataItem);
+  public ResponseWrapperListJSONObject9524a1c652c545bfb6c6898bfc3e93f3Result name(String name) {
+    this.name = name;
     return this;
   }
 
    /**
-   * Get data
-   * @return data
+   * chain name
+   * @return name
   **/
-  @Schema(description = "")
-  public Map<String, Map<String, Object>> getData() {
-    return data;
+  @Schema(description = "chain name")
+  public String getName() {
+    return name;
   }
 
-  public void setData(Map<String, Map<String, Object>> data) {
-    this.data = data;
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public ResponseWrapperListJSONObject9524a1c652c545bfb6c6898bfc3e93f3Result id(String id) {
+    this.id = id;
+    return this;
+  }
+
+   /**
+   * chain id
+   * @return id
+  **/
+  @Schema(description = "chain id")
+  public String getId() {
+    return id;
+  }
+
+  public void setId(String id) {
+    this.id = id;
   }
 
 
@@ -68,22 +78,24 @@ public class TaTokenSecurityResponse {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    TaTokenSecurityResponse taTokenSecurityResponse = (TaTokenSecurityResponse) o;
-    return Objects.equals(this.data, taTokenSecurityResponse.data);
+    ResponseWrapperListJSONObject9524a1c652c545bfb6c6898bfc3e93f3Result responseWrapperListJSONObject9524a1c652c545bfb6c6898bfc3e93f3Result = (ResponseWrapperListJSONObject9524a1c652c545bfb6c6898bfc3e93f3Result) o;
+    return Objects.equals(this.name, responseWrapperListJSONObject9524a1c652c545bfb6c6898bfc3e93f3Result.name) &&
+        Objects.equals(this.id, responseWrapperListJSONObject9524a1c652c545bfb6c6898bfc3e93f3Result.id);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(data);
+    return Objects.hash(name, id);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class TaTokenSecurityResponse {\n");
+    sb.append("class ResponseWrapperListJSONObject9524a1c652c545bfb6c6898bfc3e93f3Result {\n");
     
-    sb.append("    data: ").append(toIndentedString(data)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("}");
     return sb.toString();
   }

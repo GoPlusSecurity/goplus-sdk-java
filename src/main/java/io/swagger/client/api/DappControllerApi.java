@@ -55,7 +55,7 @@ public class DappControllerApi {
 
     /**
      * Build call for getDappInfoUsingGET
-     * @param authorization Authorization example：Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW... (optional)
+     * @param authorization Authorization (test：Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW...) (optional)
      * @param url Url or domain (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -122,7 +122,7 @@ public class DappControllerApi {
     /**
      * Check risk of dapp through URL
      * 
-     * @param authorization Authorization example：Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW... (optional)
+     * @param authorization Authorization (test：Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW...) (optional)
      * @param url Url or domain (optional)
      * @return ResponseWrapperDappContractSecurityResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -135,7 +135,7 @@ public class DappControllerApi {
     /**
      * Check risk of dapp through URL
      * 
-     * @param authorization Authorization example：Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW... (optional)
+     * @param authorization Authorization (test：Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW...) (optional)
      * @param url Url or domain (optional)
      * @return ApiResponse&lt;ResponseWrapperDappContractSecurityResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -149,7 +149,7 @@ public class DappControllerApi {
     /**
      * Check risk of dapp through URL (asynchronously)
      * 
-     * @param authorization Authorization example：Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW... (optional)
+     * @param authorization Authorization (test：Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW...) (optional)
      * @param url Url or domain (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
