@@ -25,7 +25,7 @@ import java.io.IOException;
  * It describes whether the NFT owner can burn others NFT.(Notice:Privileged_burn means that the owner can burn others&#x27; NFTs directly through the method.)
  */
 @Schema(description = "It describes whether the NFT owner can burn others NFT.(Notice:Privileged_burn means that the owner can burn others' NFTs directly through the method.)")
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-05-08T09:37:56.615797436Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-05-08T10:45:01.075301543Z[Etc/UTC]")
 public class ResponseWrapperJSONObject5c459c547a184b1880671fad2eb60d6cResultPrivilegedBurn {
   @SerializedName("owner_address")
   private String ownerAddress = null;

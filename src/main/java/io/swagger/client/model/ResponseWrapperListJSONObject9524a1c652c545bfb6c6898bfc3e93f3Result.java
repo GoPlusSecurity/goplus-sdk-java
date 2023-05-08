@@ -25,7 +25,7 @@ import java.io.IOException;
  * ResponseWrapperListJSONObject9524a1c652c545bfb6c6898bfc3e93f3Result
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-05-08T09:37:56.615797436Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-05-08T10:45:01.075301543Z[Etc/UTC]")
 public class ResponseWrapperListJSONObject9524a1c652c545bfb6c6898bfc3e93f3Result {
   @SerializedName("name")
   private String name = null;
