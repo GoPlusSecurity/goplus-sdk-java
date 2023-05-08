@@ -25,7 +25,7 @@ import java.io.IOException;
  * ParseAbiDataRequest
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-05-05T10:27:06.045046614Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-05-08T09:37:56.615797436Z[Etc/UTC]")
 public class ParseAbiDataRequest {
   @SerializedName("chain_id")
   private String chainId = null;
@@ -39,16 +39,62 @@ public class ParseAbiDataRequest {
   @SerializedName("signer")
   private String signer = null;
 
+  /**
+   * Transaction type
+   */
+  @JsonAdapter(TranscationTypeEnum.Adapter.class)
+  public enum TranscationTypeEnum {
+    COMMON("COMMON"),
+    ETH_SIGNTYPEDDATA_V4("ETH_SIGNTYPEDDATA_V4"),
+    PERSONAL_SIGN("PERSONAL_SIGN"),
+    ETH_SIGN("ETH_SIGN");
+
+    private String value;
+
+    TranscationTypeEnum(String value) {
+      this.value = value;
+    }
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+    public static TranscationTypeEnum fromValue(String input) {
+      for (TranscationTypeEnum b : TranscationTypeEnum.values()) {
+        if (b.value.equals(input)) {
+          return b;
+        }
+      }
+      return null;
+    }
+    public static class Adapter extends TypeAdapter<TranscationTypeEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final TranscationTypeEnum enumeration) throws IOException {
+        jsonWriter.value(String.valueOf(enumeration.getValue()));
+      }
+
+      @Override
+      public TranscationTypeEnum read(final JsonReader jsonReader) throws IOException {
+        Object value = jsonReader.nextString();
+        return TranscationTypeEnum.fromValue((String)(value));
+      }
+    }
+  }  @SerializedName("transcation_type")
+  private TranscationTypeEnum transcationType = null;
+
   public ParseAbiDataRequest chainId(String chainId) {
     this.chainId = chainId;
     return this;
   }
 
    /**
-   * chain_id
+   * Chain id, (ETH: 1, Cronos:25, BSC: 56, Heco: 128, Polygon: 137, Fantom:250, KCC: 321, Arbitrum: 42161, Avalanche: 43114)
    * @return chainId
   **/
-  @Schema(example = "56", required = true, description = "chain_id")
+  @Schema(example = "56", required = true, description = "Chain id, (ETH: 1, Cronos:25, BSC: 56, Heco: 128, Polygon: 137, Fantom:250, KCC: 321, Arbitrum: 42161, Avalanche: 43114)")
   public String getChainId() {
     return chainId;
   }
@@ -63,10 +109,10 @@ public class ParseAbiDataRequest {
   }
 
    /**
-   * contract_address
+   * Carrying the signer and contract address will help to decode more information.
    * @return contractAddress
   **/
-  @Schema(example = "489982930986835137684486657990555633941558688085", description = "contract_address")
+  @Schema(example = "489982930986835137684486657990555633941558688085", description = "Carrying the signer and contract address will help to decode more information.")
   public String getContractAddress() {
     return contractAddress;
   }
@@ -81,10 +127,10 @@ public class ParseAbiDataRequest {
   }
 
    /**
-   * data
+   * Transaction input
    * @return data
   **/
-  @Schema(example = "38020752995870066111790065015062961812328902090107696250858266643344188923832740441241402799828641949243718670476236652057420675249926299203332389775628687908012032", required = true, description = "data")
+  @Schema(example = "38020752995870066111790065015062961812328902090107696250858266643344188923832740441241402799828641949243718670476236652057420675249926299203332389775628687908012032", required = true, description = "Transaction input")
   public String getData() {
     return data;
   }
@@ -99,16 +145,34 @@ public class ParseAbiDataRequest {
   }
 
    /**
-   * signer
+   * Carrying the signer and contract address will help to decode more information.
    * @return signer
   **/
-  @Schema(description = "signer")
+  @Schema(description = "Carrying the signer and contract address will help to decode more information.")
   public String getSigner() {
     return signer;
   }
 
   public void setSigner(String signer) {
     this.signer = signer;
+  }
+
+  public ParseAbiDataRequest transcationType(TranscationTypeEnum transcationType) {
+    this.transcationType = transcationType;
+    return this;
+  }
+
+   /**
+   * Transaction type
+   * @return transcationType
+  **/
+  @Schema(description = "Transaction type")
+  public TranscationTypeEnum getTranscationType() {
+    return transcationType;
+  }
+
+  public void setTranscationType(TranscationTypeEnum transcationType) {
+    this.transcationType = transcationType;
   }
 
 
@@ -124,12 +188,13 @@ public class ParseAbiDataRequest {
     return Objects.equals(this.chainId, parseAbiDataRequest.chainId) &&
         Objects.equals(this.contractAddress, parseAbiDataRequest.contractAddress) &&
         Objects.equals(this.data, parseAbiDataRequest.data) &&
-        Objects.equals(this.signer, parseAbiDataRequest.signer);
+        Objects.equals(this.signer, parseAbiDataRequest.signer) &&
+        Objects.equals(this.transcationType, parseAbiDataRequest.transcationType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(chainId, contractAddress, data, signer);
+    return Objects.hash(chainId, contractAddress, data, signer, transcationType);
   }
 
 
@@ -142,6 +207,7 @@ public class ParseAbiDataRequest {
     sb.append("    contractAddress: ").append(toIndentedString(contractAddress)).append("\n");
     sb.append("    data: ").append(toIndentedString(data)).append("\n");
     sb.append("    signer: ").append(toIndentedString(signer)).append("\n");
+    sb.append("    transcationType: ").append(toIndentedString(transcationType)).append("\n");
     sb.append("}");
     return sb.toString();
   }

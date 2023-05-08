@@ -25,7 +25,7 @@ import java.io.IOException;
  * AbiAddressInfo
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-05-05T10:27:06.045046614Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-05-08T09:37:56.615797436Z[Etc/UTC]")
 public class AbiAddressInfo {
   @SerializedName("contract_name")
   private String contractName = null;

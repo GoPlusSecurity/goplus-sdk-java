@@ -26,6 +26,7 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import io.swagger.client.model.GetAccessTokenRequest;
 import io.swagger.client.model.ResponseWrapperGetAccessTokenResponse;
 
 import java.lang.reflect.Type;
@@ -55,28 +56,20 @@ public class TokenControllerApi {
 
     /**
      * Build call for getAccessTokenUsingPOST
-     * @param appKey app_key (required)
-     * @param sign Concatenate app_key, time, app_secret in turn, and do sha1().app_key &#x3D; mBOMg20QW11BbtyH4Zh0 \\n\&quot; +             \&quot;time &#x3D; 1647847498 \\n\&quot; +             \&quot;app_secret &#x3D; V6aRfxlPJwN3ViJSIFSCdxPvneajuJsh \\n\&quot; +             \&quot;sign &#x3D; sha1(mBOMg20QW11BbtyH4Zh01647847498V6aRfxlPJwN3ViJSIFSCdxPvneajuJsh)\\n\&quot; +             \&quot;        &#x3D; 7293d385b9225b3c3f232b76ba97255d0e21063e (required)
-     * @param time Quest timestamp (Second) (required)
+     * @param body request (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getAccessTokenUsingPOSTCall(String appKey, String sign, Long time, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = null;
+    public com.squareup.okhttp.Call getAccessTokenUsingPOSTCall(GetAccessTokenRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = body;
         
         // create path and map variables
         String localVarPath = "/api/v1/token";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        if (appKey != null)
-        localVarQueryParams.addAll(apiClient.parameterToPair("appKey", appKey));
-        if (sign != null)
-        localVarQueryParams.addAll(apiClient.parameterToPair("sign", sign));
-        if (time != null)
-        localVarQueryParams.addAll(apiClient.parameterToPair("time", time));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -89,7 +82,7 @@ public class TokenControllerApi {
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            
+            "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -111,21 +104,9 @@ public class TokenControllerApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getAccessTokenUsingPOSTValidateBeforeCall(String appKey, String sign, Long time, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        // verify the required parameter 'appKey' is set
-        if (appKey == null) {
-            throw new ApiException("Missing the required parameter 'appKey' when calling getAccessTokenUsingPOST(Async)");
-        }
-        // verify the required parameter 'sign' is set
-        if (sign == null) {
-            throw new ApiException("Missing the required parameter 'sign' when calling getAccessTokenUsingPOST(Async)");
-        }
-        // verify the required parameter 'time' is set
-        if (time == null) {
-            throw new ApiException("Missing the required parameter 'time' when calling getAccessTokenUsingPOST(Async)");
-        }
+    private com.squareup.okhttp.Call getAccessTokenUsingPOSTValidateBeforeCall(GetAccessTokenRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
-        com.squareup.okhttp.Call call = getAccessTokenUsingPOSTCall(appKey, sign, time, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getAccessTokenUsingPOSTCall(body, progressListener, progressRequestListener);
         return call;
 
         
@@ -137,28 +118,24 @@ public class TokenControllerApi {
     /**
      * get token
      * 
-     * @param appKey app_key (required)
-     * @param sign Concatenate app_key, time, app_secret in turn, and do sha1().app_key &#x3D; mBOMg20QW11BbtyH4Zh0 \\n\&quot; +             \&quot;time &#x3D; 1647847498 \\n\&quot; +             \&quot;app_secret &#x3D; V6aRfxlPJwN3ViJSIFSCdxPvneajuJsh \\n\&quot; +             \&quot;sign &#x3D; sha1(mBOMg20QW11BbtyH4Zh01647847498V6aRfxlPJwN3ViJSIFSCdxPvneajuJsh)\\n\&quot; +             \&quot;        &#x3D; 7293d385b9225b3c3f232b76ba97255d0e21063e (required)
-     * @param time Quest timestamp (Second) (required)
+     * @param body request (optional)
      * @return ResponseWrapperGetAccessTokenResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ResponseWrapperGetAccessTokenResponse getAccessTokenUsingPOST(String appKey, String sign, Long time) throws ApiException {
-        ApiResponse<ResponseWrapperGetAccessTokenResponse> resp = getAccessTokenUsingPOSTWithHttpInfo(appKey, sign, time);
+    public ResponseWrapperGetAccessTokenResponse getAccessTokenUsingPOST(GetAccessTokenRequest body) throws ApiException {
+        ApiResponse<ResponseWrapperGetAccessTokenResponse> resp = getAccessTokenUsingPOSTWithHttpInfo(body);
         return resp.getData();
     }
 
     /**
      * get token
      * 
-     * @param appKey app_key (required)
-     * @param sign Concatenate app_key, time, app_secret in turn, and do sha1().app_key &#x3D; mBOMg20QW11BbtyH4Zh0 \\n\&quot; +             \&quot;time &#x3D; 1647847498 \\n\&quot; +             \&quot;app_secret &#x3D; V6aRfxlPJwN3ViJSIFSCdxPvneajuJsh \\n\&quot; +             \&quot;sign &#x3D; sha1(mBOMg20QW11BbtyH4Zh01647847498V6aRfxlPJwN3ViJSIFSCdxPvneajuJsh)\\n\&quot; +             \&quot;        &#x3D; 7293d385b9225b3c3f232b76ba97255d0e21063e (required)
-     * @param time Quest timestamp (Second) (required)
+     * @param body request (optional)
      * @return ApiResponse&lt;ResponseWrapperGetAccessTokenResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ResponseWrapperGetAccessTokenResponse> getAccessTokenUsingPOSTWithHttpInfo(String appKey, String sign, Long time) throws ApiException {
-        com.squareup.okhttp.Call call = getAccessTokenUsingPOSTValidateBeforeCall(appKey, sign, time, null, null);
+    public ApiResponse<ResponseWrapperGetAccessTokenResponse> getAccessTokenUsingPOSTWithHttpInfo(GetAccessTokenRequest body) throws ApiException {
+        com.squareup.okhttp.Call call = getAccessTokenUsingPOSTValidateBeforeCall(body, null, null);
         Type localVarReturnType = new TypeToken<ResponseWrapperGetAccessTokenResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -166,14 +143,12 @@ public class TokenControllerApi {
     /**
      * get token (asynchronously)
      * 
-     * @param appKey app_key (required)
-     * @param sign Concatenate app_key, time, app_secret in turn, and do sha1().app_key &#x3D; mBOMg20QW11BbtyH4Zh0 \\n\&quot; +             \&quot;time &#x3D; 1647847498 \\n\&quot; +             \&quot;app_secret &#x3D; V6aRfxlPJwN3ViJSIFSCdxPvneajuJsh \\n\&quot; +             \&quot;sign &#x3D; sha1(mBOMg20QW11BbtyH4Zh01647847498V6aRfxlPJwN3ViJSIFSCdxPvneajuJsh)\\n\&quot; +             \&quot;        &#x3D; 7293d385b9225b3c3f232b76ba97255d0e21063e (required)
-     * @param time Quest timestamp (Second) (required)
+     * @param body request (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getAccessTokenUsingPOSTAsync(String appKey, String sign, Long time, final ApiCallback<ResponseWrapperGetAccessTokenResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call getAccessTokenUsingPOSTAsync(GetAccessTokenRequest body, final ApiCallback<ResponseWrapperGetAccessTokenResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -194,7 +169,7 @@ public class TokenControllerApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getAccessTokenUsingPOSTValidateBeforeCall(appKey, sign, time, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getAccessTokenUsingPOSTValidateBeforeCall(body, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ResponseWrapperGetAccessTokenResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

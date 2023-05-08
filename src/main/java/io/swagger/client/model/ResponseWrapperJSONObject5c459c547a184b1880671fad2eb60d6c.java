@@ -19,17 +19,15 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import io.swagger.client.model.ResponseWrapperJSONObject5c459c547a184b1880671fad2eb60d6cResult;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 /**
- * ResponseWrapperMapstringstring
+ * ResponseWrapperJSONObject5c459c547a184b1880671fad2eb60d6c
  */
 
 @javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-05-08T09:37:56.615797436Z[Etc/UTC]")
-public class ResponseWrapperMapstringstring {
+public class ResponseWrapperJSONObject5c459c547a184b1880671fad2eb60d6c {
   @SerializedName("code")
   private Integer code = null;
 
@@ -37,9 +35,9 @@ public class ResponseWrapperMapstringstring {
   private String message = null;
 
   @SerializedName("result")
-  private Map<String, String> result = null;
+  private ResponseWrapperJSONObject5c459c547a184b1880671fad2eb60d6cResult result = null;
 
-  public ResponseWrapperMapstringstring code(Integer code) {
+  public ResponseWrapperJSONObject5c459c547a184b1880671fad2eb60d6c code(Integer code) {
     this.code = code;
     return this;
   }
@@ -57,7 +55,7 @@ public class ResponseWrapperMapstringstring {
     this.code = code;
   }
 
-  public ResponseWrapperMapstringstring message(String message) {
+  public ResponseWrapperJSONObject5c459c547a184b1880671fad2eb60d6c message(String message) {
     this.message = message;
     return this;
   }
@@ -75,29 +73,21 @@ public class ResponseWrapperMapstringstring {
     this.message = message;
   }
 
-  public ResponseWrapperMapstringstring result(Map<String, String> result) {
+  public ResponseWrapperJSONObject5c459c547a184b1880671fad2eb60d6c result(ResponseWrapperJSONObject5c459c547a184b1880671fad2eb60d6cResult result) {
     this.result = result;
     return this;
   }
 
-  public ResponseWrapperMapstringstring putResultItem(String key, String resultItem) {
-    if (this.result == null) {
-      this.result = new HashMap<String, String>();
-    }
-    this.result.put(key, resultItem);
-    return this;
-  }
-
    /**
-   * Response result
+   * Get result
    * @return result
   **/
-  @Schema(description = "Response result")
-  public Map<String, String> getResult() {
+  @Schema(description = "")
+  public ResponseWrapperJSONObject5c459c547a184b1880671fad2eb60d6cResult getResult() {
     return result;
   }
 
-  public void setResult(Map<String, String> result) {
+  public void setResult(ResponseWrapperJSONObject5c459c547a184b1880671fad2eb60d6cResult result) {
     this.result = result;
   }
 
@@ -110,10 +100,10 @@ public class ResponseWrapperMapstringstring {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ResponseWrapperMapstringstring responseWrapperMapstringstring = (ResponseWrapperMapstringstring) o;
-    return Objects.equals(this.code, responseWrapperMapstringstring.code) &&
-        Objects.equals(this.message, responseWrapperMapstringstring.message) &&
-        Objects.equals(this.result, responseWrapperMapstringstring.result);
+    ResponseWrapperJSONObject5c459c547a184b1880671fad2eb60d6c responseWrapperJSONObject5c459c547a184b1880671fad2eb60d6c = (ResponseWrapperJSONObject5c459c547a184b1880671fad2eb60d6c) o;
+    return Objects.equals(this.code, responseWrapperJSONObject5c459c547a184b1880671fad2eb60d6c.code) &&
+        Objects.equals(this.message, responseWrapperJSONObject5c459c547a184b1880671fad2eb60d6c.message) &&
+        Objects.equals(this.result, responseWrapperJSONObject5c459c547a184b1880671fad2eb60d6c.result);
   }
 
   @Override
@@ -125,7 +115,7 @@ public class ResponseWrapperMapstringstring {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ResponseWrapperMapstringstring {\n");
+    sb.append("class ResponseWrapperJSONObject5c459c547a184b1880671fad2eb60d6c {\n");
     
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("    message: ").append(toIndentedString(message)).append("\n");

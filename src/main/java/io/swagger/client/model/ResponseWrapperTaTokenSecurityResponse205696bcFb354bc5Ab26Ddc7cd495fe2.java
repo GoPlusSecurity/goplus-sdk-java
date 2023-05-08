@@ -19,17 +19,18 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import io.swagger.client.model.ResponseWrapperTaTokenSecurityResponse205696bcfb354bc5ab26ddc7cd495fe2Result;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 /**
- * ResponseWrapperMapstringstring
+ * ResponseWrapperTaTokenSecurityResponse205696bcFb354bc5Ab26Ddc7cd495fe2
  */
 
 @javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-05-08T09:37:56.615797436Z[Etc/UTC]")
-public class ResponseWrapperMapstringstring {
+public class ResponseWrapperTaTokenSecurityResponse205696bcFb354bc5Ab26Ddc7cd495fe2 {
   @SerializedName("code")
   private Integer code = null;
 
@@ -37,9 +38,9 @@ public class ResponseWrapperMapstringstring {
   private String message = null;
 
   @SerializedName("result")
-  private Map<String, String> result = null;
+  private Map<String, ResponseWrapperTaTokenSecurityResponse205696bcfb354bc5ab26ddc7cd495fe2Result> result = null;
 
-  public ResponseWrapperMapstringstring code(Integer code) {
+  public ResponseWrapperTaTokenSecurityResponse205696bcFb354bc5Ab26Ddc7cd495fe2 code(Integer code) {
     this.code = code;
     return this;
   }
@@ -57,7 +58,7 @@ public class ResponseWrapperMapstringstring {
     this.code = code;
   }
 
-  public ResponseWrapperMapstringstring message(String message) {
+  public ResponseWrapperTaTokenSecurityResponse205696bcFb354bc5Ab26Ddc7cd495fe2 message(String message) {
     this.message = message;
     return this;
   }
@@ -75,14 +76,14 @@ public class ResponseWrapperMapstringstring {
     this.message = message;
   }
 
-  public ResponseWrapperMapstringstring result(Map<String, String> result) {
+  public ResponseWrapperTaTokenSecurityResponse205696bcFb354bc5Ab26Ddc7cd495fe2 result(Map<String, ResponseWrapperTaTokenSecurityResponse205696bcfb354bc5ab26ddc7cd495fe2Result> result) {
     this.result = result;
     return this;
   }
 
-  public ResponseWrapperMapstringstring putResultItem(String key, String resultItem) {
+  public ResponseWrapperTaTokenSecurityResponse205696bcFb354bc5Ab26Ddc7cd495fe2 putResultItem(String key, ResponseWrapperTaTokenSecurityResponse205696bcfb354bc5ab26ddc7cd495fe2Result resultItem) {
     if (this.result == null) {
-      this.result = new HashMap<String, String>();
+      this.result = new HashMap<String, ResponseWrapperTaTokenSecurityResponse205696bcfb354bc5ab26ddc7cd495fe2Result>();
     }
     this.result.put(key, resultItem);
     return this;
@@ -93,11 +94,11 @@ public class ResponseWrapperMapstringstring {
    * @return result
   **/
   @Schema(description = "Response result")
-  public Map<String, String> getResult() {
+  public Map<String, ResponseWrapperTaTokenSecurityResponse205696bcfb354bc5ab26ddc7cd495fe2Result> getResult() {
     return result;
   }
 
-  public void setResult(Map<String, String> result) {
+  public void setResult(Map<String, ResponseWrapperTaTokenSecurityResponse205696bcfb354bc5ab26ddc7cd495fe2Result> result) {
     this.result = result;
   }
 
@@ -110,10 +111,10 @@ public class ResponseWrapperMapstringstring {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ResponseWrapperMapstringstring responseWrapperMapstringstring = (ResponseWrapperMapstringstring) o;
-    return Objects.equals(this.code, responseWrapperMapstringstring.code) &&
-        Objects.equals(this.message, responseWrapperMapstringstring.message) &&
-        Objects.equals(this.result, responseWrapperMapstringstring.result);
+    ResponseWrapperTaTokenSecurityResponse205696bcFb354bc5Ab26Ddc7cd495fe2 responseWrapperTaTokenSecurityResponse205696bcFb354bc5Ab26Ddc7cd495fe2 = (ResponseWrapperTaTokenSecurityResponse205696bcFb354bc5Ab26Ddc7cd495fe2) o;
+    return Objects.equals(this.code, responseWrapperTaTokenSecurityResponse205696bcFb354bc5Ab26Ddc7cd495fe2.code) &&
+        Objects.equals(this.message, responseWrapperTaTokenSecurityResponse205696bcFb354bc5Ab26Ddc7cd495fe2.message) &&
+        Objects.equals(this.result, responseWrapperTaTokenSecurityResponse205696bcFb354bc5Ab26Ddc7cd495fe2.result);
   }
 
   @Override
@@ -125,7 +126,7 @@ public class ResponseWrapperMapstringstring {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ResponseWrapperMapstringstring {\n");
+    sb.append("class ResponseWrapperTaTokenSecurityResponse205696bcFb354bc5Ab26Ddc7cd495fe2 {\n");
     
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("    message: ").append(toIndentedString(message)).append("\n");
