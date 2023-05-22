@@ -26,8 +26,8 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import io.swagger.client.model.ResponseWrapperAddressContract;
 import io.swagger.client.model.ResponseWrapperContractApproveResponse;
-import io.swagger.client.model.ResponseWrapperobject545a2ceaB58741b4Aae7F3d73df91255;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -132,11 +132,11 @@ public class ApproveControllerV1Api {
      * @param address address (required)
      * @param authorization Authorization (test：Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW...) (optional)
      * @param chainId The chain_id of the blockchain. \&quot;1\&quot; means Ethereum;  \&quot;10\&quot; means Optimism; “25” means Cronos; \&quot;56\&quot; means BSC;  “66” means OKC; \&quot;100\&quot; means Gnosis; \&quot;128\&quot; means HECO;  \&quot;137\&quot; means Polygon;  \&quot;250\&quot; means Fantom; \&quot;321\&quot; means KCC; \&quot;324\&quot; means zkSync Era; \&quot;10001\&quot; means ETHW; \&quot;201022\&quot; means FON; \&quot;42161\&quot; means Arbitrum;  \&quot;43114\&quot; means Avalanche; \&quot;59140\&quot; means Linea; \&quot;1666600000\&quot; means Harmony; \&quot;tron\&quot; means Tron. (optional)
-     * @return ResponseWrapperobject545a2ceaB58741b4Aae7F3d73df91255
+     * @return ResponseWrapperAddressContract
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ResponseWrapperobject545a2ceaB58741b4Aae7F3d73df91255 addressContractUsingGET1(String address, String authorization, String chainId) throws ApiException {
-        ApiResponse<ResponseWrapperobject545a2ceaB58741b4Aae7F3d73df91255> resp = addressContractUsingGET1WithHttpInfo(address, authorization, chainId);
+    public ResponseWrapperAddressContract addressContractUsingGET1(String address, String authorization, String chainId) throws ApiException {
+        ApiResponse<ResponseWrapperAddressContract> resp = addressContractUsingGET1WithHttpInfo(address, authorization, chainId);
         return resp.getData();
     }
 
@@ -146,12 +146,12 @@ public class ApproveControllerV1Api {
      * @param address address (required)
      * @param authorization Authorization (test：Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW...) (optional)
      * @param chainId The chain_id of the blockchain. \&quot;1\&quot; means Ethereum;  \&quot;10\&quot; means Optimism; “25” means Cronos; \&quot;56\&quot; means BSC;  “66” means OKC; \&quot;100\&quot; means Gnosis; \&quot;128\&quot; means HECO;  \&quot;137\&quot; means Polygon;  \&quot;250\&quot; means Fantom; \&quot;321\&quot; means KCC; \&quot;324\&quot; means zkSync Era; \&quot;10001\&quot; means ETHW; \&quot;201022\&quot; means FON; \&quot;42161\&quot; means Arbitrum;  \&quot;43114\&quot; means Avalanche; \&quot;59140\&quot; means Linea; \&quot;1666600000\&quot; means Harmony; \&quot;tron\&quot; means Tron. (optional)
-     * @return ApiResponse&lt;ResponseWrapperobject545a2ceaB58741b4Aae7F3d73df91255&gt;
+     * @return ApiResponse&lt;ResponseWrapperAddressContract&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ResponseWrapperobject545a2ceaB58741b4Aae7F3d73df91255> addressContractUsingGET1WithHttpInfo(String address, String authorization, String chainId) throws ApiException {
+    public ApiResponse<ResponseWrapperAddressContract> addressContractUsingGET1WithHttpInfo(String address, String authorization, String chainId) throws ApiException {
         com.squareup.okhttp.Call call = addressContractUsingGET1ValidateBeforeCall(address, authorization, chainId, null, null);
-        Type localVarReturnType = new TypeToken<ResponseWrapperobject545a2ceaB58741b4Aae7F3d73df91255>(){}.getType();
+        Type localVarReturnType = new TypeToken<ResponseWrapperAddressContract>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -165,7 +165,7 @@ public class ApproveControllerV1Api {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call addressContractUsingGET1Async(String address, String authorization, String chainId, final ApiCallback<ResponseWrapperobject545a2ceaB58741b4Aae7F3d73df91255> callback) throws ApiException {
+    public com.squareup.okhttp.Call addressContractUsingGET1Async(String address, String authorization, String chainId, final ApiCallback<ResponseWrapperAddressContract> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -187,7 +187,7 @@ public class ApproveControllerV1Api {
         }
 
         com.squareup.okhttp.Call call = addressContractUsingGET1ValidateBeforeCall(address, authorization, chainId, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<ResponseWrapperobject545a2ceaB58741b4Aae7F3d73df91255>(){}.getType();
+        Type localVarReturnType = new TypeToken<ResponseWrapperAddressContract>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

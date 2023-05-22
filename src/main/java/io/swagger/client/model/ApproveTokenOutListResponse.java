@@ -28,7 +28,7 @@ import java.util.List;
  * ApproveTokenOutListResponse
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-05-08T10:45:01.075301543Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-05-22T12:45:14.641970156Z[Etc/UTC]")
 public class ApproveTokenOutListResponse {
   @SerializedName("approved_list")
   private List<ApproveTokenResult> approvedList = null;

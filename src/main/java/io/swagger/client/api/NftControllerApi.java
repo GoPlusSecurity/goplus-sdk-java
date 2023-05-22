@@ -26,7 +26,7 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import io.swagger.client.model.ResponseWrapperJSONObject5c459c547a184b1880671fad2eb60d6c;
+import io.swagger.client.model.ResponseWrapperGetNftInfo;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -139,11 +139,11 @@ public class NftControllerApi {
      * @param contractAddresses NFT contract address (required)
      * @param authorization Authorization (test：Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW...) (optional)
      * @param tokenId tokenId (optional, default to NFT token id)
-     * @return ResponseWrapperJSONObject5c459c547a184b1880671fad2eb60d6c
+     * @return ResponseWrapperGetNftInfo
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ResponseWrapperJSONObject5c459c547a184b1880671fad2eb60d6c getNftInfoUsingGET1(String chainId, String contractAddresses, String authorization, String tokenId) throws ApiException {
-        ApiResponse<ResponseWrapperJSONObject5c459c547a184b1880671fad2eb60d6c> resp = getNftInfoUsingGET1WithHttpInfo(chainId, contractAddresses, authorization, tokenId);
+    public ResponseWrapperGetNftInfo getNftInfoUsingGET1(String chainId, String contractAddresses, String authorization, String tokenId) throws ApiException {
+        ApiResponse<ResponseWrapperGetNftInfo> resp = getNftInfoUsingGET1WithHttpInfo(chainId, contractAddresses, authorization, tokenId);
         return resp.getData();
     }
 
@@ -154,12 +154,12 @@ public class NftControllerApi {
      * @param contractAddresses NFT contract address (required)
      * @param authorization Authorization (test：Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW...) (optional)
      * @param tokenId tokenId (optional, default to NFT token id)
-     * @return ApiResponse&lt;ResponseWrapperJSONObject5c459c547a184b1880671fad2eb60d6c&gt;
+     * @return ApiResponse&lt;ResponseWrapperGetNftInfo&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ResponseWrapperJSONObject5c459c547a184b1880671fad2eb60d6c> getNftInfoUsingGET1WithHttpInfo(String chainId, String contractAddresses, String authorization, String tokenId) throws ApiException {
+    public ApiResponse<ResponseWrapperGetNftInfo> getNftInfoUsingGET1WithHttpInfo(String chainId, String contractAddresses, String authorization, String tokenId) throws ApiException {
         com.squareup.okhttp.Call call = getNftInfoUsingGET1ValidateBeforeCall(chainId, contractAddresses, authorization, tokenId, null, null);
-        Type localVarReturnType = new TypeToken<ResponseWrapperJSONObject5c459c547a184b1880671fad2eb60d6c>(){}.getType();
+        Type localVarReturnType = new TypeToken<ResponseWrapperGetNftInfo>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -174,7 +174,7 @@ public class NftControllerApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getNftInfoUsingGET1Async(String chainId, String contractAddresses, String authorization, String tokenId, final ApiCallback<ResponseWrapperJSONObject5c459c547a184b1880671fad2eb60d6c> callback) throws ApiException {
+    public com.squareup.okhttp.Call getNftInfoUsingGET1Async(String chainId, String contractAddresses, String authorization, String tokenId, final ApiCallback<ResponseWrapperGetNftInfo> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -196,7 +196,7 @@ public class NftControllerApi {
         }
 
         com.squareup.okhttp.Call call = getNftInfoUsingGET1ValidateBeforeCall(chainId, contractAddresses, authorization, tokenId, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<ResponseWrapperJSONObject5c459c547a184b1880671fad2eb60d6c>(){}.getType();
+        Type localVarReturnType = new TypeToken<ResponseWrapperGetNftInfo>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

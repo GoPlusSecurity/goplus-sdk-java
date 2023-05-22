@@ -19,15 +19,17 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.client.model.TaTokenSecurityResponse;
+import io.swagger.client.model.ResponseWrapperListJSONObject877c2b4f74b04546b8a06d6e416a60b5Result;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 /**
- * ResponseWrapperTaTokenSecurityResponse
+ * ResponseWrapperListJSONObject877c2b4f74b04546B8a06d6e416a60b5
  */
 
 @javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-05-22T12:45:14.641970156Z[Etc/UTC]")
-public class ResponseWrapperTaTokenSecurityResponse {
+public class ResponseWrapperListJSONObject877c2b4f74b04546B8a06d6e416a60b5 {
   @SerializedName("code")
   private Integer code = null;
 
@@ -35,9 +37,9 @@ public class ResponseWrapperTaTokenSecurityResponse {
   private String message = null;
 
   @SerializedName("result")
-  private TaTokenSecurityResponse result = null;
+  private List<ResponseWrapperListJSONObject877c2b4f74b04546b8a06d6e416a60b5Result> result = null;
 
-  public ResponseWrapperTaTokenSecurityResponse code(Integer code) {
+  public ResponseWrapperListJSONObject877c2b4f74b04546B8a06d6e416a60b5 code(Integer code) {
     this.code = code;
     return this;
   }
@@ -55,7 +57,7 @@ public class ResponseWrapperTaTokenSecurityResponse {
     this.code = code;
   }
 
-  public ResponseWrapperTaTokenSecurityResponse message(String message) {
+  public ResponseWrapperListJSONObject877c2b4f74b04546B8a06d6e416a60b5 message(String message) {
     this.message = message;
     return this;
   }
@@ -73,21 +75,29 @@ public class ResponseWrapperTaTokenSecurityResponse {
     this.message = message;
   }
 
-  public ResponseWrapperTaTokenSecurityResponse result(TaTokenSecurityResponse result) {
+  public ResponseWrapperListJSONObject877c2b4f74b04546B8a06d6e416a60b5 result(List<ResponseWrapperListJSONObject877c2b4f74b04546b8a06d6e416a60b5Result> result) {
     this.result = result;
     return this;
   }
 
+  public ResponseWrapperListJSONObject877c2b4f74b04546B8a06d6e416a60b5 addResultItem(ResponseWrapperListJSONObject877c2b4f74b04546b8a06d6e416a60b5Result resultItem) {
+    if (this.result == null) {
+      this.result = new ArrayList<ResponseWrapperListJSONObject877c2b4f74b04546b8a06d6e416a60b5Result>();
+    }
+    this.result.add(resultItem);
+    return this;
+  }
+
    /**
-   * Get result
+   * Response result
    * @return result
   **/
-  @Schema(description = "")
-  public TaTokenSecurityResponse getResult() {
+  @Schema(description = "Response result")
+  public List<ResponseWrapperListJSONObject877c2b4f74b04546b8a06d6e416a60b5Result> getResult() {
     return result;
   }
 
-  public void setResult(TaTokenSecurityResponse result) {
+  public void setResult(List<ResponseWrapperListJSONObject877c2b4f74b04546b8a06d6e416a60b5Result> result) {
     this.result = result;
   }
 
@@ -100,10 +110,10 @@ public class ResponseWrapperTaTokenSecurityResponse {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ResponseWrapperTaTokenSecurityResponse responseWrapperTaTokenSecurityResponse = (ResponseWrapperTaTokenSecurityResponse) o;
-    return Objects.equals(this.code, responseWrapperTaTokenSecurityResponse.code) &&
-        Objects.equals(this.message, responseWrapperTaTokenSecurityResponse.message) &&
-        Objects.equals(this.result, responseWrapperTaTokenSecurityResponse.result);
+    ResponseWrapperListJSONObject877c2b4f74b04546B8a06d6e416a60b5 responseWrapperListJSONObject877c2b4f74b04546B8a06d6e416a60b5 = (ResponseWrapperListJSONObject877c2b4f74b04546B8a06d6e416a60b5) o;
+    return Objects.equals(this.code, responseWrapperListJSONObject877c2b4f74b04546B8a06d6e416a60b5.code) &&
+        Objects.equals(this.message, responseWrapperListJSONObject877c2b4f74b04546B8a06d6e416a60b5.message) &&
+        Objects.equals(this.result, responseWrapperListJSONObject877c2b4f74b04546B8a06d6e416a60b5.result);
   }
 
   @Override
@@ -115,7 +125,7 @@ public class ResponseWrapperTaTokenSecurityResponse {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ResponseWrapperTaTokenSecurityResponse {\n");
+    sb.append("class ResponseWrapperListJSONObject877c2b4f74b04546B8a06d6e416a60b5 {\n");
     
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("    message: ").append(toIndentedString(message)).append("\n");

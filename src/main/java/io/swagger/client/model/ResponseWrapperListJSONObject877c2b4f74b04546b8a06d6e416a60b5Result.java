@@ -22,51 +22,51 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 /**
- * GetAccessTokenResponse
+ * ResponseWrapperListJSONObject877c2b4f74b04546b8a06d6e416a60b5Result
  */
 
 @javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-05-22T12:45:14.641970156Z[Etc/UTC]")
-public class GetAccessTokenResponse {
-  @SerializedName("access_token")
-  private String accessToken = null;
+public class ResponseWrapperListJSONObject877c2b4f74b04546b8a06d6e416a60b5Result {
+  @SerializedName("name")
+  private String name = null;
 
-  @SerializedName("expires_in")
-  private Long expiresIn = null;
+  @SerializedName("id")
+  private String id = null;
 
-  public GetAccessTokenResponse accessToken(String accessToken) {
-    this.accessToken = accessToken;
+  public ResponseWrapperListJSONObject877c2b4f74b04546b8a06d6e416a60b5Result name(String name) {
+    this.name = name;
     return this;
   }
 
    /**
-   * access_token
-   * @return accessToken
+   * chain name
+   * @return name
   **/
-  @Schema(description = "access_token")
-  public String getAccessToken() {
-    return accessToken;
+  @Schema(description = "chain name")
+  public String getName() {
+    return name;
   }
 
-  public void setAccessToken(String accessToken) {
-    this.accessToken = accessToken;
+  public void setName(String name) {
+    this.name = name;
   }
 
-  public GetAccessTokenResponse expiresIn(Long expiresIn) {
-    this.expiresIn = expiresIn;
+  public ResponseWrapperListJSONObject877c2b4f74b04546b8a06d6e416a60b5Result id(String id) {
+    this.id = id;
     return this;
   }
 
    /**
-   * expires_in
-   * @return expiresIn
+   * chain id
+   * @return id
   **/
-  @Schema(description = "expires_in")
-  public Long getExpiresIn() {
-    return expiresIn;
+  @Schema(description = "chain id")
+  public String getId() {
+    return id;
   }
 
-  public void setExpiresIn(Long expiresIn) {
-    this.expiresIn = expiresIn;
+  public void setId(String id) {
+    this.id = id;
   }
 
 
@@ -78,24 +78,24 @@ public class GetAccessTokenResponse {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    GetAccessTokenResponse getAccessTokenResponse = (GetAccessTokenResponse) o;
-    return Objects.equals(this.accessToken, getAccessTokenResponse.accessToken) &&
-        Objects.equals(this.expiresIn, getAccessTokenResponse.expiresIn);
+    ResponseWrapperListJSONObject877c2b4f74b04546b8a06d6e416a60b5Result responseWrapperListJSONObject877c2b4f74b04546b8a06d6e416a60b5Result = (ResponseWrapperListJSONObject877c2b4f74b04546b8a06d6e416a60b5Result) o;
+    return Objects.equals(this.name, responseWrapperListJSONObject877c2b4f74b04546b8a06d6e416a60b5Result.name) &&
+        Objects.equals(this.id, responseWrapperListJSONObject877c2b4f74b04546b8a06d6e416a60b5Result.id);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(accessToken, expiresIn);
+    return Objects.hash(name, id);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class GetAccessTokenResponse {\n");
+    sb.append("class ResponseWrapperListJSONObject877c2b4f74b04546b8a06d6e416a60b5Result {\n");
     
-    sb.append("    accessToken: ").append(toIndentedString(accessToken)).append("\n");
-    sb.append("    expiresIn: ").append(toIndentedString(expiresIn)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("}");
     return sb.toString();
   }

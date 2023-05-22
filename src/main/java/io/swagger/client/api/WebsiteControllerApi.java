@@ -26,7 +26,7 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import io.swagger.client.model.ResponseWrapperMapstringstring2a740de0Be5a4eb3B6e4A2cf0a2d8bf8;
+import io.swagger.client.model.ResponseWrapperPhishingSite;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -128,11 +128,11 @@ public class WebsiteControllerApi {
      * 
      * @param url Url (required)
      * @param authorization Authorization (test：Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW...) (optional)
-     * @return ResponseWrapperMapstringstring2a740de0Be5a4eb3B6e4A2cf0a2d8bf8
+     * @return ResponseWrapperPhishingSite
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ResponseWrapperMapstringstring2a740de0Be5a4eb3B6e4A2cf0a2d8bf8 phishingSiteUsingGET(String url, String authorization) throws ApiException {
-        ApiResponse<ResponseWrapperMapstringstring2a740de0Be5a4eb3B6e4A2cf0a2d8bf8> resp = phishingSiteUsingGETWithHttpInfo(url, authorization);
+    public ResponseWrapperPhishingSite phishingSiteUsingGET(String url, String authorization) throws ApiException {
+        ApiResponse<ResponseWrapperPhishingSite> resp = phishingSiteUsingGETWithHttpInfo(url, authorization);
         return resp.getData();
     }
 
@@ -141,12 +141,12 @@ public class WebsiteControllerApi {
      * 
      * @param url Url (required)
      * @param authorization Authorization (test：Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW...) (optional)
-     * @return ApiResponse&lt;ResponseWrapperMapstringstring2a740de0Be5a4eb3B6e4A2cf0a2d8bf8&gt;
+     * @return ApiResponse&lt;ResponseWrapperPhishingSite&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ResponseWrapperMapstringstring2a740de0Be5a4eb3B6e4A2cf0a2d8bf8> phishingSiteUsingGETWithHttpInfo(String url, String authorization) throws ApiException {
+    public ApiResponse<ResponseWrapperPhishingSite> phishingSiteUsingGETWithHttpInfo(String url, String authorization) throws ApiException {
         com.squareup.okhttp.Call call = phishingSiteUsingGETValidateBeforeCall(url, authorization, null, null);
-        Type localVarReturnType = new TypeToken<ResponseWrapperMapstringstring2a740de0Be5a4eb3B6e4A2cf0a2d8bf8>(){}.getType();
+        Type localVarReturnType = new TypeToken<ResponseWrapperPhishingSite>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -159,7 +159,7 @@ public class WebsiteControllerApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call phishingSiteUsingGETAsync(String url, String authorization, final ApiCallback<ResponseWrapperMapstringstring2a740de0Be5a4eb3B6e4A2cf0a2d8bf8> callback) throws ApiException {
+    public com.squareup.okhttp.Call phishingSiteUsingGETAsync(String url, String authorization, final ApiCallback<ResponseWrapperPhishingSite> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -181,7 +181,7 @@ public class WebsiteControllerApi {
         }
 
         com.squareup.okhttp.Call call = phishingSiteUsingGETValidateBeforeCall(url, authorization, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<ResponseWrapperMapstringstring2a740de0Be5a4eb3B6e4A2cf0a2d8bf8>(){}.getType();
+        Type localVarReturnType = new TypeToken<ResponseWrapperPhishingSite>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
