@@ -21,11 +21,14 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 /**
  * ParseAbiDataRequest
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-05-08T10:45:01.075301543Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-05-22T12:45:14.641970156Z[Etc/UTC]")
 public class ParseAbiDataRequest {
   @SerializedName("chain_id")
   private String chainId = null;
@@ -36,6 +39,9 @@ public class ParseAbiDataRequest {
   @SerializedName("data")
   private String data = null;
 
+  @SerializedName("input")
+  private Map<String, Object> input = null;
+
   @SerializedName("signer")
   private String signer = null;
 
@@ -44,10 +50,10 @@ public class ParseAbiDataRequest {
    */
   @JsonAdapter(TranscationTypeEnum.Adapter.class)
   public enum TranscationTypeEnum {
-    COMMON("COMMON"),
-    ETH_SIGNTYPEDDATA_V4("ETH_SIGNTYPEDDATA_V4"),
-    PERSONAL_SIGN("PERSONAL_SIGN"),
-    ETH_SIGN("ETH_SIGN");
+    COMMON("common"),
+    ETH_SIGNTYPEDDATA_V4("eth_signTypedData_v4"),
+    PERSONAL_SIGN("personal_sign"),
+    ETH_SIGN("eth_sign");
 
     private String value;
 
@@ -139,6 +145,32 @@ public class ParseAbiDataRequest {
     this.data = data;
   }
 
+  public ParseAbiDataRequest input(Map<String, Object> input) {
+    this.input = input;
+    return this;
+  }
+
+  public ParseAbiDataRequest putInputItem(String key, Object inputItem) {
+    if (this.input == null) {
+      this.input = new HashMap<String, Object>();
+    }
+    this.input.put(key, inputItem);
+    return this;
+  }
+
+   /**
+   * input info
+   * @return input
+  **/
+  @Schema(example = "{}", description = "input info")
+  public Map<String, Object> getInput() {
+    return input;
+  }
+
+  public void setInput(Map<String, Object> input) {
+    this.input = input;
+  }
+
   public ParseAbiDataRequest signer(String signer) {
     this.signer = signer;
     return this;
@@ -188,13 +220,14 @@ public class ParseAbiDataRequest {
     return Objects.equals(this.chainId, parseAbiDataRequest.chainId) &&
         Objects.equals(this.contractAddress, parseAbiDataRequest.contractAddress) &&
         Objects.equals(this.data, parseAbiDataRequest.data) &&
+        Objects.equals(this.input, parseAbiDataRequest.input) &&
         Objects.equals(this.signer, parseAbiDataRequest.signer) &&
         Objects.equals(this.transcationType, parseAbiDataRequest.transcationType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(chainId, contractAddress, data, signer, transcationType);
+    return Objects.hash(chainId, contractAddress, data, input, signer, transcationType);
   }
 
 
@@ -206,6 +239,7 @@ public class ParseAbiDataRequest {
     sb.append("    chainId: ").append(toIndentedString(chainId)).append("\n");
     sb.append("    contractAddress: ").append(toIndentedString(contractAddress)).append("\n");
     sb.append("    data: ").append(toIndentedString(data)).append("\n");
+    sb.append("    input: ").append(toIndentedString(input)).append("\n");
     sb.append("    signer: ").append(toIndentedString(signer)).append("\n");
     sb.append("    transcationType: ").append(toIndentedString(transcationType)).append("\n");
     sb.append("}");

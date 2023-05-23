@@ -26,8 +26,8 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import io.swagger.client.model.ResponseWrapperListJSONObject9524a1c652c545bfB6c6898bfc3e93f3;
-import io.swagger.client.model.ResponseWrapperTaTokenSecurityResponse205696bcFb354bc5Ab26Ddc7cd495fe2;
+import io.swagger.client.model.ResponseWrapperListJSONObject877c2b4f74b04546B8a06d6e416a60b5;
+import io.swagger.client.model.ResponseWrapperTokenSecurity;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -125,11 +125,11 @@ public class TokenControllerV1Api {
      * 
      * @param authorization Authorization (test：Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW...) (optional)
      * @param name API name. (optional)
-     * @return ResponseWrapperListJSONObject9524a1c652c545bfB6c6898bfc3e93f3
+     * @return ResponseWrapperListJSONObject877c2b4f74b04546B8a06d6e416a60b5
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ResponseWrapperListJSONObject9524a1c652c545bfB6c6898bfc3e93f3 getChainsListUsingGET(String authorization, String name) throws ApiException {
-        ApiResponse<ResponseWrapperListJSONObject9524a1c652c545bfB6c6898bfc3e93f3> resp = getChainsListUsingGETWithHttpInfo(authorization, name);
+    public ResponseWrapperListJSONObject877c2b4f74b04546B8a06d6e416a60b5 getChainsListUsingGET(String authorization, String name) throws ApiException {
+        ApiResponse<ResponseWrapperListJSONObject877c2b4f74b04546B8a06d6e416a60b5> resp = getChainsListUsingGETWithHttpInfo(authorization, name);
         return resp.getData();
     }
 
@@ -138,12 +138,12 @@ public class TokenControllerV1Api {
      * 
      * @param authorization Authorization (test：Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW...) (optional)
      * @param name API name. (optional)
-     * @return ApiResponse&lt;ResponseWrapperListJSONObject9524a1c652c545bfB6c6898bfc3e93f3&gt;
+     * @return ApiResponse&lt;ResponseWrapperListJSONObject877c2b4f74b04546B8a06d6e416a60b5&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ResponseWrapperListJSONObject9524a1c652c545bfB6c6898bfc3e93f3> getChainsListUsingGETWithHttpInfo(String authorization, String name) throws ApiException {
+    public ApiResponse<ResponseWrapperListJSONObject877c2b4f74b04546B8a06d6e416a60b5> getChainsListUsingGETWithHttpInfo(String authorization, String name) throws ApiException {
         com.squareup.okhttp.Call call = getChainsListUsingGETValidateBeforeCall(authorization, name, null, null);
-        Type localVarReturnType = new TypeToken<ResponseWrapperListJSONObject9524a1c652c545bfB6c6898bfc3e93f3>(){}.getType();
+        Type localVarReturnType = new TypeToken<ResponseWrapperListJSONObject877c2b4f74b04546B8a06d6e416a60b5>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -156,7 +156,7 @@ public class TokenControllerV1Api {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getChainsListUsingGETAsync(String authorization, String name, final ApiCallback<ResponseWrapperListJSONObject9524a1c652c545bfB6c6898bfc3e93f3> callback) throws ApiException {
+    public com.squareup.okhttp.Call getChainsListUsingGETAsync(String authorization, String name, final ApiCallback<ResponseWrapperListJSONObject877c2b4f74b04546B8a06d6e416a60b5> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -178,7 +178,7 @@ public class TokenControllerV1Api {
         }
 
         com.squareup.okhttp.Call call = getChainsListUsingGETValidateBeforeCall(authorization, name, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<ResponseWrapperListJSONObject9524a1c652c545bfB6c6898bfc3e93f3>(){}.getType();
+        Type localVarReturnType = new TypeToken<ResponseWrapperListJSONObject877c2b4f74b04546B8a06d6e416a60b5>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -264,11 +264,11 @@ public class TokenControllerV1Api {
      * @param chainId The chain_id of the blockchain. \&quot;1\&quot; means Ethereum;  \&quot;10\&quot; means Optimism; “25” means Cronos; \&quot;56\&quot; means BSC;  “66” means OKC; \&quot;100\&quot; means Gnosis; \&quot;128\&quot; means HECO;  \&quot;137\&quot; means Polygon;  \&quot;250\&quot; means Fantom; \&quot;321\&quot; means KCC; \&quot;324\&quot; means zkSync Era; \&quot;10001\&quot; means ETHW; \&quot;201022\&quot; means FON; \&quot;42161\&quot; means Arbitrum;  \&quot;43114\&quot; means Avalanche; \&quot;59140\&quot; means Linea; \&quot;1666600000\&quot; means Harmony; \&quot;tron\&quot; means Tron. (required)
      * @param contractAddresses The contract address of tokens. (required)
      * @param authorization Authorization (test：Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW...) (optional)
-     * @return ResponseWrapperTaTokenSecurityResponse205696bcFb354bc5Ab26Ddc7cd495fe2
+     * @return ResponseWrapperTokenSecurity
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ResponseWrapperTaTokenSecurityResponse205696bcFb354bc5Ab26Ddc7cd495fe2 tokenSecurityUsingGET1(String chainId, String contractAddresses, String authorization) throws ApiException {
-        ApiResponse<ResponseWrapperTaTokenSecurityResponse205696bcFb354bc5Ab26Ddc7cd495fe2> resp = tokenSecurityUsingGET1WithHttpInfo(chainId, contractAddresses, authorization);
+    public ResponseWrapperTokenSecurity tokenSecurityUsingGET1(String chainId, String contractAddresses, String authorization) throws ApiException {
+        ApiResponse<ResponseWrapperTokenSecurity> resp = tokenSecurityUsingGET1WithHttpInfo(chainId, contractAddresses, authorization);
         return resp.getData();
     }
 
@@ -278,12 +278,12 @@ public class TokenControllerV1Api {
      * @param chainId The chain_id of the blockchain. \&quot;1\&quot; means Ethereum;  \&quot;10\&quot; means Optimism; “25” means Cronos; \&quot;56\&quot; means BSC;  “66” means OKC; \&quot;100\&quot; means Gnosis; \&quot;128\&quot; means HECO;  \&quot;137\&quot; means Polygon;  \&quot;250\&quot; means Fantom; \&quot;321\&quot; means KCC; \&quot;324\&quot; means zkSync Era; \&quot;10001\&quot; means ETHW; \&quot;201022\&quot; means FON; \&quot;42161\&quot; means Arbitrum;  \&quot;43114\&quot; means Avalanche; \&quot;59140\&quot; means Linea; \&quot;1666600000\&quot; means Harmony; \&quot;tron\&quot; means Tron. (required)
      * @param contractAddresses The contract address of tokens. (required)
      * @param authorization Authorization (test：Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW...) (optional)
-     * @return ApiResponse&lt;ResponseWrapperTaTokenSecurityResponse205696bcFb354bc5Ab26Ddc7cd495fe2&gt;
+     * @return ApiResponse&lt;ResponseWrapperTokenSecurity&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ResponseWrapperTaTokenSecurityResponse205696bcFb354bc5Ab26Ddc7cd495fe2> tokenSecurityUsingGET1WithHttpInfo(String chainId, String contractAddresses, String authorization) throws ApiException {
+    public ApiResponse<ResponseWrapperTokenSecurity> tokenSecurityUsingGET1WithHttpInfo(String chainId, String contractAddresses, String authorization) throws ApiException {
         com.squareup.okhttp.Call call = tokenSecurityUsingGET1ValidateBeforeCall(chainId, contractAddresses, authorization, null, null);
-        Type localVarReturnType = new TypeToken<ResponseWrapperTaTokenSecurityResponse205696bcFb354bc5Ab26Ddc7cd495fe2>(){}.getType();
+        Type localVarReturnType = new TypeToken<ResponseWrapperTokenSecurity>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -297,7 +297,7 @@ public class TokenControllerV1Api {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call tokenSecurityUsingGET1Async(String chainId, String contractAddresses, String authorization, final ApiCallback<ResponseWrapperTaTokenSecurityResponse205696bcFb354bc5Ab26Ddc7cd495fe2> callback) throws ApiException {
+    public com.squareup.okhttp.Call tokenSecurityUsingGET1Async(String chainId, String contractAddresses, String authorization, final ApiCallback<ResponseWrapperTokenSecurity> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -319,7 +319,7 @@ public class TokenControllerV1Api {
         }
 
         com.squareup.okhttp.Call call = tokenSecurityUsingGET1ValidateBeforeCall(chainId, contractAddresses, authorization, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<ResponseWrapperTaTokenSecurityResponse205696bcFb354bc5Ab26Ddc7cd495fe2>(){}.getType();
+        Type localVarReturnType = new TypeToken<ResponseWrapperTokenSecurity>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

@@ -19,15 +19,18 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.client.model.TaTokenSecurityResponse;
+import io.swagger.client.model.ResponseWrapperTokenSecurityResult;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 /**
- * ResponseWrapperTaTokenSecurityResponse
+ * ResponseWrapperTokenSecurity
  */
 
 @javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-05-22T12:45:14.641970156Z[Etc/UTC]")
-public class ResponseWrapperTaTokenSecurityResponse {
+public class ResponseWrapperTokenSecurity {
   @SerializedName("code")
   private Integer code = null;
 
@@ -35,9 +38,9 @@ public class ResponseWrapperTaTokenSecurityResponse {
   private String message = null;
 
   @SerializedName("result")
-  private TaTokenSecurityResponse result = null;
+  private Map<String, ResponseWrapperTokenSecurityResult> result = null;
 
-  public ResponseWrapperTaTokenSecurityResponse code(Integer code) {
+  public ResponseWrapperTokenSecurity code(Integer code) {
     this.code = code;
     return this;
   }
@@ -55,7 +58,7 @@ public class ResponseWrapperTaTokenSecurityResponse {
     this.code = code;
   }
 
-  public ResponseWrapperTaTokenSecurityResponse message(String message) {
+  public ResponseWrapperTokenSecurity message(String message) {
     this.message = message;
     return this;
   }
@@ -73,21 +76,29 @@ public class ResponseWrapperTaTokenSecurityResponse {
     this.message = message;
   }
 
-  public ResponseWrapperTaTokenSecurityResponse result(TaTokenSecurityResponse result) {
+  public ResponseWrapperTokenSecurity result(Map<String, ResponseWrapperTokenSecurityResult> result) {
     this.result = result;
     return this;
   }
 
+  public ResponseWrapperTokenSecurity putResultItem(String key, ResponseWrapperTokenSecurityResult resultItem) {
+    if (this.result == null) {
+      this.result = new HashMap<String, ResponseWrapperTokenSecurityResult>();
+    }
+    this.result.put(key, resultItem);
+    return this;
+  }
+
    /**
-   * Get result
+   * Response result
    * @return result
   **/
-  @Schema(description = "")
-  public TaTokenSecurityResponse getResult() {
+  @Schema(description = "Response result")
+  public Map<String, ResponseWrapperTokenSecurityResult> getResult() {
     return result;
   }
 
-  public void setResult(TaTokenSecurityResponse result) {
+  public void setResult(Map<String, ResponseWrapperTokenSecurityResult> result) {
     this.result = result;
   }
 
@@ -100,10 +111,10 @@ public class ResponseWrapperTaTokenSecurityResponse {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ResponseWrapperTaTokenSecurityResponse responseWrapperTaTokenSecurityResponse = (ResponseWrapperTaTokenSecurityResponse) o;
-    return Objects.equals(this.code, responseWrapperTaTokenSecurityResponse.code) &&
-        Objects.equals(this.message, responseWrapperTaTokenSecurityResponse.message) &&
-        Objects.equals(this.result, responseWrapperTaTokenSecurityResponse.result);
+    ResponseWrapperTokenSecurity responseWrapperTokenSecurity = (ResponseWrapperTokenSecurity) o;
+    return Objects.equals(this.code, responseWrapperTokenSecurity.code) &&
+        Objects.equals(this.message, responseWrapperTokenSecurity.message) &&
+        Objects.equals(this.result, responseWrapperTokenSecurity.result);
   }
 
   @Override
@@ -115,7 +126,7 @@ public class ResponseWrapperTaTokenSecurityResponse {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ResponseWrapperTaTokenSecurityResponse {\n");
+    sb.append("class ResponseWrapperTokenSecurity {\n");
     
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("    message: ").append(toIndentedString(message)).append("\n");
