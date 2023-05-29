@@ -22,30 +22,27 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 /**
- * ResponseWrapperTokenSecurityDex
+ * ResponseWrapperListGetChainsListResult
  */
 
 @javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-05-29T10:07:43.604473306Z[Etc/UTC]")
-public class ResponseWrapperTokenSecurityDex {
+public class ResponseWrapperListGetChainsListResult {
   @SerializedName("name")
   private String name = null;
 
-  @SerializedName("liquidity")
-  private String liquidity = null;
+  @SerializedName("id")
+  private String id = null;
 
-  @SerializedName("pair")
-  private String pair = null;
-
-  public ResponseWrapperTokenSecurityDex name(String name) {
+  public ResponseWrapperListGetChainsListResult name(String name) {
     this.name = name;
     return this;
   }
 
    /**
-   * Get name
+   * chain name
    * @return name
   **/
-  @Schema(description = "")
+  @Schema(description = "chain name")
   public String getName() {
     return name;
   }
@@ -54,40 +51,22 @@ public class ResponseWrapperTokenSecurityDex {
     this.name = name;
   }
 
-  public ResponseWrapperTokenSecurityDex liquidity(String liquidity) {
-    this.liquidity = liquidity;
+  public ResponseWrapperListGetChainsListResult id(String id) {
+    this.id = id;
     return this;
   }
 
    /**
-   * Liquidity is converted to USDT denomination.
-   * @return liquidity
+   * chain id
+   * @return id
   **/
-  @Schema(description = "Liquidity is converted to USDT denomination.")
-  public String getLiquidity() {
-    return liquidity;
+  @Schema(description = "chain id")
+  public String getId() {
+    return id;
   }
 
-  public void setLiquidity(String liquidity) {
-    this.liquidity = liquidity;
-  }
-
-  public ResponseWrapperTokenSecurityDex pair(String pair) {
-    this.pair = pair;
-    return this;
-  }
-
-   /**
-   *  It only counts when the token has a marketing pair with mainstream 
-   * @return pair
-  **/
-  @Schema(description = " It only counts when the token has a marketing pair with mainstream ")
-  public String getPair() {
-    return pair;
-  }
-
-  public void setPair(String pair) {
-    this.pair = pair;
+  public void setId(String id) {
+    this.id = id;
   }
 
 
@@ -99,26 +78,24 @@ public class ResponseWrapperTokenSecurityDex {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ResponseWrapperTokenSecurityDex responseWrapperTokenSecurityDex = (ResponseWrapperTokenSecurityDex) o;
-    return Objects.equals(this.name, responseWrapperTokenSecurityDex.name) &&
-        Objects.equals(this.liquidity, responseWrapperTokenSecurityDex.liquidity) &&
-        Objects.equals(this.pair, responseWrapperTokenSecurityDex.pair);
+    ResponseWrapperListGetChainsListResult responseWrapperListGetChainsListResult = (ResponseWrapperListGetChainsListResult) o;
+    return Objects.equals(this.name, responseWrapperListGetChainsListResult.name) &&
+        Objects.equals(this.id, responseWrapperListGetChainsListResult.id);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, liquidity, pair);
+    return Objects.hash(name, id);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ResponseWrapperTokenSecurityDex {\n");
+    sb.append("class ResponseWrapperListGetChainsListResult {\n");
     
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    liquidity: ").append(toIndentedString(liquidity)).append("\n");
-    sb.append("    pair: ").append(toIndentedString(pair)).append("\n");
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("}");
     return sb.toString();
   }
