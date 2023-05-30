@@ -26,8 +26,7 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import io.swagger.client.model.ParseAbiDataRequest;
-import io.swagger.client.model.ResponseWrapperParseAbiDataResponse;
+import io.swagger.client.model.ResponseWrapperGetDefiInfo;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -35,14 +34,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class ContractAbiControllerApi {
+public class DefiControllerApi {
     private ApiClient apiClient;
 
-    public ContractAbiControllerApi() {
+    public DefiControllerApi() {
         this(Configuration.getDefaultApiClient());
     }
 
-    public ContractAbiControllerApi(ApiClient apiClient) {
+    public DefiControllerApi(ApiClient apiClient) {
         this.apiClient = apiClient;
     }
 
@@ -55,22 +54,26 @@ public class ContractAbiControllerApi {
     }
 
     /**
-     * Build call for getAbiDataInfoUsingPOST
-     * @param body abiDataRequest (required)
+     * Build call for getDefiInfoUsingGET
+     * @param contractAddresses Defi protocol address (required)
+     * @param chainId Chain id, (eth: 1, bsc: 56) (required)
      * @param authorization Authorization (test：Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW...) (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getAbiDataInfoUsingPOSTCall(ParseAbiDataRequest body, String authorization, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = body;
+    public com.squareup.okhttp.Call getDefiInfoUsingGETCall(String contractAddresses, String chainId, String authorization, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/api/v1/abi/input_decode";
+        String localVarPath = "/api/v1/rugpull_detecting/{chain_id}"
+            .replaceAll("\\{" + "chain_id" + "\\}", apiClient.escapeString(chainId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        if (contractAddresses != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("contract_addresses", contractAddresses));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         if (authorization != null)
@@ -85,7 +88,7 @@ public class ContractAbiControllerApi {
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            "application/json"
+            
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -103,17 +106,21 @@ public class ContractAbiControllerApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getAbiDataInfoUsingPOSTValidateBeforeCall(ParseAbiDataRequest body, String authorization, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        // verify the required parameter 'body' is set
-        if (body == null) {
-            throw new ApiException("Missing the required parameter 'body' when calling getAbiDataInfoUsingPOST(Async)");
+    private com.squareup.okhttp.Call getDefiInfoUsingGETValidateBeforeCall(String contractAddresses, String chainId, String authorization, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        // verify the required parameter 'contractAddresses' is set
+        if (contractAddresses == null) {
+            throw new ApiException("Missing the required parameter 'contractAddresses' when calling getDefiInfoUsingGET(Async)");
+        }
+        // verify the required parameter 'chainId' is set
+        if (chainId == null) {
+            throw new ApiException("Missing the required parameter 'chainId' when calling getDefiInfoUsingGET(Async)");
         }
         
-        com.squareup.okhttp.Call call = getAbiDataInfoUsingPOSTCall(body, authorization, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getDefiInfoUsingGETCall(contractAddresses, chainId, authorization, progressListener, progressRequestListener);
         return call;
 
         
@@ -123,42 +130,45 @@ public class ContractAbiControllerApi {
     }
 
     /**
-     * Get abi decode info
+     * Rug-pull Detection API Beta
      * 
-     * @param body abiDataRequest (required)
+     * @param contractAddresses Defi protocol address (required)
+     * @param chainId Chain id, (eth: 1, bsc: 56) (required)
      * @param authorization Authorization (test：Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW...) (optional)
-     * @return ResponseWrapperParseAbiDataResponse
+     * @return ResponseWrapperGetDefiInfo
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ResponseWrapperParseAbiDataResponse getAbiDataInfoUsingPOST(ParseAbiDataRequest body, String authorization) throws ApiException {
-        ApiResponse<ResponseWrapperParseAbiDataResponse> resp = getAbiDataInfoUsingPOSTWithHttpInfo(body, authorization);
+    public ResponseWrapperGetDefiInfo getDefiInfoUsingGET(String contractAddresses, String chainId, String authorization) throws ApiException {
+        ApiResponse<ResponseWrapperGetDefiInfo> resp = getDefiInfoUsingGETWithHttpInfo(contractAddresses, chainId, authorization);
         return resp.getData();
     }
 
     /**
-     * Get abi decode info
+     * Rug-pull Detection API Beta
      * 
-     * @param body abiDataRequest (required)
+     * @param contractAddresses Defi protocol address (required)
+     * @param chainId Chain id, (eth: 1, bsc: 56) (required)
      * @param authorization Authorization (test：Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW...) (optional)
-     * @return ApiResponse&lt;ResponseWrapperParseAbiDataResponse&gt;
+     * @return ApiResponse&lt;ResponseWrapperGetDefiInfo&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ResponseWrapperParseAbiDataResponse> getAbiDataInfoUsingPOSTWithHttpInfo(ParseAbiDataRequest body, String authorization) throws ApiException {
-        com.squareup.okhttp.Call call = getAbiDataInfoUsingPOSTValidateBeforeCall(body, authorization, null, null);
-        Type localVarReturnType = new TypeToken<ResponseWrapperParseAbiDataResponse>(){}.getType();
+    public ApiResponse<ResponseWrapperGetDefiInfo> getDefiInfoUsingGETWithHttpInfo(String contractAddresses, String chainId, String authorization) throws ApiException {
+        com.squareup.okhttp.Call call = getDefiInfoUsingGETValidateBeforeCall(contractAddresses, chainId, authorization, null, null);
+        Type localVarReturnType = new TypeToken<ResponseWrapperGetDefiInfo>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
-     * Get abi decode info (asynchronously)
+     * Rug-pull Detection API Beta (asynchronously)
      * 
-     * @param body abiDataRequest (required)
+     * @param contractAddresses Defi protocol address (required)
+     * @param chainId Chain id, (eth: 1, bsc: 56) (required)
      * @param authorization Authorization (test：Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW...) (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getAbiDataInfoUsingPOSTAsync(ParseAbiDataRequest body, String authorization, final ApiCallback<ResponseWrapperParseAbiDataResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call getDefiInfoUsingGETAsync(String contractAddresses, String chainId, String authorization, final ApiCallback<ResponseWrapperGetDefiInfo> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -179,8 +189,8 @@ public class ContractAbiControllerApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getAbiDataInfoUsingPOSTValidateBeforeCall(body, authorization, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<ResponseWrapperParseAbiDataResponse>(){}.getType();
+        com.squareup.okhttp.Call call = getDefiInfoUsingGETValidateBeforeCall(contractAddresses, chainId, authorization, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<ResponseWrapperGetDefiInfo>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

@@ -19,17 +19,17 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import io.swagger.client.model.ResponseWrapperListGetChainsListResult;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
-import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 /**
- * ResponseWrapperMapstringstring
+ * ResponseWrapperListGetChainsList
  */
 
 @javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-05-29T10:07:43.604473306Z[Etc/UTC]")
-public class ResponseWrapperMapstringstring {
+public class ResponseWrapperListGetChainsList {
   @SerializedName("code")
   private Integer code = null;
 
@@ -37,9 +37,9 @@ public class ResponseWrapperMapstringstring {
   private String message = null;
 
   @SerializedName("result")
-  private Map<String, String> result = null;
+  private List<ResponseWrapperListGetChainsListResult> result = null;
 
-  public ResponseWrapperMapstringstring code(Integer code) {
+  public ResponseWrapperListGetChainsList code(Integer code) {
     this.code = code;
     return this;
   }
@@ -57,7 +57,7 @@ public class ResponseWrapperMapstringstring {
     this.code = code;
   }
 
-  public ResponseWrapperMapstringstring message(String message) {
+  public ResponseWrapperListGetChainsList message(String message) {
     this.message = message;
     return this;
   }
@@ -75,16 +75,16 @@ public class ResponseWrapperMapstringstring {
     this.message = message;
   }
 
-  public ResponseWrapperMapstringstring result(Map<String, String> result) {
+  public ResponseWrapperListGetChainsList result(List<ResponseWrapperListGetChainsListResult> result) {
     this.result = result;
     return this;
   }
 
-  public ResponseWrapperMapstringstring putResultItem(String key, String resultItem) {
+  public ResponseWrapperListGetChainsList addResultItem(ResponseWrapperListGetChainsListResult resultItem) {
     if (this.result == null) {
-      this.result = new HashMap<String, String>();
+      this.result = new ArrayList<ResponseWrapperListGetChainsListResult>();
     }
-    this.result.put(key, resultItem);
+    this.result.add(resultItem);
     return this;
   }
 
@@ -93,11 +93,11 @@ public class ResponseWrapperMapstringstring {
    * @return result
   **/
   @Schema(description = "Response result")
-  public Map<String, String> getResult() {
+  public List<ResponseWrapperListGetChainsListResult> getResult() {
     return result;
   }
 
-  public void setResult(Map<String, String> result) {
+  public void setResult(List<ResponseWrapperListGetChainsListResult> result) {
     this.result = result;
   }
 
@@ -110,10 +110,10 @@ public class ResponseWrapperMapstringstring {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ResponseWrapperMapstringstring responseWrapperMapstringstring = (ResponseWrapperMapstringstring) o;
-    return Objects.equals(this.code, responseWrapperMapstringstring.code) &&
-        Objects.equals(this.message, responseWrapperMapstringstring.message) &&
-        Objects.equals(this.result, responseWrapperMapstringstring.result);
+    ResponseWrapperListGetChainsList responseWrapperListGetChainsList = (ResponseWrapperListGetChainsList) o;
+    return Objects.equals(this.code, responseWrapperListGetChainsList.code) &&
+        Objects.equals(this.message, responseWrapperListGetChainsList.message) &&
+        Objects.equals(this.result, responseWrapperListGetChainsList.result);
   }
 
   @Override
@@ -125,7 +125,7 @@ public class ResponseWrapperMapstringstring {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ResponseWrapperMapstringstring {\n");
+    sb.append("class ResponseWrapperListGetChainsList {\n");
     
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("    message: ").append(toIndentedString(message)).append("\n");

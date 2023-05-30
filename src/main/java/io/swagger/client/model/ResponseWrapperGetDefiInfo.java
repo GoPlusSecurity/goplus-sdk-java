@@ -19,17 +19,15 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import io.swagger.client.model.ResponseWrapperGetDefiInfoResult;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 /**
- * ResponseWrapperMapstringstring
+ * ResponseWrapperGetDefiInfo
  */
 
 @javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-05-29T10:07:43.604473306Z[Etc/UTC]")
-public class ResponseWrapperMapstringstring {
+public class ResponseWrapperGetDefiInfo {
   @SerializedName("code")
   private Integer code = null;
 
@@ -37,9 +35,9 @@ public class ResponseWrapperMapstringstring {
   private String message = null;
 
   @SerializedName("result")
-  private Map<String, String> result = null;
+  private ResponseWrapperGetDefiInfoResult result = null;
 
-  public ResponseWrapperMapstringstring code(Integer code) {
+  public ResponseWrapperGetDefiInfo code(Integer code) {
     this.code = code;
     return this;
   }
@@ -57,7 +55,7 @@ public class ResponseWrapperMapstringstring {
     this.code = code;
   }
 
-  public ResponseWrapperMapstringstring message(String message) {
+  public ResponseWrapperGetDefiInfo message(String message) {
     this.message = message;
     return this;
   }
@@ -75,29 +73,21 @@ public class ResponseWrapperMapstringstring {
     this.message = message;
   }
 
-  public ResponseWrapperMapstringstring result(Map<String, String> result) {
+  public ResponseWrapperGetDefiInfo result(ResponseWrapperGetDefiInfoResult result) {
     this.result = result;
     return this;
   }
 
-  public ResponseWrapperMapstringstring putResultItem(String key, String resultItem) {
-    if (this.result == null) {
-      this.result = new HashMap<String, String>();
-    }
-    this.result.put(key, resultItem);
-    return this;
-  }
-
    /**
-   * Response result
+   * Get result
    * @return result
   **/
-  @Schema(description = "Response result")
-  public Map<String, String> getResult() {
+  @Schema(description = "")
+  public ResponseWrapperGetDefiInfoResult getResult() {
     return result;
   }
 
-  public void setResult(Map<String, String> result) {
+  public void setResult(ResponseWrapperGetDefiInfoResult result) {
     this.result = result;
   }
 
@@ -110,10 +100,10 @@ public class ResponseWrapperMapstringstring {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ResponseWrapperMapstringstring responseWrapperMapstringstring = (ResponseWrapperMapstringstring) o;
-    return Objects.equals(this.code, responseWrapperMapstringstring.code) &&
-        Objects.equals(this.message, responseWrapperMapstringstring.message) &&
-        Objects.equals(this.result, responseWrapperMapstringstring.result);
+    ResponseWrapperGetDefiInfo responseWrapperGetDefiInfo = (ResponseWrapperGetDefiInfo) o;
+    return Objects.equals(this.code, responseWrapperGetDefiInfo.code) &&
+        Objects.equals(this.message, responseWrapperGetDefiInfo.message) &&
+        Objects.equals(this.result, responseWrapperGetDefiInfo.result);
   }
 
   @Override
@@ -125,7 +115,7 @@ public class ResponseWrapperMapstringstring {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ResponseWrapperMapstringstring {\n");
+    sb.append("class ResponseWrapperGetDefiInfo {\n");
     
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("    message: ").append(toIndentedString(message)).append("\n");
