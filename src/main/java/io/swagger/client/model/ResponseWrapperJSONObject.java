@@ -28,7 +28,7 @@ import java.util.Map;
  * ResponseWrapperJSONObject
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-05-29T10:07:43.604473306Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-06-01T03:47:02.843655311Z[Etc/UTC]")
 public class ResponseWrapperJSONObject {
   @SerializedName("code")
   private Integer code = null;

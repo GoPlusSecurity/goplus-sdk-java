@@ -33,7 +33,7 @@ import java.util.List;
  * Response result
  */
 @Schema(description = "Response result")
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-05-29T10:07:43.604473306Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-06-01T03:47:02.843655311Z[Etc/UTC]")
 public class ResponseWrapperGetNftInfoResult {
   @SerializedName("traded_volume_24h")
   private BigDecimal tradedVolume24h = null;
@@ -109,6 +109,9 @@ public class ResponseWrapperGetNftInfoResult {
 
   @SerializedName("metadata_frozen")
   private Integer metadataFrozen = null;
+
+  @SerializedName("token_owner")
+  private String tokenOwner = null;
 
   @SerializedName("nft_verified")
   private Integer nftVerified = null;
@@ -590,6 +593,24 @@ public class ResponseWrapperGetNftInfoResult {
     this.metadataFrozen = metadataFrozen;
   }
 
+  public ResponseWrapperGetNftInfoResult tokenOwner(String tokenOwner) {
+    this.tokenOwner = tokenOwner;
+    return this;
+  }
+
+   /**
+   * token_owner
+   * @return tokenOwner
+  **/
+  @Schema(description = "token_owner")
+  public String getTokenOwner() {
+    return tokenOwner;
+  }
+
+  public void setTokenOwner(String tokenOwner) {
+    this.tokenOwner = tokenOwner;
+  }
+
   public ResponseWrapperGetNftInfoResult nftVerified(Integer nftVerified) {
     this.nftVerified = nftVerified;
     return this;
@@ -813,6 +834,7 @@ public class ResponseWrapperGetNftInfoResult {
         Objects.equals(this.nftDescription, responseWrapperGetNftInfoResult.nftDescription) &&
         Objects.equals(this.selfDestruct, responseWrapperGetNftInfoResult.selfDestruct) &&
         Objects.equals(this.metadataFrozen, responseWrapperGetNftInfoResult.metadataFrozen) &&
+        Objects.equals(this.tokenOwner, responseWrapperGetNftInfoResult.tokenOwner) &&
         Objects.equals(this.nftVerified, responseWrapperGetNftInfoResult.nftVerified) &&
         Objects.equals(this.sameNfts, responseWrapperGetNftInfoResult.sameNfts) &&
         Objects.equals(this.nftItems, responseWrapperGetNftInfoResult.nftItems) &&
@@ -827,7 +849,7 @@ public class ResponseWrapperGetNftInfoResult {
 
   @Override
   public int hashCode() {
-    return Objects.hash(tradedVolume24h, totalVolume, redCheckMark, nftProxy, restrictedApproval, highestPrice, transferWithoutApproval, discordUrl, nftOpenSource, privilegedMinting, nftOwnerNumber, trustList, tokenId, lowestPrice24h, averagePrice24h, nftErc, creatorAddress, mediumUrl, maliciousNftContract, privilegedBurn, twitterUrl, nftSymbol, nftDescription, selfDestruct, metadataFrozen, nftVerified, sameNfts, nftItems, oversupplyMinting, nftName, websiteUrl, githubUrl, telegramUrl, sales24h, createBlockNumber);
+    return Objects.hash(tradedVolume24h, totalVolume, redCheckMark, nftProxy, restrictedApproval, highestPrice, transferWithoutApproval, discordUrl, nftOpenSource, privilegedMinting, nftOwnerNumber, trustList, tokenId, lowestPrice24h, averagePrice24h, nftErc, creatorAddress, mediumUrl, maliciousNftContract, privilegedBurn, twitterUrl, nftSymbol, nftDescription, selfDestruct, metadataFrozen, tokenOwner, nftVerified, sameNfts, nftItems, oversupplyMinting, nftName, websiteUrl, githubUrl, telegramUrl, sales24h, createBlockNumber);
   }
 
 
@@ -861,6 +883,7 @@ public class ResponseWrapperGetNftInfoResult {
     sb.append("    nftDescription: ").append(toIndentedString(nftDescription)).append("\n");
     sb.append("    selfDestruct: ").append(toIndentedString(selfDestruct)).append("\n");
     sb.append("    metadataFrozen: ").append(toIndentedString(metadataFrozen)).append("\n");
+    sb.append("    tokenOwner: ").append(toIndentedString(tokenOwner)).append("\n");
     sb.append("    nftVerified: ").append(toIndentedString(nftVerified)).append("\n");
     sb.append("    sameNfts: ").append(toIndentedString(sameNfts)).append("\n");
     sb.append("    nftItems: ").append(toIndentedString(nftItems)).append("\n");

@@ -25,7 +25,7 @@ import java.io.IOException;
  * It describes whether the NFT contract has  minting methods which can only be triggered by an address with special privileges. (Notice:Some minting methods can only be triggered by an address with special privileges. Generally speaking, these are usually for the owner to mint.)
  */
 @Schema(description = "It describes whether the NFT contract has  minting methods which can only be triggered by an address with special privileges. (Notice:Some minting methods can only be triggered by an address with special privileges. Generally speaking, these are usually for the owner to mint.)")
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-05-29T10:07:43.604473306Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-06-01T03:47:02.843655311Z[Etc/UTC]")
 public class ResponseWrapperGetNftInfoResultPrivilegedMinting {
   @SerializedName("owner_address")
   private String ownerAddress = null;
