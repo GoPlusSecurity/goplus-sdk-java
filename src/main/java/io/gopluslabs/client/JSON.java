@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 
-package io.swagger.client;
+package io.gopluslabs.client;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -28,7 +28,7 @@ import org.threeten.bp.LocalDate;
 import org.threeten.bp.OffsetDateTime;
 import org.threeten.bp.format.DateTimeFormatter;
 
-import io.swagger.client.model.*;
+import io.gopluslabs.client.model.*;
 
 import java.io.IOException;
 import java.io.StringReader;

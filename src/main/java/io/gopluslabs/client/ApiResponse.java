@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 
-package io.swagger.client;
+package io.gopluslabs.client;
 
 import java.util.List;
 import java.util.Map;

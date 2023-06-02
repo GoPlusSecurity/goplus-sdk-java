@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 
-package io.swagger.client;
+package io.gopluslabs.client;
 
 import java.io.IOException;
 

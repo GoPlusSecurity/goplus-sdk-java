@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 
-package io.swagger.client;
+package io.gopluslabs.client;
 
 import com.squareup.okhttp.*;
 import okio.Buffer;
