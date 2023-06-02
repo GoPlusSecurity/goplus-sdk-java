@@ -28,7 +28,7 @@ import java.util.List;
  * ResponseWrapperListApproveTokenOutListResponse
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-06-02T06:26:19.246641837Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-06-02T06:35:16.334290770Z[Etc/UTC]")
 public class ResponseWrapperListApproveTokenOutListResponse {
   @SerializedName("code")
   private Integer code = null;

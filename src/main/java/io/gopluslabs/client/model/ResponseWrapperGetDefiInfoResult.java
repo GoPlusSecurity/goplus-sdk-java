@@ -26,7 +26,7 @@ import java.io.IOException;
  * Response result
  */
 @Schema(description = "Response result")
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-06-02T06:26:19.246641837Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-06-02T06:35:16.334290770Z[Etc/UTC]")
 public class ResponseWrapperGetDefiInfoResult {
   @SerializedName("owner")
   private ResponseWrapperGetDefiInfoResultOwner owner = null;
@@ -47,7 +47,7 @@ public class ResponseWrapperGetDefiInfoResult {
   private String contractName = null;
 
   @SerializedName("selfdestruct")
-  private String selfdestruct = null;
+  private Integer selfdestruct = null;
 
   @SerializedName("is_proxy")
   private Integer isProxy = null;
@@ -163,7 +163,7 @@ public class ResponseWrapperGetDefiInfoResult {
     this.contractName = contractName;
   }
 
-  public ResponseWrapperGetDefiInfoResult selfdestruct(String selfdestruct) {
+  public ResponseWrapperGetDefiInfoResult selfdestruct(Integer selfdestruct) {
     this.selfdestruct = selfdestruct;
     return this;
   }
@@ -173,11 +173,11 @@ public class ResponseWrapperGetDefiInfoResult {
    * @return selfdestruct
   **/
   @Schema(description = "It describes whether this contract can self destruct. \"1\" means true;  \"0\" means false; “-1” means unknown.")
-  public String getSelfdestruct() {
+  public Integer getSelfdestruct() {
     return selfdestruct;
   }
 
-  public void setSelfdestruct(String selfdestruct) {
+  public void setSelfdestruct(Integer selfdestruct) {
     this.selfdestruct = selfdestruct;
   }
 
