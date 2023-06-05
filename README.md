@@ -14,7 +14,7 @@ JDK >= 1.8
 <dependency>
     <groupId>io.gopluslabs</groupId>
     <artifactId>goplus-sdk-java</artifactId>
-    <version>1.0.2</version>
+    <version>1.0.4</version>
 </dependency>
 ```
 
