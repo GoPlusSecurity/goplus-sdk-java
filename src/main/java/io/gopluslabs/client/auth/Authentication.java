@@ -12,8 +12,6 @@
 
 package io.gopluslabs.client.auth;
 
-
-
 import io.gopluslabs.client.Pair;
 
 import java.util.Map;

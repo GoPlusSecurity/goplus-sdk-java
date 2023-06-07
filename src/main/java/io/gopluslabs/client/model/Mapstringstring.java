@@ -20,7 +20,8 @@ import java.util.Map;
  * Mapstringstring
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-06-02T06:35:16.334290770Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-06-07T05:46:11.788536588Z[Etc/UTC]")
+
 public class Mapstringstring extends HashMap<String, String> {
 
   @Override

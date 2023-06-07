@@ -28,7 +28,8 @@ import java.util.Map;
  * ParseAbiDataRequest
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-06-02T06:35:16.334290770Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-06-07T05:46:11.788536588Z[Etc/UTC]")
+
 public class ParseAbiDataRequest {
   @SerializedName("chain_id")
   private String chainId = null;
@@ -50,9 +51,13 @@ public class ParseAbiDataRequest {
    */
   @JsonAdapter(TranscationTypeEnum.Adapter.class)
   public enum TranscationTypeEnum {
+    @SerializedName("common")
     COMMON("common"),
+    @SerializedName("eth_signTypedData_v4")
     ETH_SIGNTYPEDDATA_V4("eth_signTypedData_v4"),
+    @SerializedName("personal_sign")
     PERSONAL_SIGN("personal_sign"),
+    @SerializedName("eth_sign")
     ETH_SIGN("eth_sign");
 
     private String value;

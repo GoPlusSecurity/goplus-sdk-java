@@ -12,13 +12,14 @@
 
 package io.gopluslabs.client.auth;
 
-
+import io.gopluslabs.client.Pair;
 
 import com.squareup.okhttp.Credentials;
-import io.gopluslabs.client.Pair;
 
 import java.util.Map;
 import java.util.List;
+
+import java.io.UnsupportedEncodingException;
 
 public class HttpBasicAuth implements Authentication {
     private String username;
