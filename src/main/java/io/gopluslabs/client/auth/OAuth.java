@@ -12,14 +12,13 @@
 
 package io.gopluslabs.client.auth;
 
-
-
 import io.gopluslabs.client.Pair;
 
 import java.util.Map;
 import java.util.List;
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-06-01T03:47:02.843655311Z[Etc/UTC]")public class OAuth implements Authentication {
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-06-07T05:46:11.788536588Z[Etc/UTC]")
+public class OAuth implements Authentication {
   private String accessToken;
 
   public String getAccessToken() {
