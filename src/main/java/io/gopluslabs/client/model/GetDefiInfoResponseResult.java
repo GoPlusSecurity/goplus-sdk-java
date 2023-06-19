@@ -19,18 +19,18 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.gopluslabs.client.model.ResponseWrapperGetDefiInfoResultOwner;
+import io.gopluslabs.client.model.GetDefiInfoResponseResultOwner;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 /**
  * Response result
  */
 @Schema(description = "Response result")
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-06-07T05:46:11.788536588Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-06-19T10:53:16.130494478Z[Etc/UTC]")
 
-public class ResponseWrapperGetDefiInfoResult {
+public class GetDefiInfoResponseResult {
   @SerializedName("owner")
-  private ResponseWrapperGetDefiInfoResultOwner owner = null;
+  private GetDefiInfoResponseResultOwner owner = null;
 
   @SerializedName("privilege_withdraw")
   private Integer privilegeWithdraw = null;
@@ -56,7 +56,7 @@ public class ResponseWrapperGetDefiInfoResult {
   @SerializedName("approval_abuse")
   private Integer approvalAbuse = null;
 
-  public ResponseWrapperGetDefiInfoResult owner(ResponseWrapperGetDefiInfoResultOwner owner) {
+  public GetDefiInfoResponseResult owner(GetDefiInfoResponseResultOwner owner) {
     this.owner = owner;
     return this;
   }
@@ -66,15 +66,15 @@ public class ResponseWrapperGetDefiInfoResult {
    * @return owner
   **/
   @Schema(description = "")
-  public ResponseWrapperGetDefiInfoResultOwner getOwner() {
+  public GetDefiInfoResponseResultOwner getOwner() {
     return owner;
   }
 
-  public void setOwner(ResponseWrapperGetDefiInfoResultOwner owner) {
+  public void setOwner(GetDefiInfoResponseResultOwner owner) {
     this.owner = owner;
   }
 
-  public ResponseWrapperGetDefiInfoResult privilegeWithdraw(Integer privilegeWithdraw) {
+  public GetDefiInfoResponseResult privilegeWithdraw(Integer privilegeWithdraw) {
     this.privilegeWithdraw = privilegeWithdraw;
     return this;
   }
@@ -92,7 +92,7 @@ public class ResponseWrapperGetDefiInfoResult {
     this.privilegeWithdraw = privilegeWithdraw;
   }
 
-  public ResponseWrapperGetDefiInfoResult withdrawMissing(Integer withdrawMissing) {
+  public GetDefiInfoResponseResult withdrawMissing(Integer withdrawMissing) {
     this.withdrawMissing = withdrawMissing;
     return this;
   }
@@ -110,7 +110,7 @@ public class ResponseWrapperGetDefiInfoResult {
     this.withdrawMissing = withdrawMissing;
   }
 
-  public ResponseWrapperGetDefiInfoResult isOpenSource(Integer isOpenSource) {
+  public GetDefiInfoResponseResult isOpenSource(Integer isOpenSource) {
     this.isOpenSource = isOpenSource;
     return this;
   }
@@ -128,7 +128,7 @@ public class ResponseWrapperGetDefiInfoResult {
     this.isOpenSource = isOpenSource;
   }
 
-  public ResponseWrapperGetDefiInfoResult blacklist(Integer blacklist) {
+  public GetDefiInfoResponseResult blacklist(Integer blacklist) {
     this.blacklist = blacklist;
     return this;
   }
@@ -146,7 +146,7 @@ public class ResponseWrapperGetDefiInfoResult {
     this.blacklist = blacklist;
   }
 
-  public ResponseWrapperGetDefiInfoResult contractName(String contractName) {
+  public GetDefiInfoResponseResult contractName(String contractName) {
     this.contractName = contractName;
     return this;
   }
@@ -164,7 +164,7 @@ public class ResponseWrapperGetDefiInfoResult {
     this.contractName = contractName;
   }
 
-  public ResponseWrapperGetDefiInfoResult selfdestruct(Integer selfdestruct) {
+  public GetDefiInfoResponseResult selfdestruct(Integer selfdestruct) {
     this.selfdestruct = selfdestruct;
     return this;
   }
@@ -182,7 +182,7 @@ public class ResponseWrapperGetDefiInfoResult {
     this.selfdestruct = selfdestruct;
   }
 
-  public ResponseWrapperGetDefiInfoResult isProxy(Integer isProxy) {
+  public GetDefiInfoResponseResult isProxy(Integer isProxy) {
     this.isProxy = isProxy;
     return this;
   }
@@ -200,7 +200,7 @@ public class ResponseWrapperGetDefiInfoResult {
     this.isProxy = isProxy;
   }
 
-  public ResponseWrapperGetDefiInfoResult approvalAbuse(Integer approvalAbuse) {
+  public GetDefiInfoResponseResult approvalAbuse(Integer approvalAbuse) {
     this.approvalAbuse = approvalAbuse;
     return this;
   }
@@ -227,16 +227,16 @@ public class ResponseWrapperGetDefiInfoResult {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ResponseWrapperGetDefiInfoResult responseWrapperGetDefiInfoResult = (ResponseWrapperGetDefiInfoResult) o;
-    return Objects.equals(this.owner, responseWrapperGetDefiInfoResult.owner) &&
-        Objects.equals(this.privilegeWithdraw, responseWrapperGetDefiInfoResult.privilegeWithdraw) &&
-        Objects.equals(this.withdrawMissing, responseWrapperGetDefiInfoResult.withdrawMissing) &&
-        Objects.equals(this.isOpenSource, responseWrapperGetDefiInfoResult.isOpenSource) &&
-        Objects.equals(this.blacklist, responseWrapperGetDefiInfoResult.blacklist) &&
-        Objects.equals(this.contractName, responseWrapperGetDefiInfoResult.contractName) &&
-        Objects.equals(this.selfdestruct, responseWrapperGetDefiInfoResult.selfdestruct) &&
-        Objects.equals(this.isProxy, responseWrapperGetDefiInfoResult.isProxy) &&
-        Objects.equals(this.approvalAbuse, responseWrapperGetDefiInfoResult.approvalAbuse);
+    GetDefiInfoResponseResult getDefiInfoResponseResult = (GetDefiInfoResponseResult) o;
+    return Objects.equals(this.owner, getDefiInfoResponseResult.owner) &&
+        Objects.equals(this.privilegeWithdraw, getDefiInfoResponseResult.privilegeWithdraw) &&
+        Objects.equals(this.withdrawMissing, getDefiInfoResponseResult.withdrawMissing) &&
+        Objects.equals(this.isOpenSource, getDefiInfoResponseResult.isOpenSource) &&
+        Objects.equals(this.blacklist, getDefiInfoResponseResult.blacklist) &&
+        Objects.equals(this.contractName, getDefiInfoResponseResult.contractName) &&
+        Objects.equals(this.selfdestruct, getDefiInfoResponseResult.selfdestruct) &&
+        Objects.equals(this.isProxy, getDefiInfoResponseResult.isProxy) &&
+        Objects.equals(this.approvalAbuse, getDefiInfoResponseResult.approvalAbuse);
   }
 
   @Override
@@ -248,7 +248,7 @@ public class ResponseWrapperGetDefiInfoResult {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ResponseWrapperGetDefiInfoResult {\n");
+    sb.append("class GetDefiInfoResponseResult {\n");
     
     sb.append("    owner: ").append(toIndentedString(owner)).append("\n");
     sb.append("    privilegeWithdraw: ").append(toIndentedString(privilegeWithdraw)).append("\n");
