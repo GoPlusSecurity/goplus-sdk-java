@@ -17,12 +17,12 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 /**
- * Mapstringstring
+ * MapStringString
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-06-07T05:46:11.788536588Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-06-19T10:53:16.130494478Z[Etc/UTC]")
 
-public class Mapstringstring extends HashMap<String, String> {
+public class MapStringString extends HashMap<String, String> {
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -44,7 +44,7 @@ public class Mapstringstring extends HashMap<String, String> {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Mapstringstring {\n");
+    sb.append("class MapStringString {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("}");
     return sb.toString();

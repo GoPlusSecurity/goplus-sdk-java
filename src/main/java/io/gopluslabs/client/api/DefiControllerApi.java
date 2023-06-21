@@ -26,7 +26,7 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import io.gopluslabs.client.model.ResponseWrapperGetDefiInfo;
+import io.gopluslabs.client.model.GetDefiInfoResponse;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -135,11 +135,11 @@ public class DefiControllerApi {
      * @param contractAddresses Defi protocol address (required)
      * @param chainId Chain id, (eth: 1, bsc: 56) (required)
      * @param authorization Authorization (test：Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW...) (optional)
-     * @return ResponseWrapperGetDefiInfo
+     * @return GetDefiInfoResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ResponseWrapperGetDefiInfo getDefiInfoUsingGET(String contractAddresses, String chainId, String authorization) throws ApiException {
-        ApiResponse<ResponseWrapperGetDefiInfo> resp = getDefiInfoUsingGETWithHttpInfo(contractAddresses, chainId, authorization);
+    public GetDefiInfoResponse getDefiInfoUsingGET(String contractAddresses, String chainId, String authorization) throws ApiException {
+        ApiResponse<GetDefiInfoResponse> resp = getDefiInfoUsingGETWithHttpInfo(contractAddresses, chainId, authorization);
         return resp.getData();
     }
 
@@ -149,12 +149,12 @@ public class DefiControllerApi {
      * @param contractAddresses Defi protocol address (required)
      * @param chainId Chain id, (eth: 1, bsc: 56) (required)
      * @param authorization Authorization (test：Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW...) (optional)
-     * @return ApiResponse&lt;ResponseWrapperGetDefiInfo&gt;
+     * @return ApiResponse&lt;GetDefiInfoResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ResponseWrapperGetDefiInfo> getDefiInfoUsingGETWithHttpInfo(String contractAddresses, String chainId, String authorization) throws ApiException {
+    public ApiResponse<GetDefiInfoResponse> getDefiInfoUsingGETWithHttpInfo(String contractAddresses, String chainId, String authorization) throws ApiException {
         com.squareup.okhttp.Call call = getDefiInfoUsingGETValidateBeforeCall(contractAddresses, chainId, authorization, null, null);
-        Type localVarReturnType = new TypeToken<ResponseWrapperGetDefiInfo>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetDefiInfoResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -168,7 +168,7 @@ public class DefiControllerApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getDefiInfoUsingGETAsync(String contractAddresses, String chainId, String authorization, final ApiCallback<ResponseWrapperGetDefiInfo> callback) throws ApiException {
+    public com.squareup.okhttp.Call getDefiInfoUsingGETAsync(String contractAddresses, String chainId, String authorization, final ApiCallback<GetDefiInfoResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -190,7 +190,7 @@ public class DefiControllerApi {
         }
 
         com.squareup.okhttp.Call call = getDefiInfoUsingGETValidateBeforeCall(contractAddresses, chainId, authorization, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<ResponseWrapperGetDefiInfo>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetDefiInfoResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

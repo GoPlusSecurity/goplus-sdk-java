@@ -25,9 +25,9 @@ import java.io.IOException;
  * When there is no owner function, or the ownership is unreadable or private, it would return empty. \&quot;owner\&quot;: {  }
  */
 @Schema(description = "When there is no owner function, or the ownership is unreadable or private, it would return empty. \"owner\": {  }")
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-06-07T05:46:11.788536588Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-06-19T10:53:16.130494478Z[Etc/UTC]")
 
-public class ResponseWrapperGetDefiInfoResultOwner {
+public class GetDefiInfoResponseResultOwner {
   @SerializedName("owner_name")
   private String ownerName = null;
 
@@ -37,7 +37,7 @@ public class ResponseWrapperGetDefiInfoResultOwner {
   @SerializedName("owner_type")
   private String ownerType = null;
 
-  public ResponseWrapperGetDefiInfoResultOwner ownerName(String ownerName) {
+  public GetDefiInfoResponseResultOwner ownerName(String ownerName) {
     this.ownerName = ownerName;
     return this;
   }
@@ -55,7 +55,7 @@ public class ResponseWrapperGetDefiInfoResultOwner {
     this.ownerName = ownerName;
   }
 
-  public ResponseWrapperGetDefiInfoResultOwner ownerAddress(String ownerAddress) {
+  public GetDefiInfoResponseResultOwner ownerAddress(String ownerAddress) {
     this.ownerAddress = ownerAddress;
     return this;
   }
@@ -73,7 +73,7 @@ public class ResponseWrapperGetDefiInfoResultOwner {
     this.ownerAddress = ownerAddress;
   }
 
-  public ResponseWrapperGetDefiInfoResultOwner ownerType(String ownerType) {
+  public GetDefiInfoResponseResultOwner ownerType(String ownerType) {
     this.ownerType = ownerType;
     return this;
   }
@@ -100,10 +100,10 @@ public class ResponseWrapperGetDefiInfoResultOwner {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ResponseWrapperGetDefiInfoResultOwner responseWrapperGetDefiInfoResultOwner = (ResponseWrapperGetDefiInfoResultOwner) o;
-    return Objects.equals(this.ownerName, responseWrapperGetDefiInfoResultOwner.ownerName) &&
-        Objects.equals(this.ownerAddress, responseWrapperGetDefiInfoResultOwner.ownerAddress) &&
-        Objects.equals(this.ownerType, responseWrapperGetDefiInfoResultOwner.ownerType);
+    GetDefiInfoResponseResultOwner getDefiInfoResponseResultOwner = (GetDefiInfoResponseResultOwner) o;
+    return Objects.equals(this.ownerName, getDefiInfoResponseResultOwner.ownerName) &&
+        Objects.equals(this.ownerAddress, getDefiInfoResponseResultOwner.ownerAddress) &&
+        Objects.equals(this.ownerType, getDefiInfoResponseResultOwner.ownerType);
   }
 
   @Override
@@ -115,7 +115,7 @@ public class ResponseWrapperGetDefiInfoResultOwner {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ResponseWrapperGetDefiInfoResultOwner {\n");
+    sb.append("class GetDefiInfoResponseResultOwner {\n");
     
     sb.append("    ownerName: ").append(toIndentedString(ownerName)).append("\n");
     sb.append("    ownerAddress: ").append(toIndentedString(ownerAddress)).append("\n");
