@@ -7,7 +7,7 @@
     <packaging>jar</packaging>
 
     <name>goplus-sdk-java</name>
-    <version>0.1.0</version>
+    <version>0.1.1</version>
     <description>goplus-sdk-java</description>
     <url>https://github.com/GoPlusSecurity/goplus-sdk-java</url>
 
@@ -24,6 +24,7 @@
         <maven-plugin-version>1.0.0</maven-plugin-version>
         <junit-version>4.13.2</junit-version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <mon.version>2.3.0</mon.version>
     </properties>
 
 
@@ -150,7 +151,6 @@
                     </execution>
                 </executions>
             </plugin>
-
         </plugins>
     </build>
 
@@ -190,6 +190,11 @@
             <artifactId>junit</artifactId>
             <version>${junit-version}</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>net.kemitix</groupId>
+            <artifactId>mon</artifactId>
+            <version>${mon.version}</version>
         </dependency>
     </dependencies>
 

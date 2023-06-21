@@ -6,6 +6,8 @@ import io.gopluslabs.client.request.*;
 
 import java.util.Optional;
 
+import io.gopluslabs.client.response.*;
+
 public class GoPlusClient {
 
 
@@ -13,10 +15,10 @@ public class GoPlusClient {
      * get token
      *
      * @param request request
-     * @return ResponseWrapperGetAccessTokenResponse
+     * @return AccessToken
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public static ResponseWrapperGetAccessTokenResponse getAccessToken(AccessTokenRequest request) throws ApiException {
+    public static AccessToken getAccessToken(AccessTokenRequest request) throws ApiException {
 
         TokenControllerApi api = Optional.ofNullable(request.getTimeout())
                 .map(timeout -> new TokenControllerApi(createApiClient(timeout)))
@@ -26,8 +28,8 @@ public class GoPlusClient {
         getAccessTokenRequest.setAppKey(request.getRequest().getAppKey());
         getAccessTokenRequest.setSign(request.getRequest().getSign());
         getAccessTokenRequest.setTime(request.getRequest().getTime());
-
-        return api.getAccessTokenUsingPOST(getAccessTokenRequest);
+        ResponseWrapperGetAccessTokenResponse accessTokenUsingPOST = api.getAccessTokenUsingPOST(getAccessTokenRequest);
+        return AccessToken.of(accessTokenUsingPOST);
     }
 
 
@@ -35,34 +37,38 @@ public class GoPlusClient {
      * Get the list of chains supported by different functions.
      *
      * @param request SupportedChainsRequest
-     * @return ResponseWrapperListJSONObject
+     * @return ChainsList
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public static ResponseWrapperListGetChainsList supportedChains(SupportedChainsRequest request) throws ApiException {
+    public static ChainsList supportedChains(SupportedChainsRequest request) throws ApiException {
 
         TokenControllerV1Api api = new TokenControllerV1Api();
         if (request.getTimeout() != null) {
             api.setApiClient(createApiClient(request.getTimeout()));
         }
-
-        return api.getChainsListUsingGET(request.getAuthorization(), request.getName());
+        ResponseWrapperListGetChainsList chainsListUsingGET = api.getChainsListUsingGET(request.getAuthorization(), request.getName());
+        return ChainsList.of(chainsListUsingGET);
     }
 
     /**
      * Get token security and risk data.
      *
      * @param request TokenSecurityRequest
-     * @return ResponseWrapperTokenSecurity
+     * @return TokenSecurity
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public static ResponseWrapperTokenSecurity tokenSecurity(TokenSecurityRequest request) throws ApiException {
+    public static TokenSecurity tokenSecurity(TokenSecurityRequest request) throws ApiException {
 
         TokenControllerV1Api api = new TokenControllerV1Api();
         if (request.getTimeout()!=null){
             api.setApiClient(createApiClient(request.getTimeout()));
         }
-
-        return api.tokenSecurityUsingGET1(request.getChainId(), request.getAddress(), request.getAuthorization());
+        ResponseWrapperTokenSecurity tokenSecurity = api.tokenSecurityUsingGET1(
+                request.getChainId(),
+                request.getAddress(),
+                request.getAuthorization()
+        );
+        return TokenSecurity.of(tokenSecurity);
     }
 
 
@@ -70,17 +76,21 @@ public class GoPlusClient {
      * Check if the address is malicious
      *
      * @param request AddressSecurityRequest
-     * @return ResponseWrapperAddressContract
+     * @return AddressContract
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public static ResponseWrapperAddressContract addressSecurity(AddressSecurityRequest request) throws ApiException {
+    public static AddressContract addressSecurity(AddressSecurityRequest request) throws ApiException {
 
         ApproveControllerV1Api api = new ApproveControllerV1Api();
         if (request.getTimeout()!=null){
             api.setApiClient(createApiClient(request.getTimeout()));
         }
-
-        return api.addressContractUsingGET1(request.getAddress(), request.getAuthorization(), request.getChainId());
+        ResponseWrapperAddressContract addressContract = api.addressContractUsingGET1(
+                request.getAddress(),
+                request.getAuthorization(),
+                request.getChainId()
+        );
+        return AddressContract.of(addressContract);
 
     }
 
@@ -88,15 +98,20 @@ public class GoPlusClient {
      * Check if the approval is secure
      *
      * @param request ApprovalSecurityRequest
-     * @return ResponseWrapperContractApproveResponse
+     * @return ContractApprove
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public static ResponseWrapperContractApproveResponse approvalSecurity(ApprovalSecurityRequest request) throws ApiException {
+    public static ContractApprove approvalSecurity(ApprovalSecurityRequest request) throws ApiException {
         ApproveControllerV1Api api = new ApproveControllerV1Api();
         if (request.getTimeout()!=null){
             api.setApiClient(createApiClient(request.getTimeout()));
         }
-        return api.approvalContractUsingGET(request.getChainId(), request.getAddress(), request.getAuthorization());
+        ResponseWrapperContractApproveResponse contractApprove = api.approvalContractUsingGET(
+                request.getChainId(),
+                request.getAddress(),
+                request.getAuthorization()
+        );
+        return ContractApprove.of(contractApprove);
     }
 
 
@@ -104,40 +119,41 @@ public class GoPlusClient {
      * Check risk of all erc20 approvals under one EOA.
      *
      * @param request Erc20ApprovalSecurityRequest
-     * @return ResponseWrapperListApproveTokenOutListResponse
+     * @return ApproveTokenOutList
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public static ResponseWrapperListApproveTokenOutListResponse erc20ApprovalSecurity(Erc20ApprovalSecurityRequest request) throws ApiException {
+    public static ApproveTokenOutList erc20ApprovalSecurity(Erc20ApprovalSecurityRequest request) throws ApiException {
 
         ApproveControllerV2Api api = new ApproveControllerV2Api();
         if (request.getTimeout()!=null){
             api.setApiClient(createApiClient(request.getTimeout()));
         }
-
-        return new ApproveControllerV2Api().addressTokenApproveListUsingGET1(
+        ResponseWrapperListApproveTokenOutListResponse response = api.addressTokenApproveListUsingGET1(
                 request.getAddress(),
                 request.getChainId(),
                 request.getAuthorization()
         );
+        return ApproveTokenOutList.of(response);
     }
 
     /**
      * Check risk of all erc721 approvals under one EOA.
      *
      * @param request Erc721ApprovalSecurityRequest
-     * @return ResponseWrapperListApproveNFTListResponse
+     * @return ApproveNFTList
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public static ResponseWrapperListApproveNFTListResponse erc721ApprovalSecurity(Erc721ApprovalSecurityRequest request) throws ApiException {
+    public static ApproveNFTList erc721ApprovalSecurity(Erc721ApprovalSecurityRequest request) throws ApiException {
         ApproveControllerV2Api api = new ApproveControllerV2Api();
         if (request.getTimeout()!=null){
             api.setApiClient(createApiClient(request.getTimeout()));
         }
-        return new ApproveControllerV2Api().addressNFT721ApproveListUsingGET1(
+        ResponseWrapperListApproveNFTListResponse response = api.addressNFT721ApproveListUsingGET1(
                 request.getAddress(),
                 request.getChainId(),
                 request.getAuthorization()
         );
+        return ApproveNFTList.of(response);
     }
 
 
@@ -145,19 +161,20 @@ public class GoPlusClient {
      * Check risk of all erc1155 approvals under one EOA.
      *
      * @param request Erc1155ApprovalSecurityRequest
-     * @return ResponseWrapperListApproveNFT1155ListResponse
+     * @return ApproveNFT1155List
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public static ResponseWrapperListApproveNFT1155ListResponse erc1155ApprovalSecurity(Erc1155ApprovalSecurityRequest request) throws ApiException {
+    public static ApproveNFT1155List erc1155ApprovalSecurity(Erc1155ApprovalSecurityRequest request) throws ApiException {
         ApproveControllerV2Api api = new ApproveControllerV2Api();
         if (request.getTimeout()!=null){
             api.setApiClient(createApiClient(request.getTimeout()));
         }
-        return api.addressNFT1155ApproveListUsingGET1(
+        ResponseWrapperListApproveNFT1155ListResponse response = api.addressNFT1155ApproveListUsingGET1(
                 request.getAddress(),
                 request.getChainId(),
                 request.getAuthorization()
         );
+        return ApproveNFT1155List.of(response);
     }
 
 
@@ -165,10 +182,10 @@ public class GoPlusClient {
      * Get abi decode info
      *
      * @param request InputDecodeRequest
-     * @return ResponseWrapperParseAbiDataResponse
+     * @return ParseAbiData
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public static ResponseWrapperParseAbiDataResponse inputDecode(InputDecodeRequest request) throws ApiException {
+    public static ParseAbiData inputDecode(InputDecodeRequest request) throws ApiException {
         ContractAbiControllerApi api = new ContractAbiControllerApi();
         if (request.getTimeout()!=null){
             api.setApiClient(createApiClient(request.getTimeout()));
@@ -181,7 +198,8 @@ public class GoPlusClient {
         parseAbiDataRequest.setContractAddress(request.getBody().getContractAddress());
         parseAbiDataRequest.setSigner(request.getBody().getSigner());
 
-        return api.getAbiDataInfoUsingPOST(parseAbiDataRequest, request.getAuthorization());
+        ResponseWrapperParseAbiDataResponse abiData = api.getAbiDataInfoUsingPOST(parseAbiDataRequest, request.getAuthorization());
+        return ParseAbiData.of(abiData);
     }
 
 
@@ -189,17 +207,23 @@ public class GoPlusClient {
      * Get NFT security and risk data.
      *
      * @param request NftSecurityRequest
-     * @return ResponseWrapperGetNftInfo
+     * @return NftInfo
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public static ResponseWrapperGetNftInfo nftSecurity(NftSecurityRequest request) throws ApiException {
+    public static NftInfo nftSecurity(NftSecurityRequest request) throws ApiException {
         NftControllerApi api = new NftControllerApi();
 
         if (request.getTimeout()!=null){
             api.setApiClient(createApiClient(request.getTimeout()));
         }
 
-        return api.getNftInfoUsingGET1(request.getChainId(), request.getAddress(), request.getAuthorization(), request.getTokenId());
+        ResponseWrapperGetNftInfo nftInfo = api.getNftInfoUsingGET1(
+                request.getChainId(),
+                request.getAddress(),
+                request.getAuthorization(),
+                request.getTokenId()
+        );
+        return NftInfo.of(nftInfo);
     }
 
 
@@ -207,19 +231,20 @@ public class GoPlusClient {
      * Check risk of dapp through URL
      *
      * @param request DappSecurityRequest
-     * @return ResponseWrapperDappContractSecurityResponse
+     * @return DappContractSecurity
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public static ResponseWrapperDappContractSecurityResponse dappSecurity(DappSecurityRequest request) throws ApiException {
+    public static DappContractSecurity dappSecurity(DappSecurityRequest request) throws ApiException {
         DappControllerApi api = new DappControllerApi();
         if (request.getTimeout()!=null){
             api.setApiClient(createApiClient(request.getTimeout()));
         }
 
-        return api.getDappInfoUsingGET(
+        ResponseWrapperDappContractSecurityResponse response = api.getDappInfoUsingGET(
                 request.getAuthorization(),
                 request.getUrl()
         );
+        return DappContractSecurity.of(response);
     }
 
 
@@ -227,30 +252,36 @@ public class GoPlusClient {
      * Check if the  url is a phishing site
      *
      * @param request PhishingSiteRequest
-     * @return ResponseWrapperPhishingSite
+     * @return PhishingSite
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public static ResponseWrapperPhishingSite phishingSite(PhishingSiteRequest request) throws ApiException {
+    public static PhishingSite phishingSite(PhishingSiteRequest request) throws ApiException {
         WebsiteControllerApi api = new WebsiteControllerApi();
         if (request.getTimeout()!=null){
             api.setApiClient(createApiClient(request.getTimeout()));
         }
-        return api.phishingSiteUsingGET(request.getUrl(), request.getAuthorization());
+        ResponseWrapperPhishingSite response = api.phishingSiteUsingGET(request.getUrl(), request.getAuthorization());
+        return PhishingSite.of(response);
     }
 
     /**
      * Rug-pull Detection API Beta
      *
      * @param request DefiInfoRequest
-     * @return ResponseWrapperGetDefiInfo
+     * @return DefiInfo
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public static ResponseWrapperGetDefiInfo rugpullDetecting(DefiInfoRequest request) throws ApiException {
+    public static DefiInfo rugpullDetecting(DefiInfoRequest request) throws ApiException {
         DefiControllerApi api = new DefiControllerApi();
         if (request.getTimeout()!=null){
             api.setApiClient(createApiClient(request.getTimeout()));
         }
-        return api.getDefiInfoUsingGET(request.getAddress(), request.getChainId(), request.getAuthorization());
+        GetDefiInfoResponse defiInfoUsingGET = api.getDefiInfoUsingGET(
+                request.getAddress(),
+                request.getChainId(),
+                request.getAuthorization()
+        );
+        return DefiInfo.of(defiInfoUsingGET);
     }
 
 
