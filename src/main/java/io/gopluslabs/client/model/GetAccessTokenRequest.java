@@ -25,7 +25,7 @@ import java.io.IOException;
  * GetAccessTokenRequest
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-06-19T10:53:16.130494478Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-06-28T06:52:19.201634885Z[Etc/UTC]")
 
 public class GetAccessTokenRequest {
   @SerializedName("app_key")
@@ -61,10 +61,10 @@ public class GetAccessTokenRequest {
   }
 
    /**
-   * Concatenate app_key, time, app_secret in turn, and do sha1().app_key &#x3D; mBOMg20QW11BbtyH4Zh0 \\n\&quot; +             \&quot;time &#x3D; 1647847498 \\n\&quot; +             \&quot;app_secret &#x3D; V6aRfxlPJwN3ViJSIFSCdxPvneajuJsh \\n\&quot; +             \&quot;sign &#x3D; sha1(mBOMg20QW11BbtyH4Zh01647847498V6aRfxlPJwN3ViJSIFSCdxPvneajuJsh)\\n\&quot; +             \&quot;        &#x3D; 7293d385b9225b3c3f232b76ba97255d0e21063e
+   * Sign Method Concatenate app_key, time, app_secret in turn, and do sha1() . Example app_key &#x3D; mBOMg20QW11BbtyH4Zh0 time &#x3D; 1647847498 app_secret &#x3D; V6aRfxlPJwN3ViJSIFSCdxPvneajuJsh sign &#x3D; sha1(mBOMg20QW11BbtyH4Zh01647847498V6aRfxlPJwN3ViJSIFSCdxPvneajuJsh)        &#x3D; 7293d385b9225b3c3f232b76ba97255d0e21063e
    * @return sign
   **/
-  @Schema(required = true, description = "Concatenate app_key, time, app_secret in turn, and do sha1().app_key = mBOMg20QW11BbtyH4Zh0 \\n\" +             \"time = 1647847498 \\n\" +             \"app_secret = V6aRfxlPJwN3ViJSIFSCdxPvneajuJsh \\n\" +             \"sign = sha1(mBOMg20QW11BbtyH4Zh01647847498V6aRfxlPJwN3ViJSIFSCdxPvneajuJsh)\\n\" +             \"        = 7293d385b9225b3c3f232b76ba97255d0e21063e")
+  @Schema(required = true, description = "Sign Method Concatenate app_key, time, app_secret in turn, and do sha1() . Example app_key = mBOMg20QW11BbtyH4Zh0 time = 1647847498 app_secret = V6aRfxlPJwN3ViJSIFSCdxPvneajuJsh sign = sha1(mBOMg20QW11BbtyH4Zh01647847498V6aRfxlPJwN3ViJSIFSCdxPvneajuJsh)        = 7293d385b9225b3c3f232b76ba97255d0e21063e")
   public String getSign() {
     return sign;
   }
