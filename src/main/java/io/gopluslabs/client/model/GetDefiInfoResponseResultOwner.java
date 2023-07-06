@@ -25,7 +25,7 @@ import java.io.IOException;
  * When there is no owner function, or the ownership is unreadable or private, it would return empty. \&quot;owner\&quot;: {  }
  */
 @Schema(description = "When there is no owner function, or the ownership is unreadable or private, it would return empty. \"owner\": {  }")
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-06-19T10:53:16.130494478Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-06-28T06:52:19.201634885Z[Etc/UTC]")
 
 public class GetDefiInfoResponseResultOwner {
   @SerializedName("owner_name")
