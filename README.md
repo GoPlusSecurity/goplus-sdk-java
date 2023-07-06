@@ -2,11 +2,11 @@
 
 The official [GoPlus Security](https://gopluslabs.io/) Java SDK.
 
-### Environmental Preparation
+## Requirement
 
 JDK >= 1.8
 
-### Installation
+## Installation
 
 ```xml
 <dependency>
