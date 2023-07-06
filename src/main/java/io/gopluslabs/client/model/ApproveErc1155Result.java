@@ -26,7 +26,7 @@ import java.io.IOException;
  * ApproveErc1155Result
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-06-28T06:52:19.201634885Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-07-06T09:52:32.634171989Z[Etc/UTC]")
 
 public class ApproveErc1155Result {
   @SerializedName("address_info")

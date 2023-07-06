@@ -19,6 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import io.gopluslabs.client.model.ResponseWrapperTokenSecurityLockedDetail;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -27,7 +28,7 @@ import java.util.List;
  * ResponseWrapperTokenSecurityLpHolders
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-06-28T06:52:19.201634885Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-07-06T09:52:32.634171989Z[Etc/UTC]")
 
 public class ResponseWrapperTokenSecurityLpHolders {
   @SerializedName("is_locked")
@@ -43,7 +44,7 @@ public class ResponseWrapperTokenSecurityLpHolders {
   private String balance = null;
 
   @SerializedName("locked_detail")
-  private List<String> lockedDetail = null;
+  private List<ResponseWrapperTokenSecurityLockedDetail> lockedDetail = null;
 
   @SerializedName("tag")
   private String tag = null;
@@ -123,29 +124,29 @@ public class ResponseWrapperTokenSecurityLpHolders {
     this.balance = balance;
   }
 
-  public ResponseWrapperTokenSecurityLpHolders lockedDetail(List<String> lockedDetail) {
+  public ResponseWrapperTokenSecurityLpHolders lockedDetail(List<ResponseWrapperTokenSecurityLockedDetail> lockedDetail) {
     this.lockedDetail = lockedDetail;
     return this;
   }
 
-  public ResponseWrapperTokenSecurityLpHolders addLockedDetailItem(String lockedDetailItem) {
+  public ResponseWrapperTokenSecurityLpHolders addLockedDetailItem(ResponseWrapperTokenSecurityLockedDetail lockedDetailItem) {
     if (this.lockedDetail == null) {
-      this.lockedDetail = new ArrayList<String>();
+      this.lockedDetail = new ArrayList<ResponseWrapperTokenSecurityLockedDetail>();
     }
     this.lockedDetail.add(lockedDetailItem);
     return this;
   }
 
    /**
-   * It is an array, decribes lock position info of this holder, only shows when \&quot;locked\&quot;: 1. This Array may contain multiple objects for multiple locking info. In every objetc, \&quot;amount\&quot; describes the number of token locked, \&quot;end_time\&quot; describes when the token will be unlocked, \&quot;opt_time\&quot; describes when the token was locked.(Notice:When \&quot;locked\&quot;:0, or lock address is a black hole address,  \&quot;locked_detail\&quot; will be no return.)
+   * It is an array, decribes lock position info of this holder, only shows when \&quot;locked\&quot;: 1. This Array may contain multiple objects for multiple locking info. (Notice:When \&quot;locked\&quot;:0, or lock address is a black hole address,  \&quot;locked_detail\&quot; will be no return.)
    * @return lockedDetail
   **/
-  @Schema(description = "It is an array, decribes lock position info of this holder, only shows when \"locked\": 1. This Array may contain multiple objects for multiple locking info. In every objetc, \"amount\" describes the number of token locked, \"end_time\" describes when the token will be unlocked, \"opt_time\" describes when the token was locked.(Notice:When \"locked\":0, or lock address is a black hole address,  \"locked_detail\" will be no return.)")
-  public List<String> getLockedDetail() {
+  @Schema(description = "It is an array, decribes lock position info of this holder, only shows when \"locked\": 1. This Array may contain multiple objects for multiple locking info. (Notice:When \"locked\":0, or lock address is a black hole address,  \"locked_detail\" will be no return.)")
+  public List<ResponseWrapperTokenSecurityLockedDetail> getLockedDetail() {
     return lockedDetail;
   }
 
-  public void setLockedDetail(List<String> lockedDetail) {
+  public void setLockedDetail(List<ResponseWrapperTokenSecurityLockedDetail> lockedDetail) {
     this.lockedDetail = lockedDetail;
   }
 
