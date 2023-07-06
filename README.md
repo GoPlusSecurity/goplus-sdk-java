@@ -4,7 +4,7 @@ The official [GoPlus Security](https://gopluslabs.io/) Java SDK.
 
 ### Environmental Preparation
 
-**JDK >= 1.8**
+JDK >= 1.8
 
 ### Installation
 
