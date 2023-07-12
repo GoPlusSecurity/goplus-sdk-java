@@ -25,7 +25,7 @@ import java.io.IOException;
  * Response result
  */
 @Schema(description = "Response result")
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-07-06T09:52:32.634171989Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-07-12T10:15:49.495196307Z[Etc/UTC]")
 
 public class ResponseWrapperAddressContractResult {
   @SerializedName("cybercrime")
@@ -244,10 +244,10 @@ public class ResponseWrapperAddressContractResult {
   }
 
    /**
-   * It describes the data source for this address information. For example：GoPlus/SlowMist
+   * It describes the data source for this address information. For example: GoPlus/SlowMist
    * @return dataSource
   **/
-  @Schema(description = "It describes the data source for this address information. For example：GoPlus/SlowMist")
+  @Schema(description = "It describes the data source for this address information. For example: GoPlus/SlowMist")
   public String getDataSource() {
     return dataSource;
   }

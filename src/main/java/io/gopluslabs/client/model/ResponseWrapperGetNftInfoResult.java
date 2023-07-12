@@ -33,7 +33,7 @@ import java.util.List;
  * Response result
  */
 @Schema(description = "Response result")
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-07-06T09:52:32.634171989Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-07-12T10:15:49.495196307Z[Etc/UTC]")
 
 public class ResponseWrapperGetNftInfoResult {
   @SerializedName("traded_volume_24h")
@@ -276,10 +276,10 @@ public class ResponseWrapperGetNftInfoResult {
   }
 
    /**
-   * It describes the discord url of the NFT. Return “null” means there is no discord url or didn&#x27;t find the discord url.
+   * It describes the discord url of the NFT. Return \&quot;null\&quot; means there is no discord url or didn&#x27;t find the discord url.
    * @return discordUrl
   **/
-  @Schema(description = "It describes the discord url of the NFT. Return “null” means there is no discord url or didn't find the discord url.")
+  @Schema(description = "It describes the discord url of the NFT. Return \"null\" means there is no discord url or didn't find the discord url.")
   public String getDiscordUrl() {
     return discordUrl;
   }
@@ -438,10 +438,10 @@ public class ResponseWrapperGetNftInfoResult {
   }
 
    /**
-   * It describes the creator address of the NFT. Example: \&quot;creator_address\&quot;: \&quot;0x1ee0af784b96bb55ece98c9b15675726b0da1b6b\&quot;; Return “null” means that we didn&#x27;t find the creator address.
+   * It describes the creator address of the NFT. Example: \&quot;creator_address\&quot;: \&quot;0x1ee0af784b96bb55ece98c9b15675726b0da1b6b\&quot;; Return \&quot;null\&quot; means that we didn&#x27;t find the creator address.
    * @return creatorAddress
   **/
-  @Schema(description = "It describes the creator address of the NFT. Example: \"creator_address\": \"0x1ee0af784b96bb55ece98c9b15675726b0da1b6b\"; Return “null” means that we didn't find the creator address.")
+  @Schema(description = "It describes the creator address of the NFT. Example: \"creator_address\": \"0x1ee0af784b96bb55ece98c9b15675726b0da1b6b\"; Return \"null\" means that we didn't find the creator address.")
   public String getCreatorAddress() {
     return creatorAddress;
   }
@@ -456,10 +456,10 @@ public class ResponseWrapperGetNftInfoResult {
   }
 
    /**
-   * It describes the medium url of the NFT. Return “null” means there is no medium url or didn&#x27;t find the medium url.
+   * It describes the medium url of the NFT. Return \&quot;null\&quot; means there is no medium url or didn&#x27;t find the medium url.
    * @return mediumUrl
   **/
-  @Schema(description = "It describes the medium url of the NFT. Return “null” means there is no medium url or didn't find the medium url.")
+  @Schema(description = "It describes the medium url of the NFT. Return \"null\" means there is no medium url or didn't find the medium url.")
   public String getMediumUrl() {
     return mediumUrl;
   }
@@ -510,10 +510,10 @@ public class ResponseWrapperGetNftInfoResult {
   }
 
    /**
-   * It describes the twitter url of the NFT. Return “null” means there is no twitter url or didn&#x27;t find the twitter url.
+   * It describes the twitter url of the NFT. Return \&quot;null\&quot; means there is no twitter url or didn&#x27;t find the twitter url.
    * @return twitterUrl
   **/
-  @Schema(description = "It describes the twitter url of the NFT. Return “null” means there is no twitter url or didn't find the twitter url.")
+  @Schema(description = "It describes the twitter url of the NFT. Return \"null\" means there is no twitter url or didn't find the twitter url.")
   public String getTwitterUrl() {
     return twitterUrl;
   }
@@ -546,10 +546,10 @@ public class ResponseWrapperGetNftInfoResult {
   }
 
    /**
-   * It describes the introduction of the NFT. Return “null” means there is no description of the NFT.
+   * It describes the introduction of the NFT. Return \&quot;null\&quot; means there is no description of the NFT.
    * @return nftDescription
   **/
-  @Schema(description = "It describes the introduction of the NFT. Return “null” means there is no description of the NFT.")
+  @Schema(description = "It describes the introduction of the NFT. Return \"null\" means there is no description of the NFT.")
   public String getNftDescription() {
     return nftDescription;
   }
@@ -680,10 +680,10 @@ public class ResponseWrapperGetNftInfoResult {
   }
 
    /**
-   * It describes whether this NFT owner can bypass the maximum amount of minting specified in the contract, and continue to mint NFTs beyond this limit.  \&quot;1\&quot; means true;  \&quot;0\&quot; means false;  \&quot;Null\&quot; means unknown.(Notice:Oversupply minting refers to the existence of a special mint method in the NFT contract — the owner can bypass the maximum amount of minting specified in the contract, and continue to mint NFTs beyond this limit.)
+   * It describes whether this NFT owner can bypass the maximum amount of minting specified in the contract, and continue to mint NFTs beyond this limit.  \&quot;1\&quot; means true;  \&quot;0\&quot; means false;  \&quot;Null\&quot; means unknown.(Notice:Oversupply minting refers to the existence of a special mint method in the NFT contract - the owner can bypass the maximum amount of minting specified in the contract, and continue to mint NFTs beyond this limit.)
    * @return oversupplyMinting
   **/
-  @Schema(description = "It describes whether this NFT owner can bypass the maximum amount of minting specified in the contract, and continue to mint NFTs beyond this limit.  \"1\" means true;  \"0\" means false;  \"Null\" means unknown.(Notice:Oversupply minting refers to the existence of a special mint method in the NFT contract — the owner can bypass the maximum amount of minting specified in the contract, and continue to mint NFTs beyond this limit.)")
+  @Schema(description = "It describes whether this NFT owner can bypass the maximum amount of minting specified in the contract, and continue to mint NFTs beyond this limit.  \"1\" means true;  \"0\" means false;  \"Null\" means unknown.(Notice:Oversupply minting refers to the existence of a special mint method in the NFT contract - the owner can bypass the maximum amount of minting specified in the contract, and continue to mint NFTs beyond this limit.)")
   public Integer getOversupplyMinting() {
     return oversupplyMinting;
   }
@@ -716,10 +716,10 @@ public class ResponseWrapperGetNftInfoResult {
   }
 
    /**
-   * It describes the website url of the NFT. Return “null” means there is no website url or didn&#x27;t find the website url.
+   * It describes the website url of the NFT. Return \&quot;null\&quot; means there is no website url or didn&#x27;t find the website url.
    * @return websiteUrl
   **/
-  @Schema(description = "It describes the website url of the NFT. Return “null” means there is no website url or didn't find the website url.")
+  @Schema(description = "It describes the website url of the NFT. Return \"null\" means there is no website url or didn't find the website url.")
   public String getWebsiteUrl() {
     return websiteUrl;
   }
@@ -734,10 +734,10 @@ public class ResponseWrapperGetNftInfoResult {
   }
 
    /**
-   * It describes the github url of the NFT. Return “null” means there is no github url or didn&#x27;t find the github url.
+   * It describes the github url of the NFT. Return \&quot;null\&quot; means there is no github url or didn&#x27;t find the github url.
    * @return githubUrl
   **/
-  @Schema(description = "It describes the github url of the NFT. Return “null” means there is no github url or didn't find the github url.")
+  @Schema(description = "It describes the github url of the NFT. Return \"null\" means there is no github url or didn't find the github url.")
   public String getGithubUrl() {
     return githubUrl;
   }
@@ -752,10 +752,10 @@ public class ResponseWrapperGetNftInfoResult {
   }
 
    /**
-   * It describes the telegram url of the NFT. Return “null” means there is no telegram url or didn&#x27;t find the telegram url.
+   * It describes the telegram url of the NFT. Return \&quot;null\&quot; means there is no telegram url or didn&#x27;t find the telegram url.
    * @return telegramUrl
   **/
-  @Schema(description = "It describes the telegram url of the NFT. Return “null” means there is no telegram url or didn't find the telegram url.")
+  @Schema(description = "It describes the telegram url of the NFT. Return \"null\" means there is no telegram url or didn't find the telegram url.")
   public String getTelegramUrl() {
     return telegramUrl;
   }
@@ -788,10 +788,10 @@ public class ResponseWrapperGetNftInfoResult {
   }
 
    /**
-   * It describes the number of blocks created for the NFT. Return “null” means that we didn&#x27;t find the number of blocks created for the NFT.
+   * It describes the number of blocks created for the NFT. Return \&quot;null\&quot; means that we didn&#x27;t find the number of blocks created for the NFT.
    * @return createBlockNumber
   **/
-  @Schema(description = "It describes the number of blocks created for the NFT. Return “null” means that we didn't find the number of blocks created for the NFT.")
+  @Schema(description = "It describes the number of blocks created for the NFT. Return \"null\" means that we didn't find the number of blocks created for the NFT.")
   public Long getCreateBlockNumber() {
     return createBlockNumber;
   }

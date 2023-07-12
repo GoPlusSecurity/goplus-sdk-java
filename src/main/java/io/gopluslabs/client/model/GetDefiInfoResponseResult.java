@@ -26,7 +26,7 @@ import java.io.IOException;
  * Response result
  */
 @Schema(description = "Response result")
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-07-06T09:52:32.634171989Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-07-12T10:15:49.495196307Z[Etc/UTC]")
 
 public class GetDefiInfoResponseResult {
   @SerializedName("owner")
@@ -170,10 +170,10 @@ public class GetDefiInfoResponseResult {
   }
 
    /**
-   * It describes whether this contract can self destruct. \&quot;1\&quot; means true;  \&quot;0\&quot; means false; “-1” means unknown.
+   * It describes whether this contract can self destruct. \&quot;1\&quot; means true;  \&quot;0\&quot; means false; \&quot;-1\&quot; means unknown.
    * @return selfdestruct
   **/
-  @Schema(description = "It describes whether this contract can self destruct. \"1\" means true;  \"0\" means false; “-1” means unknown.")
+  @Schema(description = "It describes whether this contract can self destruct. \"1\" means true;  \"0\" means false; \"-1\" means unknown.")
   public Integer getSelfdestruct() {
     return selfdestruct;
   }
@@ -188,10 +188,10 @@ public class GetDefiInfoResponseResult {
   }
 
    /**
-   * It describes whether this contract has a proxy contract.  \&quot;1\&quot; means true;  \&quot;0\&quot; means false; “-1” means unknown.
+   * It describes whether this contract has a proxy contract.  \&quot;1\&quot; means true;  \&quot;0\&quot; means false; \&quot;-1\&quot; means unknown.
    * @return isProxy
   **/
-  @Schema(description = "It describes whether this contract has a proxy contract.  \"1\" means true;  \"0\" means false; “-1” means unknown.")
+  @Schema(description = "It describes whether this contract has a proxy contract.  \"1\" means true;  \"0\" means false; \"-1\" means unknown.")
   public Integer getIsProxy() {
     return isProxy;
   }
@@ -206,10 +206,10 @@ public class GetDefiInfoResponseResult {
   }
 
    /**
-   * It describes whether the owner can spend the allowance that obtained by the contract. If so, this function could potentially be abused to steal user assets. \&quot;1\&quot; means true;  \&quot;0\&quot; means false; “-1” means unknown.
+   * It describes whether the owner can spend the allowance that obtained by the contract. If so, this function could potentially be abused to steal user assets. \&quot;1\&quot; means true;  \&quot;0\&quot; means false; \&quot;-1\&quot; means unknown.
    * @return approvalAbuse
   **/
-  @Schema(description = "It describes whether the owner can spend the allowance that obtained by the contract. If so, this function could potentially be abused to steal user assets. \"1\" means true;  \"0\" means false; “-1” means unknown.")
+  @Schema(description = "It describes whether the owner can spend the allowance that obtained by the contract. If so, this function could potentially be abused to steal user assets. \"1\" means true;  \"0\" means false; \"-1\" means unknown.")
   public Integer getApprovalAbuse() {
     return approvalAbuse;
   }

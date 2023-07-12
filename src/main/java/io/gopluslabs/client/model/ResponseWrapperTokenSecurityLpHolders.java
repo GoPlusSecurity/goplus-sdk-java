@@ -28,7 +28,7 @@ import java.util.List;
  * ResponseWrapperTokenSecurityLpHolders
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-07-06T09:52:32.634171989Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-07-12T10:15:49.495196307Z[Etc/UTC]")
 
 public class ResponseWrapperTokenSecurityLpHolders {
   @SerializedName("is_locked")
@@ -58,10 +58,10 @@ public class ResponseWrapperTokenSecurityLpHolders {
   }
 
    /**
-   * It describes whether the tokens owned by the holder are locked \&quot;1\&quot; means true; \&quot;0\&quot; means false;  (3) “tag” describes the address&#x27;s public tag. Example:Burn (Notice:About \&quot;locked\&quot;: We only support the token lock addresses or black hole addresses that we have included. )
+   * It describes whether the tokens owned by the holder are locked \&quot;1\&quot; means true; \&quot;0\&quot; means false;  (3) \&quot;tag\&quot; describes the address&#x27;s public tag. Example:Burn (Notice:About \&quot;locked\&quot;: We only support the token lock addresses or black hole addresses that we have included. )
    * @return isLocked
   **/
-  @Schema(description = "It describes whether the tokens owned by the holder are locked \"1\" means true; \"0\" means false;  (3) “tag” describes the address's public tag. Example:Burn (Notice:About \"locked\": We only support the token lock addresses or black hole addresses that we have included. )")
+  @Schema(description = "It describes whether the tokens owned by the holder are locked \"1\" means true; \"0\" means false;  (3) \"tag\" describes the address's public tag. Example:Burn (Notice:About \"locked\": We only support the token lock addresses or black hole addresses that we have included. )")
   public Integer getIsLocked() {
     return isLocked;
   }
