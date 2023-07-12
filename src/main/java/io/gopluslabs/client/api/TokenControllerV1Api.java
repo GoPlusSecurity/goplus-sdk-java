@@ -56,7 +56,7 @@ public class TokenControllerV1Api {
 
     /**
      * Build call for getChainsListUsingGET
-     * @param authorization Authorization (test：Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW...) (optional)
+     * @param authorization Authorization (test: Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW...) (optional)
      * @param name API name. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -123,7 +123,7 @@ public class TokenControllerV1Api {
     /**
      * Get the list of chains supported by different functions.
      * 
-     * @param authorization Authorization (test：Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW...) (optional)
+     * @param authorization Authorization (test: Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW...) (optional)
      * @param name API name. (optional)
      * @return ResponseWrapperListGetChainsList
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -136,7 +136,7 @@ public class TokenControllerV1Api {
     /**
      * Get the list of chains supported by different functions.
      * 
-     * @param authorization Authorization (test：Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW...) (optional)
+     * @param authorization Authorization (test: Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW...) (optional)
      * @param name API name. (optional)
      * @return ApiResponse&lt;ResponseWrapperListGetChainsList&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -150,7 +150,7 @@ public class TokenControllerV1Api {
     /**
      * Get the list of chains supported by different functions. (asynchronously)
      * 
-     * @param authorization Authorization (test：Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW...) (optional)
+     * @param authorization Authorization (test: Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW...) (optional)
      * @param name API name. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -184,9 +184,9 @@ public class TokenControllerV1Api {
     }
     /**
      * Build call for tokenSecurityUsingGET1
-     * @param chainId The chain_id of the blockchain. \&quot;1\&quot; means Ethereum;  \&quot;10\&quot; means Optimism; “25” means Cronos; \&quot;56\&quot; means BSC;  “66” means OKC; \&quot;100\&quot; means Gnosis; \&quot;128\&quot; means HECO;  \&quot;137\&quot; means Polygon;  \&quot;250\&quot; means Fantom; \&quot;321\&quot; means KCC; \&quot;324\&quot; means zkSync Era; \&quot;10001\&quot; means ETHW; \&quot;201022\&quot; means FON; \&quot;42161\&quot; means Arbitrum;  \&quot;43114\&quot; means Avalanche; \&quot;59140\&quot; means Linea; \&quot;1666600000\&quot; means Harmony; \&quot;tron\&quot; means Tron. (required)
+     * @param chainId The chain_id of the blockchain. \&quot;1\&quot; means Ethereum;  \&quot;10\&quot; means Optimism; \&quot;25\&quot; means Cronos; \&quot;56\&quot; means BSC;  \&quot;66\&quot; means OKC; \&quot;100\&quot; means Gnosis; \&quot;128\&quot; means HECO;  \&quot;137\&quot; means Polygon;  \&quot;250\&quot; means Fantom; \&quot;321\&quot; means KCC; \&quot;324\&quot; means zkSync Era; \&quot;10001\&quot; means ETHW; \&quot;201022\&quot; means FON; \&quot;42161\&quot; means Arbitrum;  \&quot;43114\&quot; means Avalanche; \&quot;59140\&quot; means Linea; \&quot;1666600000\&quot; means Harmony; \&quot;tron\&quot; means Tron. (required)
      * @param contractAddresses The contract address of tokens. (required)
-     * @param authorization Authorization (test：Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW...) (optional)
+     * @param authorization Authorization (test: Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW...) (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -261,9 +261,9 @@ public class TokenControllerV1Api {
     /**
      * Get token&#x27;s security and risk data.
      * 
-     * @param chainId The chain_id of the blockchain. \&quot;1\&quot; means Ethereum;  \&quot;10\&quot; means Optimism; “25” means Cronos; \&quot;56\&quot; means BSC;  “66” means OKC; \&quot;100\&quot; means Gnosis; \&quot;128\&quot; means HECO;  \&quot;137\&quot; means Polygon;  \&quot;250\&quot; means Fantom; \&quot;321\&quot; means KCC; \&quot;324\&quot; means zkSync Era; \&quot;10001\&quot; means ETHW; \&quot;201022\&quot; means FON; \&quot;42161\&quot; means Arbitrum;  \&quot;43114\&quot; means Avalanche; \&quot;59140\&quot; means Linea; \&quot;1666600000\&quot; means Harmony; \&quot;tron\&quot; means Tron. (required)
+     * @param chainId The chain_id of the blockchain. \&quot;1\&quot; means Ethereum;  \&quot;10\&quot; means Optimism; \&quot;25\&quot; means Cronos; \&quot;56\&quot; means BSC;  \&quot;66\&quot; means OKC; \&quot;100\&quot; means Gnosis; \&quot;128\&quot; means HECO;  \&quot;137\&quot; means Polygon;  \&quot;250\&quot; means Fantom; \&quot;321\&quot; means KCC; \&quot;324\&quot; means zkSync Era; \&quot;10001\&quot; means ETHW; \&quot;201022\&quot; means FON; \&quot;42161\&quot; means Arbitrum;  \&quot;43114\&quot; means Avalanche; \&quot;59140\&quot; means Linea; \&quot;1666600000\&quot; means Harmony; \&quot;tron\&quot; means Tron. (required)
      * @param contractAddresses The contract address of tokens. (required)
-     * @param authorization Authorization (test：Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW...) (optional)
+     * @param authorization Authorization (test: Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW...) (optional)
      * @return ResponseWrapperTokenSecurity
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -275,9 +275,9 @@ public class TokenControllerV1Api {
     /**
      * Get token&#x27;s security and risk data.
      * 
-     * @param chainId The chain_id of the blockchain. \&quot;1\&quot; means Ethereum;  \&quot;10\&quot; means Optimism; “25” means Cronos; \&quot;56\&quot; means BSC;  “66” means OKC; \&quot;100\&quot; means Gnosis; \&quot;128\&quot; means HECO;  \&quot;137\&quot; means Polygon;  \&quot;250\&quot; means Fantom; \&quot;321\&quot; means KCC; \&quot;324\&quot; means zkSync Era; \&quot;10001\&quot; means ETHW; \&quot;201022\&quot; means FON; \&quot;42161\&quot; means Arbitrum;  \&quot;43114\&quot; means Avalanche; \&quot;59140\&quot; means Linea; \&quot;1666600000\&quot; means Harmony; \&quot;tron\&quot; means Tron. (required)
+     * @param chainId The chain_id of the blockchain. \&quot;1\&quot; means Ethereum;  \&quot;10\&quot; means Optimism; \&quot;25\&quot; means Cronos; \&quot;56\&quot; means BSC;  \&quot;66\&quot; means OKC; \&quot;100\&quot; means Gnosis; \&quot;128\&quot; means HECO;  \&quot;137\&quot; means Polygon;  \&quot;250\&quot; means Fantom; \&quot;321\&quot; means KCC; \&quot;324\&quot; means zkSync Era; \&quot;10001\&quot; means ETHW; \&quot;201022\&quot; means FON; \&quot;42161\&quot; means Arbitrum;  \&quot;43114\&quot; means Avalanche; \&quot;59140\&quot; means Linea; \&quot;1666600000\&quot; means Harmony; \&quot;tron\&quot; means Tron. (required)
      * @param contractAddresses The contract address of tokens. (required)
-     * @param authorization Authorization (test：Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW...) (optional)
+     * @param authorization Authorization (test: Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW...) (optional)
      * @return ApiResponse&lt;ResponseWrapperTokenSecurity&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -290,9 +290,9 @@ public class TokenControllerV1Api {
     /**
      * Get token&#x27;s security and risk data. (asynchronously)
      * 
-     * @param chainId The chain_id of the blockchain. \&quot;1\&quot; means Ethereum;  \&quot;10\&quot; means Optimism; “25” means Cronos; \&quot;56\&quot; means BSC;  “66” means OKC; \&quot;100\&quot; means Gnosis; \&quot;128\&quot; means HECO;  \&quot;137\&quot; means Polygon;  \&quot;250\&quot; means Fantom; \&quot;321\&quot; means KCC; \&quot;324\&quot; means zkSync Era; \&quot;10001\&quot; means ETHW; \&quot;201022\&quot; means FON; \&quot;42161\&quot; means Arbitrum;  \&quot;43114\&quot; means Avalanche; \&quot;59140\&quot; means Linea; \&quot;1666600000\&quot; means Harmony; \&quot;tron\&quot; means Tron. (required)
+     * @param chainId The chain_id of the blockchain. \&quot;1\&quot; means Ethereum;  \&quot;10\&quot; means Optimism; \&quot;25\&quot; means Cronos; \&quot;56\&quot; means BSC;  \&quot;66\&quot; means OKC; \&quot;100\&quot; means Gnosis; \&quot;128\&quot; means HECO;  \&quot;137\&quot; means Polygon;  \&quot;250\&quot; means Fantom; \&quot;321\&quot; means KCC; \&quot;324\&quot; means zkSync Era; \&quot;10001\&quot; means ETHW; \&quot;201022\&quot; means FON; \&quot;42161\&quot; means Arbitrum;  \&quot;43114\&quot; means Avalanche; \&quot;59140\&quot; means Linea; \&quot;1666600000\&quot; means Harmony; \&quot;tron\&quot; means Tron. (required)
      * @param contractAddresses The contract address of tokens. (required)
-     * @param authorization Authorization (test：Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW...) (optional)
+     * @param authorization Authorization (test: Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW...) (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object

@@ -57,7 +57,7 @@ public class NftControllerApi {
      * Build call for getNftInfoUsingGET1
      * @param chainId Chain id, (eth: 1, bsc: 56, Polygon: 137, Avalanche: 43114) (required)
      * @param contractAddresses NFT contract address (required)
-     * @param authorization Authorization (test：Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW...) (optional)
+     * @param authorization Authorization (test: Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW...) (optional)
      * @param tokenId tokenId (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -137,7 +137,7 @@ public class NftControllerApi {
      * 
      * @param chainId Chain id, (eth: 1, bsc: 56, Polygon: 137, Avalanche: 43114) (required)
      * @param contractAddresses NFT contract address (required)
-     * @param authorization Authorization (test：Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW...) (optional)
+     * @param authorization Authorization (test: Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW...) (optional)
      * @param tokenId tokenId (optional)
      * @return ResponseWrapperGetNftInfo
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -152,7 +152,7 @@ public class NftControllerApi {
      * 
      * @param chainId Chain id, (eth: 1, bsc: 56, Polygon: 137, Avalanche: 43114) (required)
      * @param contractAddresses NFT contract address (required)
-     * @param authorization Authorization (test：Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW...) (optional)
+     * @param authorization Authorization (test: Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW...) (optional)
      * @param tokenId tokenId (optional)
      * @return ApiResponse&lt;ResponseWrapperGetNftInfo&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -168,7 +168,7 @@ public class NftControllerApi {
      * 
      * @param chainId Chain id, (eth: 1, bsc: 56, Polygon: 137, Avalanche: 43114) (required)
      * @param contractAddresses NFT contract address (required)
-     * @param authorization Authorization (test：Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW...) (optional)
+     * @param authorization Authorization (test: Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW...) (optional)
      * @param tokenId tokenId (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call

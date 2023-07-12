@@ -26,7 +26,7 @@ import java.io.IOException;
  * GetDefiInfoResponse
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-07-06T09:52:32.634171989Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-07-12T10:15:49.495196307Z[Etc/UTC]")
 
 public class GetDefiInfoResponse {
   @SerializedName("code")
@@ -44,10 +44,10 @@ public class GetDefiInfoResponse {
   }
 
    /**
-   * Code 1：Success
+   * Code 1: Success
    * @return code
   **/
-  @Schema(description = "Code 1：Success")
+  @Schema(description = "Code 1: Success")
   public Integer getCode() {
     return code;
   }

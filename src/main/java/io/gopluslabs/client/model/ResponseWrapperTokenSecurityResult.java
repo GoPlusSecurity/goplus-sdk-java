@@ -29,7 +29,7 @@ import java.util.List;
  * key is contract address
  */
 @Schema(description = "key is contract address")
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-07-06T09:52:32.634171989Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-07-12T10:15:49.495196307Z[Etc/UTC]")
 
 public class ResponseWrapperTokenSecurityResult {
   @SerializedName("note")
@@ -164,10 +164,10 @@ public class ResponseWrapperTokenSecurityResult {
   }
 
    /**
-   * It describes whether the contract has other things investors need to know.  Example:  \&quot;note”: “Contract owner is a multisign contract.”(Notice:(1) If we haven&#x27;t found any other thing which is valuable yet, there will be no return.  (2) Type: string.)
+   * It describes whether the contract has other things investors need to know.  Example:  \&quot;note\&quot;: \&quot;Contract owner is a multisign contract.\&quot;(Notice:(1) If we haven&#x27;t found any other thing which is valuable yet, there will be no return.  (2) Type: string.)
    * @return note
   **/
-  @Schema(description = "It describes whether the contract has other things investors need to know.  Example:  \"note”: “Contract owner is a multisign contract.”(Notice:(1) If we haven't found any other thing which is valuable yet, there will be no return.  (2) Type: string.)")
+  @Schema(description = "It describes whether the contract has other things investors need to know.  Example:  \"note\": \"Contract owner is a multisign contract.\"(Notice:(1) If we haven't found any other thing which is valuable yet, there will be no return.  (2) Type: string.)")
   public String getNote() {
     return note;
   }
@@ -244,10 +244,10 @@ public class ResponseWrapperTokenSecurityResult {
   }
 
    /**
-   * It describes whether the contract has other potential risks. Example: “other_potential_risks”: “Owner can set different transaction taxes for each user, which can trigger serious losses.”(Notice:(1) If we haven&#x27;t found any other potential risk yet, there will be no return.  (2) Type: string.)
+   * It describes whether the contract has other potential risks. Example: \&quot;other_potential_risks\&quot;: \&quot;Owner can set different transaction taxes for each user, which can trigger serious losses.\&quot;(Notice:(1) If we haven&#x27;t found any other potential risk yet, there will be no return.  (2) Type: string.)
    * @return otherPotentialRisks
   **/
-  @Schema(description = "It describes whether the contract has other potential risks. Example: “other_potential_risks”: “Owner can set different transaction taxes for each user, which can trigger serious losses.”(Notice:(1) If we haven't found any other potential risk yet, there will be no return.  (2) Type: string.)")
+  @Schema(description = "It describes whether the contract has other potential risks. Example: \"other_potential_risks\": \"Owner can set different transaction taxes for each user, which can trigger serious losses.\"(Notice:(1) If we haven't found any other potential risk yet, there will be no return.  (2) Type: string.)")
   public String getOtherPotentialRisks() {
     return otherPotentialRisks;
   }
@@ -298,10 +298,10 @@ public class ResponseWrapperTokenSecurityResult {
   }
 
    /**
-   * It describes whether the contract has hidden owners. For contract with a hidden owner, developer can still manipulate the contract even if the ownership has been abandoned. “1” means true; \&quot;0\&quot; means false; No return means unknown.(Notice:(1) When \&quot;is_open_source\&quot;: \&quot;0\&quot;, there will be no return.  (2) Sometimes, when \&quot;is_proxy\&quot;: \&quot;1\&quot;, there will be no return.  (3) Hidden owner is often used by developers to hide ownership and is often accompanied by malicious functionality. When the hidden owner exists, it is assumed that ownership has not been abandoned.)
+   * It describes whether the contract has hidden owners. For contract with a hidden owner, developer can still manipulate the contract even if the ownership has been abandoned. \&quot;1\&quot; means true; \&quot;0\&quot; means false; No return means unknown.(Notice:(1) When \&quot;is_open_source\&quot;: \&quot;0\&quot;, there will be no return.  (2) Sometimes, when \&quot;is_proxy\&quot;: \&quot;1\&quot;, there will be no return.  (3) Hidden owner is often used by developers to hide ownership and is often accompanied by malicious functionality. When the hidden owner exists, it is assumed that ownership has not been abandoned.)
    * @return hiddenOwner
   **/
-  @Schema(description = "It describes whether the contract has hidden owners. For contract with a hidden owner, developer can still manipulate the contract even if the ownership has been abandoned. “1” means true; \"0\" means false; No return means unknown.(Notice:(1) When \"is_open_source\": \"0\", there will be no return.  (2) Sometimes, when \"is_proxy\": \"1\", there will be no return.  (3) Hidden owner is often used by developers to hide ownership and is often accompanied by malicious functionality. When the hidden owner exists, it is assumed that ownership has not been abandoned.)")
+  @Schema(description = "It describes whether the contract has hidden owners. For contract with a hidden owner, developer can still manipulate the contract even if the ownership has been abandoned. \"1\" means true; \"0\" means false; No return means unknown.(Notice:(1) When \"is_open_source\": \"0\", there will be no return.  (2) Sometimes, when \"is_proxy\": \"1\", there will be no return.  (3) Hidden owner is often used by developers to hide ownership and is often accompanied by malicious functionality. When the hidden owner exists, it is assumed that ownership has not been abandoned.)")
   public String getHiddenOwner() {
     return hiddenOwner;
   }
@@ -890,10 +890,10 @@ public class ResponseWrapperTokenSecurityResult {
   }
 
    /**
-   * It deiscribes whether the Token can be bought. \&quot;1\&quot; means true;  \&quot;0\&quot; means false;  No return means unknown.(Notice:(1) Generally, \&quot;cannot_buy\&quot;: \&quot;1\&quot; would be found in Reward Tokens. Such Tokens are issued as rewards for some on-chain applications and cannot be bought directly by users. (2) Sometimes token&#x27;s anti-bot mechanism would affect our sandbox system, causing the display of \&quot;buy_tax\&quot;: \&quot;1\&quot;. (3) When “cannot_buy”: \&quot;1\&quot;, our sandbox system might be bloked, causing the display of \&quot;buy_tax\&quot;: \&quot;1\&quot; and \&quot;sell_tax\&quot;: \&quot;1\&quot;)
+   * It deiscribes whether the Token can be bought. \&quot;1\&quot; means true;  \&quot;0\&quot; means false;  No return means unknown.(Notice:(1) Generally, \&quot;cannot_buy\&quot;: \&quot;1\&quot; would be found in Reward Tokens. Such Tokens are issued as rewards for some on-chain applications and cannot be bought directly by users. (2) Sometimes token&#x27;s anti-bot mechanism would affect our sandbox system, causing the display of \&quot;buy_tax\&quot;: \&quot;1\&quot;. (3) When \&quot;cannot_buy\&quot;: \&quot;1\&quot;, our sandbox system might be bloked, causing the display of \&quot;buy_tax\&quot;: \&quot;1\&quot; and \&quot;sell_tax\&quot;: \&quot;1\&quot;)
    * @return cannotBuy
   **/
-  @Schema(description = "It deiscribes whether the Token can be bought. \"1\" means true;  \"0\" means false;  No return means unknown.(Notice:(1) Generally, \"cannot_buy\": \"1\" would be found in Reward Tokens. Such Tokens are issued as rewards for some on-chain applications and cannot be bought directly by users. (2) Sometimes token's anti-bot mechanism would affect our sandbox system, causing the display of \"buy_tax\": \"1\". (3) When “cannot_buy”: \"1\", our sandbox system might be bloked, causing the display of \"buy_tax\": \"1\" and \"sell_tax\": \"1\")")
+  @Schema(description = "It deiscribes whether the Token can be bought. \"1\" means true;  \"0\" means false;  No return means unknown.(Notice:(1) Generally, \"cannot_buy\": \"1\" would be found in Reward Tokens. Such Tokens are issued as rewards for some on-chain applications and cannot be bought directly by users. (2) Sometimes token's anti-bot mechanism would affect our sandbox system, causing the display of \"buy_tax\": \"1\". (3) When \"cannot_buy\": \"1\", our sandbox system might be bloked, causing the display of \"buy_tax\": \"1\" and \"sell_tax\": \"1\")")
   public String getCannotBuy() {
     return cannotBuy;
   }

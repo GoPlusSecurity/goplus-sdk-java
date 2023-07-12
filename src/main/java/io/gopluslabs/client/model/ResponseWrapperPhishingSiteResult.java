@@ -27,7 +27,7 @@ import java.util.List;
  * Response result
  */
 @Schema(description = "Response result")
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-07-06T09:52:32.634171989Z[Etc/UTC]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-07-12T10:15:49.495196307Z[Etc/UTC]")
 
 public class ResponseWrapperPhishingSiteResult {
   @SerializedName("website_contract_security")

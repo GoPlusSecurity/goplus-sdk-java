@@ -57,7 +57,7 @@ public class DefiControllerApi {
      * Build call for getDefiInfoUsingGET
      * @param contractAddresses Defi protocol address (required)
      * @param chainId Chain id, (eth: 1, bsc: 56) (required)
-     * @param authorization Authorization (test：Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW...) (optional)
+     * @param authorization Authorization (test: Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW...) (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -134,7 +134,7 @@ public class DefiControllerApi {
      * 
      * @param contractAddresses Defi protocol address (required)
      * @param chainId Chain id, (eth: 1, bsc: 56) (required)
-     * @param authorization Authorization (test：Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW...) (optional)
+     * @param authorization Authorization (test: Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW...) (optional)
      * @return GetDefiInfoResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -148,7 +148,7 @@ public class DefiControllerApi {
      * 
      * @param contractAddresses Defi protocol address (required)
      * @param chainId Chain id, (eth: 1, bsc: 56) (required)
-     * @param authorization Authorization (test：Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW...) (optional)
+     * @param authorization Authorization (test: Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW...) (optional)
      * @return ApiResponse&lt;GetDefiInfoResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -163,7 +163,7 @@ public class DefiControllerApi {
      * 
      * @param contractAddresses Defi protocol address (required)
      * @param chainId Chain id, (eth: 1, bsc: 56) (required)
-     * @param authorization Authorization (test：Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW...) (optional)
+     * @param authorization Authorization (test: Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW...) (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
