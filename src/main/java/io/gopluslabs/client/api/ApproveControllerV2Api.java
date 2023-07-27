@@ -132,8 +132,8 @@ public class ApproveControllerV2Api {
     }
 
     /**
-     * Check risk of all erc1155 approvals under one EOA.
-     * 
+     * Returns the ERC-1155 approvals of an EOA address and associated risk items.
+     * Reports the outstanding token approvals issued to ERC-1155 contracts by the given EOA address and associated risk items, including the date that the approval was issued, the allowance of the approval, and the transaction ID issuing the allowance.
      * @param addresses contract address (required)
      * @param chainId chain id (required)
      * @param authorization Authorization (test: Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW...) (optional)
@@ -146,8 +146,8 @@ public class ApproveControllerV2Api {
     }
 
     /**
-     * Check risk of all erc1155 approvals under one EOA.
-     * 
+     * Returns the ERC-1155 approvals of an EOA address and associated risk items.
+     * Reports the outstanding token approvals issued to ERC-1155 contracts by the given EOA address and associated risk items, including the date that the approval was issued, the allowance of the approval, and the transaction ID issuing the allowance.
      * @param addresses contract address (required)
      * @param chainId chain id (required)
      * @param authorization Authorization (test: Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW...) (optional)
@@ -161,8 +161,8 @@ public class ApproveControllerV2Api {
     }
 
     /**
-     * Check risk of all erc1155 approvals under one EOA. (asynchronously)
-     * 
+     * Returns the ERC-1155 approvals of an EOA address and associated risk items. (asynchronously)
+     * Reports the outstanding token approvals issued to ERC-1155 contracts by the given EOA address and associated risk items, including the date that the approval was issued, the allowance of the approval, and the transaction ID issuing the allowance.
      * @param addresses contract address (required)
      * @param chainId chain id (required)
      * @param authorization Authorization (test: Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW...) (optional)
@@ -273,8 +273,8 @@ public class ApproveControllerV2Api {
     }
 
     /**
-     * Check risk of all erc721 approvals under one EOA.
-     * 
+     * Returns the ERC-721 approvals of an EOA address and associated risk items.
+     * Reports the outstanding token approvals issued to ERC-721 contracts by the given EOA address and associated risk items, including the date that the approval was issued, the allowance of the approval, and the transaction ID issuing the allowance.
      * @param addresses contract address (required)
      * @param chainId chain id (required)
      * @param authorization Authorization (test: Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW...) (optional)
@@ -287,8 +287,8 @@ public class ApproveControllerV2Api {
     }
 
     /**
-     * Check risk of all erc721 approvals under one EOA.
-     * 
+     * Returns the ERC-721 approvals of an EOA address and associated risk items.
+     * Reports the outstanding token approvals issued to ERC-721 contracts by the given EOA address and associated risk items, including the date that the approval was issued, the allowance of the approval, and the transaction ID issuing the allowance.
      * @param addresses contract address (required)
      * @param chainId chain id (required)
      * @param authorization Authorization (test: Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW...) (optional)
@@ -302,8 +302,8 @@ public class ApproveControllerV2Api {
     }
 
     /**
-     * Check risk of all erc721 approvals under one EOA. (asynchronously)
-     * 
+     * Returns the ERC-721 approvals of an EOA address and associated risk items. (asynchronously)
+     * Reports the outstanding token approvals issued to ERC-721 contracts by the given EOA address and associated risk items, including the date that the approval was issued, the allowance of the approval, and the transaction ID issuing the allowance.
      * @param addresses contract address (required)
      * @param chainId chain id (required)
      * @param authorization Authorization (test: Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW...) (optional)
@@ -414,8 +414,8 @@ public class ApproveControllerV2Api {
     }
 
     /**
-     * Check risk of all erc20 approvals under one EOA.
-     * 
+     * Returns the ERC-20 approvals of an EOA address and associated risk items.
+     * Reports the outstanding token approvals issued to ERC-20 contracts by the given EOA address and associated risk items, including the date that the approval was issued, the allowance of the approval, and the transaction ID issuing the allowance.
      * @param addresses contract address (required)
      * @param chainId chain id (required)
      * @param authorization Authorization (test: Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW...) (optional)
@@ -428,8 +428,8 @@ public class ApproveControllerV2Api {
     }
 
     /**
-     * Check risk of all erc20 approvals under one EOA.
-     * 
+     * Returns the ERC-20 approvals of an EOA address and associated risk items.
+     * Reports the outstanding token approvals issued to ERC-20 contracts by the given EOA address and associated risk items, including the date that the approval was issued, the allowance of the approval, and the transaction ID issuing the allowance.
      * @param addresses contract address (required)
      * @param chainId chain id (required)
      * @param authorization Authorization (test: Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW...) (optional)
@@ -443,8 +443,8 @@ public class ApproveControllerV2Api {
     }
 
     /**
-     * Check risk of all erc20 approvals under one EOA. (asynchronously)
-     * 
+     * Returns the ERC-20 approvals of an EOA address and associated risk items. (asynchronously)
+     * Reports the outstanding token approvals issued to ERC-20 contracts by the given EOA address and associated risk items, including the date that the approval was issued, the allowance of the approval, and the transaction ID issuing the allowance.
      * @param addresses contract address (required)
      * @param chainId chain id (required)
      * @param authorization Authorization (test: Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW...) (optional)
