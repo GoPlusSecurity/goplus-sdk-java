@@ -12,7 +12,7 @@
 
 package io.gopluslabs.client;
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-07-27T08:37:03.140494914Z[Etc/UTC]")
+
 public class Pair {
     private String name = "";
     private String value = "";

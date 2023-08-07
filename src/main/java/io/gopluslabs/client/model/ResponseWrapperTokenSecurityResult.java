@@ -29,7 +29,7 @@ import java.util.List;
  * key is contract address
  */
 @Schema(description = "key is contract address")
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-07-27T08:37:03.140494914Z[Etc/UTC]")
+
 
 public class ResponseWrapperTokenSecurityResult {
   @SerializedName("note")
