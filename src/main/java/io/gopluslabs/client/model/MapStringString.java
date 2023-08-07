@@ -20,7 +20,7 @@ import java.util.Map;
  * MapStringString
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-07-27T08:37:03.140494914Z[Etc/UTC]")
+
 
 public class MapStringString extends HashMap<String, String> {
 
