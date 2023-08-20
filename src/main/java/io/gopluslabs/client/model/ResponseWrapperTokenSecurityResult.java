@@ -74,6 +74,9 @@ public class ResponseWrapperTokenSecurityResult {
   @SerializedName("is_honeypot")
   private String isHoneypot = null;
 
+  @SerializedName("honeypot_with_same_creator")
+  private String honeypotWithSameCreator = null;
+
   @SerializedName("holders")
   private List<ResponseWrapperTokenSecurityLpHolders> holders = null;
 
@@ -416,6 +419,24 @@ public class ResponseWrapperTokenSecurityResult {
 
   public void setIsHoneypot(String isHoneypot) {
     this.isHoneypot = isHoneypot;
+  }
+
+  public ResponseWrapperTokenSecurityResult honeypotWithSameCreator(String honeypotWithSameCreator) {
+    this.honeypotWithSameCreator = honeypotWithSameCreator;
+    return this;
+  }
+
+   /**
+   * It describes the number of honeypot tokens created by this creator.
+   * @return honeypotWithSameCreator
+  **/
+  @Schema(description = "It describes the number of honeypot tokens created by this creator.")
+  public String getHoneypotWithSameCreator() {
+    return honeypotWithSameCreator;
+  }
+
+  public void setHoneypotWithSameCreator(String honeypotWithSameCreator) {
+    this.honeypotWithSameCreator = honeypotWithSameCreator;
   }
 
   public ResponseWrapperTokenSecurityResult holders(List<ResponseWrapperTokenSecurityLpHolders> holders) {
@@ -962,6 +983,7 @@ public class ResponseWrapperTokenSecurityResult {
         Objects.equals(this.holderCount, responseWrapperTokenSecurityResult.holderCount) &&
         Objects.equals(this.trustList, responseWrapperTokenSecurityResult.trustList) &&
         Objects.equals(this.isHoneypot, responseWrapperTokenSecurityResult.isHoneypot) &&
+        Objects.equals(this.honeypotWithSameCreator, responseWrapperTokenSecurityResult.honeypotWithSameCreator) &&
         Objects.equals(this.holders, responseWrapperTokenSecurityResult.holders) &&
         Objects.equals(this.dex, responseWrapperTokenSecurityResult.dex) &&
         Objects.equals(this.isOpenSource, responseWrapperTokenSecurityResult.isOpenSource) &&
@@ -994,7 +1016,7 @@ public class ResponseWrapperTokenSecurityResult {
 
   @Override
   public int hashCode() {
-    return Objects.hash(note, lpTotalSupply, lpHolders, isAirdropScam, otherPotentialRisks, transferPausable, tradingCooldown, hiddenOwner, selfdestruct, ownerPercent, isWhitelisted, holderCount, trustList, isHoneypot, holders, dex, isOpenSource, sellTax, tokenName, creatorAddress, creatorPercent, isProxy, creatorBalance, isInDex, ownerBalance, totalSupply, isTrueToken, canTakeBackOwnership, isBlacklisted, ownerAddress, slippageModifiable, buyTax, externalCall, cannotSellAll, lpHolderCount, personalSlippageModifiable, isAntiWhale, isMintable, ownerChangeBalance, cannotBuy, antiWhaleModifiable, tokenSymbol);
+    return Objects.hash(note, lpTotalSupply, lpHolders, isAirdropScam, otherPotentialRisks, transferPausable, tradingCooldown, hiddenOwner, selfdestruct, ownerPercent, isWhitelisted, holderCount, trustList, isHoneypot, honeypotWithSameCreator, holders, dex, isOpenSource, sellTax, tokenName, creatorAddress, creatorPercent, isProxy, creatorBalance, isInDex, ownerBalance, totalSupply, isTrueToken, canTakeBackOwnership, isBlacklisted, ownerAddress, slippageModifiable, buyTax, externalCall, cannotSellAll, lpHolderCount, personalSlippageModifiable, isAntiWhale, isMintable, ownerChangeBalance, cannotBuy, antiWhaleModifiable, tokenSymbol);
   }
 
 
@@ -1017,6 +1039,7 @@ public class ResponseWrapperTokenSecurityResult {
     sb.append("    holderCount: ").append(toIndentedString(holderCount)).append("\n");
     sb.append("    trustList: ").append(toIndentedString(trustList)).append("\n");
     sb.append("    isHoneypot: ").append(toIndentedString(isHoneypot)).append("\n");
+    sb.append("    honeypotWithSameCreator: ").append(toIndentedString(honeypotWithSameCreator)).append("\n");
     sb.append("    holders: ").append(toIndentedString(holders)).append("\n");
     sb.append("    dex: ").append(toIndentedString(dex)).append("\n");
     sb.append("    isOpenSource: ").append(toIndentedString(isOpenSource)).append("\n");
