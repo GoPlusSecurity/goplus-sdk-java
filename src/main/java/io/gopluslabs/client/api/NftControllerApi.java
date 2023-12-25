@@ -55,7 +55,7 @@ public class NftControllerApi {
 
     /**
      * Build call for getNftInfoUsingGET1
-     * @param chainId Chain id, (eth: 1, bsc: 56, Polygon: 137, Avalanche: 43114) (required)
+     * @param chainId The chain_id of the blockchain.\&quot;1\&quot; means Ethereum; \&quot;10\&quot; means Optimism;\&quot;25\&quot; means Cronos;\&quot;56\&quot; means BSC;  \&quot;100\&quot; means Gnosis;\&quot;128\&quot; means HECO; \&quot;137\&quot; means Polygon; \&quot;250\&quot; means Fantom;\&quot;321\&quot; means KCC;\&quot;324\&quot; means zkSync Era; \&quot;201022\&quot; means FON;\&quot;42161\&quot; means Arbitrum; \&quot;43114\&quot; means Avalanche;\&quot;59144\&quot; means Linea Mainnet;\&quot;8453\&quot; Base;\&quot;5000\&quot; Mantle; (required)
      * @param contractAddresses NFT contract address (required)
      * @param authorization Authorization (test: Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW...) (optional)
      * @param tokenId tokenId (optional)
@@ -135,7 +135,7 @@ public class NftControllerApi {
     /**
      * Get NFT&#x27;s security and risk data.
      * 
-     * @param chainId Chain id, (eth: 1, bsc: 56, Polygon: 137, Avalanche: 43114) (required)
+     * @param chainId The chain_id of the blockchain.\&quot;1\&quot; means Ethereum; \&quot;10\&quot; means Optimism;\&quot;25\&quot; means Cronos;\&quot;56\&quot; means BSC;  \&quot;100\&quot; means Gnosis;\&quot;128\&quot; means HECO; \&quot;137\&quot; means Polygon; \&quot;250\&quot; means Fantom;\&quot;321\&quot; means KCC;\&quot;324\&quot; means zkSync Era; \&quot;201022\&quot; means FON;\&quot;42161\&quot; means Arbitrum; \&quot;43114\&quot; means Avalanche;\&quot;59144\&quot; means Linea Mainnet;\&quot;8453\&quot; Base;\&quot;5000\&quot; Mantle; (required)
      * @param contractAddresses NFT contract address (required)
      * @param authorization Authorization (test: Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW...) (optional)
      * @param tokenId tokenId (optional)
@@ -150,7 +150,7 @@ public class NftControllerApi {
     /**
      * Get NFT&#x27;s security and risk data.
      * 
-     * @param chainId Chain id, (eth: 1, bsc: 56, Polygon: 137, Avalanche: 43114) (required)
+     * @param chainId The chain_id of the blockchain.\&quot;1\&quot; means Ethereum; \&quot;10\&quot; means Optimism;\&quot;25\&quot; means Cronos;\&quot;56\&quot; means BSC;  \&quot;100\&quot; means Gnosis;\&quot;128\&quot; means HECO; \&quot;137\&quot; means Polygon; \&quot;250\&quot; means Fantom;\&quot;321\&quot; means KCC;\&quot;324\&quot; means zkSync Era; \&quot;201022\&quot; means FON;\&quot;42161\&quot; means Arbitrum; \&quot;43114\&quot; means Avalanche;\&quot;59144\&quot; means Linea Mainnet;\&quot;8453\&quot; Base;\&quot;5000\&quot; Mantle; (required)
      * @param contractAddresses NFT contract address (required)
      * @param authorization Authorization (test: Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW...) (optional)
      * @param tokenId tokenId (optional)
@@ -166,7 +166,7 @@ public class NftControllerApi {
     /**
      * Get NFT&#x27;s security and risk data. (asynchronously)
      * 
-     * @param chainId Chain id, (eth: 1, bsc: 56, Polygon: 137, Avalanche: 43114) (required)
+     * @param chainId The chain_id of the blockchain.\&quot;1\&quot; means Ethereum; \&quot;10\&quot; means Optimism;\&quot;25\&quot; means Cronos;\&quot;56\&quot; means BSC;  \&quot;100\&quot; means Gnosis;\&quot;128\&quot; means HECO; \&quot;137\&quot; means Polygon; \&quot;250\&quot; means Fantom;\&quot;321\&quot; means KCC;\&quot;324\&quot; means zkSync Era; \&quot;201022\&quot; means FON;\&quot;42161\&quot; means Arbitrum; \&quot;43114\&quot; means Avalanche;\&quot;59144\&quot; means Linea Mainnet;\&quot;8453\&quot; Base;\&quot;5000\&quot; Mantle; (required)
      * @param contractAddresses NFT contract address (required)
      * @param authorization Authorization (test: Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW...) (optional)
      * @param tokenId tokenId (optional)

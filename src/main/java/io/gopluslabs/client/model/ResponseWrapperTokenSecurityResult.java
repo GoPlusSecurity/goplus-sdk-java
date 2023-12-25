@@ -20,6 +20,8 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.gopluslabs.client.model.ResponseWrapperTokenSecurityDex;
+import io.gopluslabs.client.model.ResponseWrapperTokenSecurityFakeToken;
+import io.gopluslabs.client.model.ResponseWrapperTokenSecurityHolders;
 import io.gopluslabs.client.model.ResponseWrapperTokenSecurityLpHolders;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
@@ -78,7 +80,7 @@ public class ResponseWrapperTokenSecurityResult {
   private String honeypotWithSameCreator = null;
 
   @SerializedName("holders")
-  private List<ResponseWrapperTokenSecurityLpHolders> holders = null;
+  private List<ResponseWrapperTokenSecurityHolders> holders = null;
 
   @SerializedName("dex")
   private List<ResponseWrapperTokenSecurityDex> dex = null;
@@ -91,6 +93,9 @@ public class ResponseWrapperTokenSecurityResult {
 
   @SerializedName("token_name")
   private String tokenName = null;
+
+  @SerializedName("fake_token")
+  private ResponseWrapperTokenSecurityFakeToken fakeToken = null;
 
   @SerializedName("creator_address")
   private String creatorAddress = null;
@@ -439,14 +444,14 @@ public class ResponseWrapperTokenSecurityResult {
     this.honeypotWithSameCreator = honeypotWithSameCreator;
   }
 
-  public ResponseWrapperTokenSecurityResult holders(List<ResponseWrapperTokenSecurityLpHolders> holders) {
+  public ResponseWrapperTokenSecurityResult holders(List<ResponseWrapperTokenSecurityHolders> holders) {
     this.holders = holders;
     return this;
   }
 
-  public ResponseWrapperTokenSecurityResult addHoldersItem(ResponseWrapperTokenSecurityLpHolders holdersItem) {
+  public ResponseWrapperTokenSecurityResult addHoldersItem(ResponseWrapperTokenSecurityHolders holdersItem) {
     if (this.holders == null) {
-      this.holders = new ArrayList<ResponseWrapperTokenSecurityLpHolders>();
+      this.holders = new ArrayList<ResponseWrapperTokenSecurityHolders>();
     }
     this.holders.add(holdersItem);
     return this;
@@ -457,11 +462,11 @@ public class ResponseWrapperTokenSecurityResult {
    * @return holders
   **/
   @Schema(description = "Top10 holders info")
-  public List<ResponseWrapperTokenSecurityLpHolders> getHolders() {
+  public List<ResponseWrapperTokenSecurityHolders> getHolders() {
     return holders;
   }
 
-  public void setHolders(List<ResponseWrapperTokenSecurityLpHolders> holders) {
+  public void setHolders(List<ResponseWrapperTokenSecurityHolders> holders) {
     this.holders = holders;
   }
 
@@ -543,6 +548,24 @@ public class ResponseWrapperTokenSecurityResult {
 
   public void setTokenName(String tokenName) {
     this.tokenName = tokenName;
+  }
+
+  public ResponseWrapperTokenSecurityResult fakeToken(ResponseWrapperTokenSecurityFakeToken fakeToken) {
+    this.fakeToken = fakeToken;
+    return this;
+  }
+
+   /**
+   * Get fakeToken
+   * @return fakeToken
+  **/
+  @Schema(description = "")
+  public ResponseWrapperTokenSecurityFakeToken getFakeToken() {
+    return fakeToken;
+  }
+
+  public void setFakeToken(ResponseWrapperTokenSecurityFakeToken fakeToken) {
+    this.fakeToken = fakeToken;
   }
 
   public ResponseWrapperTokenSecurityResult creatorAddress(String creatorAddress) {
@@ -989,6 +1012,7 @@ public class ResponseWrapperTokenSecurityResult {
         Objects.equals(this.isOpenSource, responseWrapperTokenSecurityResult.isOpenSource) &&
         Objects.equals(this.sellTax, responseWrapperTokenSecurityResult.sellTax) &&
         Objects.equals(this.tokenName, responseWrapperTokenSecurityResult.tokenName) &&
+        Objects.equals(this.fakeToken, responseWrapperTokenSecurityResult.fakeToken) &&
         Objects.equals(this.creatorAddress, responseWrapperTokenSecurityResult.creatorAddress) &&
         Objects.equals(this.creatorPercent, responseWrapperTokenSecurityResult.creatorPercent) &&
         Objects.equals(this.isProxy, responseWrapperTokenSecurityResult.isProxy) &&
@@ -1016,7 +1040,7 @@ public class ResponseWrapperTokenSecurityResult {
 
   @Override
   public int hashCode() {
-    return Objects.hash(note, lpTotalSupply, lpHolders, isAirdropScam, otherPotentialRisks, transferPausable, tradingCooldown, hiddenOwner, selfdestruct, ownerPercent, isWhitelisted, holderCount, trustList, isHoneypot, honeypotWithSameCreator, holders, dex, isOpenSource, sellTax, tokenName, creatorAddress, creatorPercent, isProxy, creatorBalance, isInDex, ownerBalance, totalSupply, isTrueToken, canTakeBackOwnership, isBlacklisted, ownerAddress, slippageModifiable, buyTax, externalCall, cannotSellAll, lpHolderCount, personalSlippageModifiable, isAntiWhale, isMintable, ownerChangeBalance, cannotBuy, antiWhaleModifiable, tokenSymbol);
+    return Objects.hash(note, lpTotalSupply, lpHolders, isAirdropScam, otherPotentialRisks, transferPausable, tradingCooldown, hiddenOwner, selfdestruct, ownerPercent, isWhitelisted, holderCount, trustList, isHoneypot, honeypotWithSameCreator, holders, dex, isOpenSource, sellTax, tokenName, fakeToken, creatorAddress, creatorPercent, isProxy, creatorBalance, isInDex, ownerBalance, totalSupply, isTrueToken, canTakeBackOwnership, isBlacklisted, ownerAddress, slippageModifiable, buyTax, externalCall, cannotSellAll, lpHolderCount, personalSlippageModifiable, isAntiWhale, isMintable, ownerChangeBalance, cannotBuy, antiWhaleModifiable, tokenSymbol);
   }
 
 
@@ -1045,6 +1069,7 @@ public class ResponseWrapperTokenSecurityResult {
     sb.append("    isOpenSource: ").append(toIndentedString(isOpenSource)).append("\n");
     sb.append("    sellTax: ").append(toIndentedString(sellTax)).append("\n");
     sb.append("    tokenName: ").append(toIndentedString(tokenName)).append("\n");
+    sb.append("    fakeToken: ").append(toIndentedString(fakeToken)).append("\n");
     sb.append("    creatorAddress: ").append(toIndentedString(creatorAddress)).append("\n");
     sb.append("    creatorPercent: ").append(toIndentedString(creatorPercent)).append("\n");
     sb.append("    isProxy: ").append(toIndentedString(isProxy)).append("\n");

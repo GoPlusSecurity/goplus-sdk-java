@@ -79,10 +79,10 @@ public class GetAccessTokenRequest {
   }
 
    /**
-   * Quest timestamp (Second)
+   * Quest timestamp (Second), should be within +-1000s around current timestamp
    * @return time
   **/
-  @Schema(required = true, description = "Quest timestamp (Second)")
+  @Schema(required = true, description = "Quest timestamp (Second), should be within +-1000s around current timestamp")
   public Long getTime() {
     return time;
   }
