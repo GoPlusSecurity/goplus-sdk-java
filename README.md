@@ -12,7 +12,7 @@ JDK >= 1.8
 <dependency>
     <groupId>io.gopluslabs</groupId>
     <artifactId>goplus-sdk-java</artifactId>
-    <version>0.1.3</version>
+    <version>0.1.4</version>
 </dependency>
 ```
 
