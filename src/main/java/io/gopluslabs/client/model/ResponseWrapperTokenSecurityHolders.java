@@ -20,18 +20,17 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.gopluslabs.client.model.ResponseWrapperTokenSecurityLockedDetail;
-import io.gopluslabs.client.model.ResponseWrapperTokenSecurityNFTList;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 /**
- * ResponseWrapperTokenSecurityLpHolders
+ * ResponseWrapperTokenSecurityHolders
  */
 
 
 
-public class ResponseWrapperTokenSecurityLpHolders {
+public class ResponseWrapperTokenSecurityHolders {
   @SerializedName("is_locked")
   private Integer isLocked = null;
 
@@ -44,9 +43,6 @@ public class ResponseWrapperTokenSecurityLpHolders {
   @SerializedName("balance")
   private String balance = null;
 
-  @SerializedName("NFT_list")
-  private List<ResponseWrapperTokenSecurityNFTList> nfTList = null;
-
   @SerializedName("locked_detail")
   private List<ResponseWrapperTokenSecurityLockedDetail> lockedDetail = null;
 
@@ -56,7 +52,7 @@ public class ResponseWrapperTokenSecurityLpHolders {
   @SerializedName("percent")
   private String percent = null;
 
-  public ResponseWrapperTokenSecurityLpHolders isLocked(Integer isLocked) {
+  public ResponseWrapperTokenSecurityHolders isLocked(Integer isLocked) {
     this.isLocked = isLocked;
     return this;
   }
@@ -74,7 +70,7 @@ public class ResponseWrapperTokenSecurityLpHolders {
     this.isLocked = isLocked;
   }
 
-  public ResponseWrapperTokenSecurityLpHolders isContract(Integer isContract) {
+  public ResponseWrapperTokenSecurityHolders isContract(Integer isContract) {
     this.isContract = isContract;
     return this;
   }
@@ -92,7 +88,7 @@ public class ResponseWrapperTokenSecurityLpHolders {
     this.isContract = isContract;
   }
 
-  public ResponseWrapperTokenSecurityLpHolders address(String address) {
+  public ResponseWrapperTokenSecurityHolders address(String address) {
     this.address = address;
     return this;
   }
@@ -110,7 +106,7 @@ public class ResponseWrapperTokenSecurityLpHolders {
     this.address = address;
   }
 
-  public ResponseWrapperTokenSecurityLpHolders balance(String balance) {
+  public ResponseWrapperTokenSecurityHolders balance(String balance) {
     this.balance = balance;
     return this;
   }
@@ -128,38 +124,12 @@ public class ResponseWrapperTokenSecurityLpHolders {
     this.balance = balance;
   }
 
-  public ResponseWrapperTokenSecurityLpHolders nfTList(List<ResponseWrapperTokenSecurityNFTList> nfTList) {
-    this.nfTList = nfTList;
-    return this;
-  }
-
-  public ResponseWrapperTokenSecurityLpHolders addNfTListItem(ResponseWrapperTokenSecurityNFTList nfTListItem) {
-    if (this.nfTList == null) {
-      this.nfTList = new ArrayList<ResponseWrapperTokenSecurityNFTList>();
-    }
-    this.nfTList.add(nfTListItem);
-    return this;
-  }
-
-   /**
-   * It is an array, decribes nft list
-   * @return nfTList
-  **/
-  @Schema(description = "It is an array, decribes nft list")
-  public List<ResponseWrapperTokenSecurityNFTList> getNfTList() {
-    return nfTList;
-  }
-
-  public void setNfTList(List<ResponseWrapperTokenSecurityNFTList> nfTList) {
-    this.nfTList = nfTList;
-  }
-
-  public ResponseWrapperTokenSecurityLpHolders lockedDetail(List<ResponseWrapperTokenSecurityLockedDetail> lockedDetail) {
+  public ResponseWrapperTokenSecurityHolders lockedDetail(List<ResponseWrapperTokenSecurityLockedDetail> lockedDetail) {
     this.lockedDetail = lockedDetail;
     return this;
   }
 
-  public ResponseWrapperTokenSecurityLpHolders addLockedDetailItem(ResponseWrapperTokenSecurityLockedDetail lockedDetailItem) {
+  public ResponseWrapperTokenSecurityHolders addLockedDetailItem(ResponseWrapperTokenSecurityLockedDetail lockedDetailItem) {
     if (this.lockedDetail == null) {
       this.lockedDetail = new ArrayList<ResponseWrapperTokenSecurityLockedDetail>();
     }
@@ -180,7 +150,7 @@ public class ResponseWrapperTokenSecurityLpHolders {
     this.lockedDetail = lockedDetail;
   }
 
-  public ResponseWrapperTokenSecurityLpHolders tag(String tag) {
+  public ResponseWrapperTokenSecurityHolders tag(String tag) {
     this.tag = tag;
     return this;
   }
@@ -198,7 +168,7 @@ public class ResponseWrapperTokenSecurityLpHolders {
     this.tag = tag;
   }
 
-  public ResponseWrapperTokenSecurityLpHolders percent(String percent) {
+  public ResponseWrapperTokenSecurityHolders percent(String percent) {
     this.percent = percent;
     return this;
   }
@@ -225,33 +195,31 @@ public class ResponseWrapperTokenSecurityLpHolders {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ResponseWrapperTokenSecurityLpHolders responseWrapperTokenSecurityLpHolders = (ResponseWrapperTokenSecurityLpHolders) o;
-    return Objects.equals(this.isLocked, responseWrapperTokenSecurityLpHolders.isLocked) &&
-        Objects.equals(this.isContract, responseWrapperTokenSecurityLpHolders.isContract) &&
-        Objects.equals(this.address, responseWrapperTokenSecurityLpHolders.address) &&
-        Objects.equals(this.balance, responseWrapperTokenSecurityLpHolders.balance) &&
-        Objects.equals(this.nfTList, responseWrapperTokenSecurityLpHolders.nfTList) &&
-        Objects.equals(this.lockedDetail, responseWrapperTokenSecurityLpHolders.lockedDetail) &&
-        Objects.equals(this.tag, responseWrapperTokenSecurityLpHolders.tag) &&
-        Objects.equals(this.percent, responseWrapperTokenSecurityLpHolders.percent);
+    ResponseWrapperTokenSecurityHolders responseWrapperTokenSecurityHolders = (ResponseWrapperTokenSecurityHolders) o;
+    return Objects.equals(this.isLocked, responseWrapperTokenSecurityHolders.isLocked) &&
+        Objects.equals(this.isContract, responseWrapperTokenSecurityHolders.isContract) &&
+        Objects.equals(this.address, responseWrapperTokenSecurityHolders.address) &&
+        Objects.equals(this.balance, responseWrapperTokenSecurityHolders.balance) &&
+        Objects.equals(this.lockedDetail, responseWrapperTokenSecurityHolders.lockedDetail) &&
+        Objects.equals(this.tag, responseWrapperTokenSecurityHolders.tag) &&
+        Objects.equals(this.percent, responseWrapperTokenSecurityHolders.percent);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(isLocked, isContract, address, balance, nfTList, lockedDetail, tag, percent);
+    return Objects.hash(isLocked, isContract, address, balance, lockedDetail, tag, percent);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ResponseWrapperTokenSecurityLpHolders {\n");
+    sb.append("class ResponseWrapperTokenSecurityHolders {\n");
     
     sb.append("    isLocked: ").append(toIndentedString(isLocked)).append("\n");
     sb.append("    isContract: ").append(toIndentedString(isContract)).append("\n");
     sb.append("    address: ").append(toIndentedString(address)).append("\n");
     sb.append("    balance: ").append(toIndentedString(balance)).append("\n");
-    sb.append("    nfTList: ").append(toIndentedString(nfTList)).append("\n");
     sb.append("    lockedDetail: ").append(toIndentedString(lockedDetail)).append("\n");
     sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
     sb.append("    percent: ").append(toIndentedString(percent)).append("\n");
