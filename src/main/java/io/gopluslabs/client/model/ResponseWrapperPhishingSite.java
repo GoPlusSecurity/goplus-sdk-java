@@ -44,10 +44,10 @@ public class ResponseWrapperPhishingSite {
   }
 
    /**
-   * Code 1: Success
+   * Code 1：Success
    * @return code
   **/
-  @Schema(description = "Code 1: Success")
+  @Schema(description = "Code 1：Success")
   public Integer getCode() {
     return code;
   }

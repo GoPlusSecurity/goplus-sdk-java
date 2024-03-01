@@ -19,6 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import io.gopluslabs.client.model.ResponseWrapperPhishingSiteResultWebsiteContractSecurity;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -31,19 +32,19 @@ import java.util.List;
 
 public class ResponseWrapperPhishingSiteResult {
   @SerializedName("website_contract_security")
-  private List<String> websiteContractSecurity = null;
+  private List<ResponseWrapperPhishingSiteResultWebsiteContractSecurity> websiteContractSecurity = null;
 
   @SerializedName("phishing_site")
   private Integer phishingSite = null;
 
-  public ResponseWrapperPhishingSiteResult websiteContractSecurity(List<String> websiteContractSecurity) {
+  public ResponseWrapperPhishingSiteResult websiteContractSecurity(List<ResponseWrapperPhishingSiteResultWebsiteContractSecurity> websiteContractSecurity) {
     this.websiteContractSecurity = websiteContractSecurity;
     return this;
   }
 
-  public ResponseWrapperPhishingSiteResult addWebsiteContractSecurityItem(String websiteContractSecurityItem) {
+  public ResponseWrapperPhishingSiteResult addWebsiteContractSecurityItem(ResponseWrapperPhishingSiteResultWebsiteContractSecurity websiteContractSecurityItem) {
     if (this.websiteContractSecurity == null) {
-      this.websiteContractSecurity = new ArrayList<String>();
+      this.websiteContractSecurity = new ArrayList<ResponseWrapperPhishingSiteResultWebsiteContractSecurity>();
     }
     this.websiteContractSecurity.add(websiteContractSecurityItem);
     return this;
@@ -54,11 +55,11 @@ public class ResponseWrapperPhishingSiteResult {
    * @return websiteContractSecurity
   **/
   @Schema(description = "")
-  public List<String> getWebsiteContractSecurity() {
+  public List<ResponseWrapperPhishingSiteResultWebsiteContractSecurity> getWebsiteContractSecurity() {
     return websiteContractSecurity;
   }
 
-  public void setWebsiteContractSecurity(List<String> websiteContractSecurity) {
+  public void setWebsiteContractSecurity(List<ResponseWrapperPhishingSiteResultWebsiteContractSecurity> websiteContractSecurity) {
     this.websiteContractSecurity = websiteContractSecurity;
   }
 
