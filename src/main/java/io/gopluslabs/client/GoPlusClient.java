@@ -20,9 +20,8 @@ public class GoPlusClient {
      */
     public static AccessToken getAccessToken(AccessTokenRequest request) throws ApiException {
 
-        TokenControllerApi api = Optional.ofNullable(request.getTimeout())
-                .map(timeout -> new TokenControllerApi(createApiClient(timeout)))
-                .orElse(new TokenControllerApi());
+        TokenControllerApi  api =new TokenControllerApi();
+        api.setApiClient(createApiClient(request.getTimeout()));
 
         GetAccessTokenRequest getAccessTokenRequest = new GetAccessTokenRequest();
         getAccessTokenRequest.setAppKey(request.getRequest().getAppKey());
@@ -43,9 +42,7 @@ public class GoPlusClient {
     public static ChainsList supportedChains(SupportedChainsRequest request) throws ApiException {
 
         TokenControllerV1Api api = new TokenControllerV1Api();
-        if (request.getTimeout() != null) {
-            api.setApiClient(createApiClient(request.getTimeout()));
-        }
+        api.setApiClient(createApiClient(request.getTimeout()));
         ResponseWrapperListGetChainsList chainsListUsingGET = api.getChainsListUsingGET(request.getAuthorization(), request.getName());
         return ChainsList.of(chainsListUsingGET);
     }
@@ -60,9 +57,7 @@ public class GoPlusClient {
     public static TokenSecurity tokenSecurity(TokenSecurityRequest request) throws ApiException {
 
         TokenControllerV1Api api = new TokenControllerV1Api();
-        if (request.getTimeout()!=null){
-            api.setApiClient(createApiClient(request.getTimeout()));
-        }
+        api.setApiClient(createApiClient(request.getTimeout()));
         ResponseWrapperTokenSecurity tokenSecurity = api.tokenSecurityUsingGET1(
                 request.getChainId(),
                 request.getAddress(),
@@ -82,9 +77,7 @@ public class GoPlusClient {
     public static AddressContract addressSecurity(AddressSecurityRequest request) throws ApiException {
 
         ApproveControllerV1Api api = new ApproveControllerV1Api();
-        if (request.getTimeout()!=null){
-            api.setApiClient(createApiClient(request.getTimeout()));
-        }
+        api.setApiClient(createApiClient(request.getTimeout()));
         ResponseWrapperAddressContract addressContract = api.addressContractUsingGET1(
                 request.getAddress(),
                 request.getAuthorization(),
@@ -103,9 +96,7 @@ public class GoPlusClient {
      */
     public static ContractApprove approvalSecurity(ApprovalSecurityRequest request) throws ApiException {
         ApproveControllerV1Api api = new ApproveControllerV1Api();
-        if (request.getTimeout()!=null){
-            api.setApiClient(createApiClient(request.getTimeout()));
-        }
+        api.setApiClient(createApiClient(request.getTimeout()));
         ResponseWrapperContractApproveResponse contractApprove = api.approvalContractUsingGET(
                 request.getChainId(),
                 request.getAddress(),
@@ -125,9 +116,7 @@ public class GoPlusClient {
     public static ApproveTokenOutList erc20ApprovalSecurity(Erc20ApprovalSecurityRequest request) throws ApiException {
 
         ApproveControllerV2Api api = new ApproveControllerV2Api();
-        if (request.getTimeout()!=null){
-            api.setApiClient(createApiClient(request.getTimeout()));
-        }
+        api.setApiClient(createApiClient(request.getTimeout()));
         ResponseWrapperListApproveTokenOutListResponse response = api.addressTokenApproveListUsingGET1(
                 request.getAddress(),
                 request.getChainId(),
@@ -145,9 +134,7 @@ public class GoPlusClient {
      */
     public static ApproveNFTList erc721ApprovalSecurity(Erc721ApprovalSecurityRequest request) throws ApiException {
         ApproveControllerV2Api api = new ApproveControllerV2Api();
-        if (request.getTimeout()!=null){
-            api.setApiClient(createApiClient(request.getTimeout()));
-        }
+        api.setApiClient(createApiClient(request.getTimeout()));
         ResponseWrapperListApproveNFTListResponse response = api.addressNFT721ApproveListUsingGET1(
                 request.getAddress(),
                 request.getChainId(),
@@ -166,9 +153,7 @@ public class GoPlusClient {
      */
     public static ApproveNFT1155List erc1155ApprovalSecurity(Erc1155ApprovalSecurityRequest request) throws ApiException {
         ApproveControllerV2Api api = new ApproveControllerV2Api();
-        if (request.getTimeout()!=null){
-            api.setApiClient(createApiClient(request.getTimeout()));
-        }
+        api.setApiClient(createApiClient(request.getTimeout()));
         ResponseWrapperListApproveNFT1155ListResponse response = api.addressNFT1155ApproveListUsingGET1(
                 request.getAddress(),
                 request.getChainId(),
@@ -187,11 +172,7 @@ public class GoPlusClient {
      */
     public static ParseAbiData inputDecode(InputDecodeRequest request) throws ApiException {
         ContractAbiControllerApi api = new ContractAbiControllerApi();
-        if (request.getTimeout()!=null){
-            api.setApiClient(createApiClient(request.getTimeout()));
-        }
-
-
+        api.setApiClient(createApiClient(request.getTimeout()));
         ParseAbiDataRequest parseAbiDataRequest = new ParseAbiDataRequest();
         parseAbiDataRequest.setData(request.getBody().getData());
         parseAbiDataRequest.setChainId(request.getBody().getChainId());
@@ -212,11 +193,7 @@ public class GoPlusClient {
      */
     public static NftInfo nftSecurity(NftSecurityRequest request) throws ApiException {
         NftControllerApi api = new NftControllerApi();
-
-        if (request.getTimeout()!=null){
-            api.setApiClient(createApiClient(request.getTimeout()));
-        }
-
+        api.setApiClient(createApiClient(request.getTimeout()));
         ResponseWrapperGetNftInfo nftInfo = api.getNftInfoUsingGET1(
                 request.getChainId(),
                 request.getAddress(),
@@ -236,10 +213,7 @@ public class GoPlusClient {
      */
     public static DappContractSecurity dappSecurity(DappSecurityRequest request) throws ApiException {
         DappControllerApi api = new DappControllerApi();
-        if (request.getTimeout()!=null){
-            api.setApiClient(createApiClient(request.getTimeout()));
-        }
-
+        api.setApiClient(createApiClient(request.getTimeout()));
         ResponseWrapperDappContractSecurityResponse response = api.getDappInfoUsingGET(
                 request.getAuthorization(),
                 request.getUrl()
@@ -257,9 +231,7 @@ public class GoPlusClient {
      */
     public static PhishingSite phishingSite(PhishingSiteRequest request) throws ApiException {
         WebsiteControllerApi api = new WebsiteControllerApi();
-        if (request.getTimeout()!=null){
-            api.setApiClient(createApiClient(request.getTimeout()));
-        }
+        api.setApiClient(createApiClient(request.getTimeout()));
         ResponseWrapperPhishingSite response = api.phishingSiteUsingGET(request.getUrl(), request.getAuthorization());
         return PhishingSite.of(response);
     }
@@ -273,9 +245,7 @@ public class GoPlusClient {
      */
     public static DefiInfo rugpullDetecting(DefiInfoRequest request) throws ApiException {
         DefiControllerApi api = new DefiControllerApi();
-        if (request.getTimeout()!=null){
-            api.setApiClient(createApiClient(request.getTimeout()));
-        }
+        api.setApiClient(createApiClient(request.getTimeout()));
         GetDefiInfoResponse defiInfoUsingGET = api.getDefiInfoUsingGET(
                 request.getAddress(),
                 request.getChainId(),
@@ -285,11 +255,9 @@ public class GoPlusClient {
     }
 
 
-
-
     private static ApiClient createApiClient(Integer timeOut) {
         ApiClient apiClient = new ApiClient();
-        apiClient.setReadTimeout(timeOut);
+        apiClient.setReadTimeout(timeOut == null ? 60000 : timeOut);
         return apiClient;
     }
 

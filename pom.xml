@@ -7,7 +7,7 @@
     <packaging>jar</packaging>
 
     <name>goplus-sdk-java</name>
-    <version>0.1.5</version>
+    <version>0.1.6</version>
     <description>goplus-sdk-java</description>
     <url>https://github.com/GoPlusSecurity/goplus-sdk-java</url>
 
