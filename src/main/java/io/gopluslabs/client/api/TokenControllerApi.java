@@ -62,9 +62,9 @@ public class TokenControllerApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getAccessTokenUsingPOSTCall(GetAccessTokenRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call getAccessTokenUsingPOSTCall(GetAccessTokenRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = body;
-        
+
         // create path and map variables
         String localVarPath = "/api/v1/token";
 
@@ -88,10 +88,10 @@ public class TokenControllerApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
                     .build();
@@ -102,17 +102,13 @@ public class TokenControllerApi {
         String[] localVarAuthNames = new String[] {  };
         return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
-    
+
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getAccessTokenUsingPOSTValidateBeforeCall(GetAccessTokenRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        com.squareup.okhttp.Call call = getAccessTokenUsingPOSTCall(body, progressListener, progressRequestListener);
+    private okhttp3.Call getAccessTokenUsingPOSTValidateBeforeCall(GetAccessTokenRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+
+        okhttp3.Call call = getAccessTokenUsingPOSTCall(body, progressListener, progressRequestListener);
         return call;
 
-        
-        
-        
-        
     }
 
     /**
@@ -135,7 +131,7 @@ public class TokenControllerApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<ResponseWrapperGetAccessTokenResponse> getAccessTokenUsingPOSTWithHttpInfo(GetAccessTokenRequest body) throws ApiException {
-        com.squareup.okhttp.Call call = getAccessTokenUsingPOSTValidateBeforeCall(body, null, null);
+        okhttp3.Call call = getAccessTokenUsingPOSTValidateBeforeCall(body, null, null);
         Type localVarReturnType = new TypeToken<ResponseWrapperGetAccessTokenResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -148,7 +144,7 @@ public class TokenControllerApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getAccessTokenUsingPOSTAsync(GetAccessTokenRequest body, final ApiCallback<ResponseWrapperGetAccessTokenResponse> callback) throws ApiException {
+    public okhttp3.Call getAccessTokenUsingPOSTAsync(GetAccessTokenRequest body, final ApiCallback<ResponseWrapperGetAccessTokenResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -169,7 +165,7 @@ public class TokenControllerApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getAccessTokenUsingPOSTValidateBeforeCall(body, progressListener, progressRequestListener);
+        okhttp3.Call call = getAccessTokenUsingPOSTValidateBeforeCall(body, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ResponseWrapperGetAccessTokenResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

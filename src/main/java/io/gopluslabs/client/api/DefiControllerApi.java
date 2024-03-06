@@ -63,9 +63,9 @@ public class DefiControllerApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getDefiInfoUsingGETCall(String contractAddresses, String chainId, String authorization, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call getDefiInfoUsingGETCall(String contractAddresses, String chainId, String authorization, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
-        
+
         // create path and map variables
         String localVarPath = "/api/v1/rugpull_detecting/{chain_id}"
             .replaceAll("\\{" + "chain_id" + "\\}", apiClient.escapeString(chainId.toString()));
@@ -94,10 +94,10 @@ public class DefiControllerApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
                     .build();
@@ -108,9 +108,9 @@ public class DefiControllerApi {
         String[] localVarAuthNames = new String[] {  };
         return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
-    
+
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getDefiInfoUsingGETValidateBeforeCall(String contractAddresses, String chainId, String authorization, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call getDefiInfoUsingGETValidateBeforeCall(String contractAddresses, String chainId, String authorization, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         // verify the required parameter 'contractAddresses' is set
         if (contractAddresses == null) {
             throw new ApiException("Missing the required parameter 'contractAddresses' when calling getDefiInfoUsingGET(Async)");
@@ -119,14 +119,10 @@ public class DefiControllerApi {
         if (chainId == null) {
             throw new ApiException("Missing the required parameter 'chainId' when calling getDefiInfoUsingGET(Async)");
         }
-        
-        com.squareup.okhttp.Call call = getDefiInfoUsingGETCall(contractAddresses, chainId, authorization, progressListener, progressRequestListener);
+
+        okhttp3.Call call = getDefiInfoUsingGETCall(contractAddresses, chainId, authorization, progressListener, progressRequestListener);
         return call;
 
-        
-        
-        
-        
     }
 
     /**
@@ -153,7 +149,7 @@ public class DefiControllerApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<GetDefiInfoResponse> getDefiInfoUsingGETWithHttpInfo(String contractAddresses, String chainId, String authorization) throws ApiException {
-        com.squareup.okhttp.Call call = getDefiInfoUsingGETValidateBeforeCall(contractAddresses, chainId, authorization, null, null);
+        okhttp3.Call call = getDefiInfoUsingGETValidateBeforeCall(contractAddresses, chainId, authorization, null, null);
         Type localVarReturnType = new TypeToken<GetDefiInfoResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -168,7 +164,7 @@ public class DefiControllerApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getDefiInfoUsingGETAsync(String contractAddresses, String chainId, String authorization, final ApiCallback<GetDefiInfoResponse> callback) throws ApiException {
+    public okhttp3.Call getDefiInfoUsingGETAsync(String contractAddresses, String chainId, String authorization, final ApiCallback<GetDefiInfoResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -189,7 +185,7 @@ public class DefiControllerApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getDefiInfoUsingGETValidateBeforeCall(contractAddresses, chainId, authorization, progressListener, progressRequestListener);
+        okhttp3.Call call = getDefiInfoUsingGETValidateBeforeCall(contractAddresses, chainId, authorization, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<GetDefiInfoResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

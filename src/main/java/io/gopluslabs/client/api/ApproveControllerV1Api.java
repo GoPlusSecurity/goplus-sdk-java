@@ -64,9 +64,9 @@ public class ApproveControllerV1Api {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call addressContractUsingGET1Call(String address, String authorization, String chainId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call addressContractUsingGET1Call(String address, String authorization, String chainId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
-        
+
         // create path and map variables
         String localVarPath = "/api/v1/address_security/{address}"
             .replaceAll("\\{" + "address" + "\\}", apiClient.escapeString(address.toString()));
@@ -95,10 +95,10 @@ public class ApproveControllerV1Api {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
                     .build();
@@ -109,21 +109,17 @@ public class ApproveControllerV1Api {
         String[] localVarAuthNames = new String[] {  };
         return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
-    
+
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call addressContractUsingGET1ValidateBeforeCall(String address, String authorization, String chainId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call addressContractUsingGET1ValidateBeforeCall(String address, String authorization, String chainId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         // verify the required parameter 'address' is set
         if (address == null) {
             throw new ApiException("Missing the required parameter 'address' when calling addressContractUsingGET1(Async)");
         }
-        
-        com.squareup.okhttp.Call call = addressContractUsingGET1Call(address, authorization, chainId, progressListener, progressRequestListener);
+
+        okhttp3.Call call = addressContractUsingGET1Call(address, authorization, chainId, progressListener, progressRequestListener);
         return call;
 
-        
-        
-        
-        
     }
 
     /**
@@ -150,7 +146,7 @@ public class ApproveControllerV1Api {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<ResponseWrapperAddressContract> addressContractUsingGET1WithHttpInfo(String address, String authorization, String chainId) throws ApiException {
-        com.squareup.okhttp.Call call = addressContractUsingGET1ValidateBeforeCall(address, authorization, chainId, null, null);
+        okhttp3.Call call = addressContractUsingGET1ValidateBeforeCall(address, authorization, chainId, null, null);
         Type localVarReturnType = new TypeToken<ResponseWrapperAddressContract>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -165,7 +161,7 @@ public class ApproveControllerV1Api {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call addressContractUsingGET1Async(String address, String authorization, String chainId, final ApiCallback<ResponseWrapperAddressContract> callback) throws ApiException {
+    public okhttp3.Call addressContractUsingGET1Async(String address, String authorization, String chainId, final ApiCallback<ResponseWrapperAddressContract> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -186,7 +182,7 @@ public class ApproveControllerV1Api {
             };
         }
 
-        com.squareup.okhttp.Call call = addressContractUsingGET1ValidateBeforeCall(address, authorization, chainId, progressListener, progressRequestListener);
+        okhttp3.Call call = addressContractUsingGET1ValidateBeforeCall(address, authorization, chainId, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ResponseWrapperAddressContract>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -201,9 +197,9 @@ public class ApproveControllerV1Api {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call approvalContractUsingGETCall(String chainId, String contractAddresses, String authorization, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call approvalContractUsingGETCall(String chainId, String contractAddresses, String authorization, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
-        
+
         // create path and map variables
         String localVarPath = "/api/v1/approval_security/{chain_id}"
             .replaceAll("\\{" + "chain_id" + "\\}", apiClient.escapeString(chainId.toString()));
@@ -232,10 +228,10 @@ public class ApproveControllerV1Api {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
                     .build();
@@ -246,9 +242,9 @@ public class ApproveControllerV1Api {
         String[] localVarAuthNames = new String[] {  };
         return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
-    
+
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call approvalContractUsingGETValidateBeforeCall(String chainId, String contractAddresses, String authorization, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call approvalContractUsingGETValidateBeforeCall(String chainId, String contractAddresses, String authorization, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         // verify the required parameter 'chainId' is set
         if (chainId == null) {
             throw new ApiException("Missing the required parameter 'chainId' when calling approvalContractUsingGET(Async)");
@@ -257,14 +253,10 @@ public class ApproveControllerV1Api {
         if (contractAddresses == null) {
             throw new ApiException("Missing the required parameter 'contractAddresses' when calling approvalContractUsingGET(Async)");
         }
-        
-        com.squareup.okhttp.Call call = approvalContractUsingGETCall(chainId, contractAddresses, authorization, progressListener, progressRequestListener);
+
+        okhttp3.Call call = approvalContractUsingGETCall(chainId, contractAddresses, authorization, progressListener, progressRequestListener);
         return call;
 
-        
-        
-        
-        
     }
 
     /**
@@ -291,7 +283,7 @@ public class ApproveControllerV1Api {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<ResponseWrapperContractApproveResponse> approvalContractUsingGETWithHttpInfo(String chainId, String contractAddresses, String authorization) throws ApiException {
-        com.squareup.okhttp.Call call = approvalContractUsingGETValidateBeforeCall(chainId, contractAddresses, authorization, null, null);
+        okhttp3.Call call = approvalContractUsingGETValidateBeforeCall(chainId, contractAddresses, authorization, null, null);
         Type localVarReturnType = new TypeToken<ResponseWrapperContractApproveResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -306,7 +298,7 @@ public class ApproveControllerV1Api {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call approvalContractUsingGETAsync(String chainId, String contractAddresses, String authorization, final ApiCallback<ResponseWrapperContractApproveResponse> callback) throws ApiException {
+    public okhttp3.Call approvalContractUsingGETAsync(String chainId, String contractAddresses, String authorization, final ApiCallback<ResponseWrapperContractApproveResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -327,7 +319,7 @@ public class ApproveControllerV1Api {
             };
         }
 
-        com.squareup.okhttp.Call call = approvalContractUsingGETValidateBeforeCall(chainId, contractAddresses, authorization, progressListener, progressRequestListener);
+        okhttp3.Call call = approvalContractUsingGETValidateBeforeCall(chainId, contractAddresses, authorization, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ResponseWrapperContractApproveResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

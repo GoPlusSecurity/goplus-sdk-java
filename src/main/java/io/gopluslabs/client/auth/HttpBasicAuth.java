@@ -14,7 +14,7 @@ package io.gopluslabs.client.auth;
 
 import io.gopluslabs.client.Pair;
 
-import com.squareup.okhttp.Credentials;
+import okhttp3.Credentials;
 
 import java.util.Map;
 import java.util.List;
