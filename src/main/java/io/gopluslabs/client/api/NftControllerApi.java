@@ -64,9 +64,9 @@ public class NftControllerApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getNftInfoUsingGET1Call(String chainId, String contractAddresses, String authorization, String tokenId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call getNftInfoUsingGET1Call(String chainId, String contractAddresses, String authorization, String tokenId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
-        
+
         // create path and map variables
         String localVarPath = "/api/v1/nft_security/{chain_id}"
             .replaceAll("\\{" + "chain_id" + "\\}", apiClient.escapeString(chainId.toString()));
@@ -97,10 +97,10 @@ public class NftControllerApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
                     .build();
@@ -111,9 +111,9 @@ public class NftControllerApi {
         String[] localVarAuthNames = new String[] {  };
         return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
-    
+
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getNftInfoUsingGET1ValidateBeforeCall(String chainId, String contractAddresses, String authorization, String tokenId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call getNftInfoUsingGET1ValidateBeforeCall(String chainId, String contractAddresses, String authorization, String tokenId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         // verify the required parameter 'chainId' is set
         if (chainId == null) {
             throw new ApiException("Missing the required parameter 'chainId' when calling getNftInfoUsingGET1(Async)");
@@ -122,14 +122,10 @@ public class NftControllerApi {
         if (contractAddresses == null) {
             throw new ApiException("Missing the required parameter 'contractAddresses' when calling getNftInfoUsingGET1(Async)");
         }
-        
-        com.squareup.okhttp.Call call = getNftInfoUsingGET1Call(chainId, contractAddresses, authorization, tokenId, progressListener, progressRequestListener);
+
+        okhttp3.Call call = getNftInfoUsingGET1Call(chainId, contractAddresses, authorization, tokenId, progressListener, progressRequestListener);
         return call;
 
-        
-        
-        
-        
     }
 
     /**
@@ -158,7 +154,7 @@ public class NftControllerApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<ResponseWrapperGetNftInfo> getNftInfoUsingGET1WithHttpInfo(String chainId, String contractAddresses, String authorization, String tokenId) throws ApiException {
-        com.squareup.okhttp.Call call = getNftInfoUsingGET1ValidateBeforeCall(chainId, contractAddresses, authorization, tokenId, null, null);
+        okhttp3.Call call = getNftInfoUsingGET1ValidateBeforeCall(chainId, contractAddresses, authorization, tokenId, null, null);
         Type localVarReturnType = new TypeToken<ResponseWrapperGetNftInfo>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -174,7 +170,7 @@ public class NftControllerApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getNftInfoUsingGET1Async(String chainId, String contractAddresses, String authorization, String tokenId, final ApiCallback<ResponseWrapperGetNftInfo> callback) throws ApiException {
+    public okhttp3.Call getNftInfoUsingGET1Async(String chainId, String contractAddresses, String authorization, String tokenId, final ApiCallback<ResponseWrapperGetNftInfo> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -195,7 +191,7 @@ public class NftControllerApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getNftInfoUsingGET1ValidateBeforeCall(chainId, contractAddresses, authorization, tokenId, progressListener, progressRequestListener);
+        okhttp3.Call call = getNftInfoUsingGET1ValidateBeforeCall(chainId, contractAddresses, authorization, tokenId, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ResponseWrapperGetNftInfo>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
