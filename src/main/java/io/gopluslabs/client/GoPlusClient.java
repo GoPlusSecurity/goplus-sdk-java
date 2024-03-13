@@ -3,10 +3,10 @@ package io.gopluslabs.client;
 import io.gopluslabs.client.api.*;
 import io.gopluslabs.client.model.*;
 import io.gopluslabs.client.request.*;
-
-import java.util.Optional;
-
 import io.gopluslabs.client.response.*;
+import okhttp3.OkHttpClient;
+
+import java.util.concurrent.TimeUnit;
 
 public class GoPlusClient {
 
@@ -257,7 +257,11 @@ public class GoPlusClient {
 
     private static ApiClient createApiClient(Integer timeOut) {
         ApiClient apiClient = new ApiClient();
-        apiClient.setReadTimeout(timeOut == null ? 60000 : timeOut);
+        OkHttpClient httpClient = apiClient.getHttpClient();
+        OkHttpClient build = httpClient.newBuilder()
+                .readTimeout(timeOut == null ? 60000 : timeOut, TimeUnit.MILLISECONDS)
+                .build();
+        apiClient.setHttpClient(build);
         return apiClient;
     }
 
