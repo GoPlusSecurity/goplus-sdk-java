@@ -37,11 +37,17 @@ public class ResponseWrapperAddressContractResult {
   @SerializedName("number_of_malicious_contracts_created")
   private String numberOfMaliciousContractsCreated = null;
 
+  @SerializedName("gas_abuse")
+  private String gasAbuse = null;
+
   @SerializedName("financial_crime")
   private String financialCrime = null;
 
   @SerializedName("darkweb_transactions")
   private String darkwebTransactions = null;
+
+  @SerializedName("reinit")
+  private String reinit = null;
 
   @SerializedName("phishing_activities")
   private String phishingActivities = null;
@@ -58,6 +64,9 @@ public class ResponseWrapperAddressContractResult {
   @SerializedName("data_source")
   private String dataSource = null;
 
+  @SerializedName("fake_standard_interface")
+  private String fakeStandardInterface = null;
+
   @SerializedName("stealing_attack")
   private String stealingAttack = null;
 
@@ -72,6 +81,9 @@ public class ResponseWrapperAddressContractResult {
 
   @SerializedName("mixer")
   private String mixer = null;
+
+  @SerializedName("fake_token")
+  private String fakeToken = null;
 
   @SerializedName("honeypot_related_address")
   private String honeypotRelatedAddress = null;
@@ -130,6 +142,24 @@ public class ResponseWrapperAddressContractResult {
     this.numberOfMaliciousContractsCreated = numberOfMaliciousContractsCreated;
   }
 
+  public ResponseWrapperAddressContractResult gasAbuse(String gasAbuse) {
+    this.gasAbuse = gasAbuse;
+    return this;
+  }
+
+   /**
+   * It describes whether this address is cheating other user&#x27;s gas fee to mint other assets.(Notice:Any interaction with such addresses may result in loss of property.)
+   * @return gasAbuse
+  **/
+  @Schema(description = "It describes whether this address is cheating other user's gas fee to mint other assets.(Notice:Any interaction with such addresses may result in loss of property.)")
+  public String getGasAbuse() {
+    return gasAbuse;
+  }
+
+  public void setGasAbuse(String gasAbuse) {
+    this.gasAbuse = gasAbuse;
+  }
+
   public ResponseWrapperAddressContractResult financialCrime(String financialCrime) {
     this.financialCrime = financialCrime;
     return this;
@@ -164,6 +194,24 @@ public class ResponseWrapperAddressContractResult {
 
   public void setDarkwebTransactions(String darkwebTransactions) {
     this.darkwebTransactions = darkwebTransactions;
+  }
+
+  public ResponseWrapperAddressContractResult reinit(String reinit) {
+    this.reinit = reinit;
+    return this;
+  }
+
+   /**
+   * It describes whether this address/contract has been deployed more than onces, and can be deployed again.(Notice:If a contract can be reinited, the developer can change the contract code whenever he wants.)
+   * @return reinit
+  **/
+  @Schema(description = "It describes whether this address/contract has been deployed more than onces, and can be deployed again.(Notice:If a contract can be reinited, the developer can change the contract code whenever he wants.)")
+  public String getReinit() {
+    return reinit;
+  }
+
+  public void setReinit(String reinit) {
+    this.reinit = reinit;
   }
 
   public ResponseWrapperAddressContractResult phishingActivities(String phishingActivities) {
@@ -256,6 +304,24 @@ public class ResponseWrapperAddressContractResult {
     this.dataSource = dataSource;
   }
 
+  public ResponseWrapperAddressContractResult fakeStandardInterface(String fakeStandardInterface) {
+    this.fakeStandardInterface = fakeStandardInterface;
+    return this;
+  }
+
+   /**
+   * It describes whether this contract contains standard interfaces that do not conform the requirements of the standard protocol.(Notice:Fake Standard Interface is mostly seen in scam assets.)
+   * @return fakeStandardInterface
+  **/
+  @Schema(description = "It describes whether this contract contains standard interfaces that do not conform the requirements of the standard protocol.(Notice:Fake Standard Interface is mostly seen in scam assets.)")
+  public String getFakeStandardInterface() {
+    return fakeStandardInterface;
+  }
+
+  public void setFakeStandardInterface(String fakeStandardInterface) {
+    this.fakeStandardInterface = fakeStandardInterface;
+  }
+
   public ResponseWrapperAddressContractResult stealingAttack(String stealingAttack) {
     this.stealingAttack = stealingAttack;
     return this;
@@ -346,6 +412,24 @@ public class ResponseWrapperAddressContractResult {
     this.mixer = mixer;
   }
 
+  public ResponseWrapperAddressContractResult fakeToken(String fakeToken) {
+    this.fakeToken = fakeToken;
+    return this;
+  }
+
+   /**
+   * It indicates whether the token is a counterfeit of a mainstream asset.
+   * @return fakeToken
+  **/
+  @Schema(description = "It indicates whether the token is a counterfeit of a mainstream asset.")
+  public String getFakeToken() {
+    return fakeToken;
+  }
+
+  public void setFakeToken(String fakeToken) {
+    this.fakeToken = fakeToken;
+  }
+
   public ResponseWrapperAddressContractResult honeypotRelatedAddress(String honeypotRelatedAddress) {
     this.honeypotRelatedAddress = honeypotRelatedAddress;
     return this;
@@ -377,24 +461,28 @@ public class ResponseWrapperAddressContractResult {
     return Objects.equals(this.cybercrime, responseWrapperAddressContractResult.cybercrime) &&
         Objects.equals(this.moneyLaundering, responseWrapperAddressContractResult.moneyLaundering) &&
         Objects.equals(this.numberOfMaliciousContractsCreated, responseWrapperAddressContractResult.numberOfMaliciousContractsCreated) &&
+        Objects.equals(this.gasAbuse, responseWrapperAddressContractResult.gasAbuse) &&
         Objects.equals(this.financialCrime, responseWrapperAddressContractResult.financialCrime) &&
         Objects.equals(this.darkwebTransactions, responseWrapperAddressContractResult.darkwebTransactions) &&
+        Objects.equals(this.reinit, responseWrapperAddressContractResult.reinit) &&
         Objects.equals(this.phishingActivities, responseWrapperAddressContractResult.phishingActivities) &&
         Objects.equals(this.contractAddress, responseWrapperAddressContractResult.contractAddress) &&
         Objects.equals(this.fakeKyc, responseWrapperAddressContractResult.fakeKyc) &&
         Objects.equals(this.blacklistDoubt, responseWrapperAddressContractResult.blacklistDoubt) &&
         Objects.equals(this.dataSource, responseWrapperAddressContractResult.dataSource) &&
+        Objects.equals(this.fakeStandardInterface, responseWrapperAddressContractResult.fakeStandardInterface) &&
         Objects.equals(this.stealingAttack, responseWrapperAddressContractResult.stealingAttack) &&
         Objects.equals(this.blackmailActivities, responseWrapperAddressContractResult.blackmailActivities) &&
         Objects.equals(this.sanctioned, responseWrapperAddressContractResult.sanctioned) &&
         Objects.equals(this.maliciousMiningActivities, responseWrapperAddressContractResult.maliciousMiningActivities) &&
         Objects.equals(this.mixer, responseWrapperAddressContractResult.mixer) &&
+        Objects.equals(this.fakeToken, responseWrapperAddressContractResult.fakeToken) &&
         Objects.equals(this.honeypotRelatedAddress, responseWrapperAddressContractResult.honeypotRelatedAddress);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(cybercrime, moneyLaundering, numberOfMaliciousContractsCreated, financialCrime, darkwebTransactions, phishingActivities, contractAddress, fakeKyc, blacklistDoubt, dataSource, stealingAttack, blackmailActivities, sanctioned, maliciousMiningActivities, mixer, honeypotRelatedAddress);
+    return Objects.hash(cybercrime, moneyLaundering, numberOfMaliciousContractsCreated, gasAbuse, financialCrime, darkwebTransactions, reinit, phishingActivities, contractAddress, fakeKyc, blacklistDoubt, dataSource, fakeStandardInterface, stealingAttack, blackmailActivities, sanctioned, maliciousMiningActivities, mixer, fakeToken, honeypotRelatedAddress);
   }
 
 
@@ -406,18 +494,22 @@ public class ResponseWrapperAddressContractResult {
     sb.append("    cybercrime: ").append(toIndentedString(cybercrime)).append("\n");
     sb.append("    moneyLaundering: ").append(toIndentedString(moneyLaundering)).append("\n");
     sb.append("    numberOfMaliciousContractsCreated: ").append(toIndentedString(numberOfMaliciousContractsCreated)).append("\n");
+    sb.append("    gasAbuse: ").append(toIndentedString(gasAbuse)).append("\n");
     sb.append("    financialCrime: ").append(toIndentedString(financialCrime)).append("\n");
     sb.append("    darkwebTransactions: ").append(toIndentedString(darkwebTransactions)).append("\n");
+    sb.append("    reinit: ").append(toIndentedString(reinit)).append("\n");
     sb.append("    phishingActivities: ").append(toIndentedString(phishingActivities)).append("\n");
     sb.append("    contractAddress: ").append(toIndentedString(contractAddress)).append("\n");
     sb.append("    fakeKyc: ").append(toIndentedString(fakeKyc)).append("\n");
     sb.append("    blacklistDoubt: ").append(toIndentedString(blacklistDoubt)).append("\n");
     sb.append("    dataSource: ").append(toIndentedString(dataSource)).append("\n");
+    sb.append("    fakeStandardInterface: ").append(toIndentedString(fakeStandardInterface)).append("\n");
     sb.append("    stealingAttack: ").append(toIndentedString(stealingAttack)).append("\n");
     sb.append("    blackmailActivities: ").append(toIndentedString(blackmailActivities)).append("\n");
     sb.append("    sanctioned: ").append(toIndentedString(sanctioned)).append("\n");
     sb.append("    maliciousMiningActivities: ").append(toIndentedString(maliciousMiningActivities)).append("\n");
     sb.append("    mixer: ").append(toIndentedString(mixer)).append("\n");
+    sb.append("    fakeToken: ").append(toIndentedString(fakeToken)).append("\n");
     sb.append("    honeypotRelatedAddress: ").append(toIndentedString(honeypotRelatedAddress)).append("\n");
     sb.append("}");
     return sb.toString();
