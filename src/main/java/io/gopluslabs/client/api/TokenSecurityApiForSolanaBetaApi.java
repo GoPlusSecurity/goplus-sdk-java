@@ -26,8 +26,7 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import io.gopluslabs.client.model.ParseAbiDataRequest;
-import io.gopluslabs.client.model.ResponseWrapperParseAbiDataResponse;
+import io.gopluslabs.client.model.ResponseWrapperSolanaTokenSecurity;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -35,14 +34,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class ContractAbiControllerApi {
+public class TokenSecurityApiForSolanaBetaApi {
     private ApiClient apiClient;
 
-    public ContractAbiControllerApi() {
+    public TokenSecurityApiForSolanaBetaApi() {
         this(Configuration.getDefaultApiClient());
     }
 
-    public ContractAbiControllerApi(ApiClient apiClient) {
+    public TokenSecurityApiForSolanaBetaApi(ApiClient apiClient) {
         this.apiClient = apiClient;
     }
 
@@ -55,22 +54,24 @@ public class ContractAbiControllerApi {
     }
 
     /**
-     * Build call for getAbiDataInfoUsingPOST
-     * @param body abiDataRequest (required)
+     * Build call for solanaTokenSecurityUsingGET
+     * @param contractAddresses The contract address of solana tokens. (required)
      * @param authorization Authorization token in the format: Bearer &lt;token&gt; (e.g., Bearer eyJsZXZlbCI6NSwiYXBwTmFtZSI6ImF2cyIsImFwcEtleSI6IjFaW...) (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call getAbiDataInfoUsingPOSTCall(ParseAbiDataRequest body, String authorization, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = body;
+    public okhttp3.Call solanaTokenSecurityUsingGETCall(String contractAddresses, String authorization, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/api/v1/abi/input_decode";
+        String localVarPath = "/api/v1/solana/token_security";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        if (contractAddresses != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("contract_addresses", contractAddresses));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         if (authorization != null)
@@ -85,7 +86,7 @@ public class ContractAbiControllerApi {
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            "application/json"
+            
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -103,58 +104,58 @@ public class ContractAbiControllerApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getAbiDataInfoUsingPOSTValidateBeforeCall(ParseAbiDataRequest body, String authorization, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        // verify the required parameter 'body' is set
-        if (body == null) {
-            throw new ApiException("Missing the required parameter 'body' when calling getAbiDataInfoUsingPOST(Async)");
+    private okhttp3.Call solanaTokenSecurityUsingGETValidateBeforeCall(String contractAddresses, String authorization, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        // verify the required parameter 'contractAddresses' is set
+        if (contractAddresses == null) {
+            throw new ApiException("Missing the required parameter 'contractAddresses' when calling solanaTokenSecurityUsingGET(Async)");
         }
 
-        okhttp3.Call call = getAbiDataInfoUsingPOSTCall(body, authorization, progressListener, progressRequestListener);
+        okhttp3.Call call = solanaTokenSecurityUsingGETCall(contractAddresses, authorization, progressListener, progressRequestListener);
         return call;
 
     }
 
     /**
-     * Get abi decode info
+     * Get token&#x27;s security and risk data.
      * 
-     * @param body abiDataRequest (required)
+     * @param contractAddresses The contract address of solana tokens. (required)
      * @param authorization Authorization token in the format: Bearer &lt;token&gt; (e.g., Bearer eyJsZXZlbCI6NSwiYXBwTmFtZSI6ImF2cyIsImFwcEtleSI6IjFaW...) (optional)
-     * @return ResponseWrapperParseAbiDataResponse
+     * @return ResponseWrapperSolanaTokenSecurity
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ResponseWrapperParseAbiDataResponse getAbiDataInfoUsingPOST(ParseAbiDataRequest body, String authorization) throws ApiException {
-        ApiResponse<ResponseWrapperParseAbiDataResponse> resp = getAbiDataInfoUsingPOSTWithHttpInfo(body, authorization);
+    public ResponseWrapperSolanaTokenSecurity solanaTokenSecurityUsingGET(String contractAddresses, String authorization) throws ApiException {
+        ApiResponse<ResponseWrapperSolanaTokenSecurity> resp = solanaTokenSecurityUsingGETWithHttpInfo(contractAddresses, authorization);
         return resp.getData();
     }
 
     /**
-     * Get abi decode info
+     * Get token&#x27;s security and risk data.
      * 
-     * @param body abiDataRequest (required)
+     * @param contractAddresses The contract address of solana tokens. (required)
      * @param authorization Authorization token in the format: Bearer &lt;token&gt; (e.g., Bearer eyJsZXZlbCI6NSwiYXBwTmFtZSI6ImF2cyIsImFwcEtleSI6IjFaW...) (optional)
-     * @return ApiResponse&lt;ResponseWrapperParseAbiDataResponse&gt;
+     * @return ApiResponse&lt;ResponseWrapperSolanaTokenSecurity&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ResponseWrapperParseAbiDataResponse> getAbiDataInfoUsingPOSTWithHttpInfo(ParseAbiDataRequest body, String authorization) throws ApiException {
-        okhttp3.Call call = getAbiDataInfoUsingPOSTValidateBeforeCall(body, authorization, null, null);
-        Type localVarReturnType = new TypeToken<ResponseWrapperParseAbiDataResponse>(){}.getType();
+    public ApiResponse<ResponseWrapperSolanaTokenSecurity> solanaTokenSecurityUsingGETWithHttpInfo(String contractAddresses, String authorization) throws ApiException {
+        okhttp3.Call call = solanaTokenSecurityUsingGETValidateBeforeCall(contractAddresses, authorization, null, null);
+        Type localVarReturnType = new TypeToken<ResponseWrapperSolanaTokenSecurity>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
-     * Get abi decode info (asynchronously)
+     * Get token&#x27;s security and risk data. (asynchronously)
      * 
-     * @param body abiDataRequest (required)
+     * @param contractAddresses The contract address of solana tokens. (required)
      * @param authorization Authorization token in the format: Bearer &lt;token&gt; (e.g., Bearer eyJsZXZlbCI6NSwiYXBwTmFtZSI6ImF2cyIsImFwcEtleSI6IjFaW...) (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call getAbiDataInfoUsingPOSTAsync(ParseAbiDataRequest body, String authorization, final ApiCallback<ResponseWrapperParseAbiDataResponse> callback) throws ApiException {
+    public okhttp3.Call solanaTokenSecurityUsingGETAsync(String contractAddresses, String authorization, final ApiCallback<ResponseWrapperSolanaTokenSecurity> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -175,8 +176,8 @@ public class ContractAbiControllerApi {
             };
         }
 
-        okhttp3.Call call = getAbiDataInfoUsingPOSTValidateBeforeCall(body, authorization, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<ResponseWrapperParseAbiDataResponse>(){}.getType();
+        okhttp3.Call call = solanaTokenSecurityUsingGETValidateBeforeCall(contractAddresses, authorization, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<ResponseWrapperSolanaTokenSecurity>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

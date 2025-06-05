@@ -57,7 +57,7 @@ public class NftControllerApi {
      * Build call for getNftInfoUsingGET1
      * @param chainId The chain_id of the blockchain.\&quot;1\&quot; means Ethereum; \&quot;10\&quot; means Optimism;\&quot;25\&quot; means Cronos;\&quot;56\&quot; means BSC;  \&quot;100\&quot; means Gnosis;\&quot;128\&quot; means HECO; \&quot;137\&quot; means Polygon; \&quot;250\&quot; means Fantom;\&quot;321\&quot; means KCC;\&quot;324\&quot; means zkSync Era; \&quot;201022\&quot; means FON;\&quot;42161\&quot; means Arbitrum; \&quot;43114\&quot; means Avalanche;\&quot;59144\&quot; means Linea Mainnet;\&quot;8453\&quot; Base;\&quot;5000\&quot; Mantle; (required)
      * @param contractAddresses NFT contract address (required)
-     * @param authorization Authorization (test: Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW...) (optional)
+     * @param authorization Authorization token in the format: Bearer &lt;token&gt; (e.g., Bearer eyJsZXZlbCI6NSwiYXBwTmFtZSI6ImF2cyIsImFwcEtleSI6IjFaW...) (optional)
      * @param tokenId tokenId (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -133,7 +133,7 @@ public class NftControllerApi {
      * 
      * @param chainId The chain_id of the blockchain.\&quot;1\&quot; means Ethereum; \&quot;10\&quot; means Optimism;\&quot;25\&quot; means Cronos;\&quot;56\&quot; means BSC;  \&quot;100\&quot; means Gnosis;\&quot;128\&quot; means HECO; \&quot;137\&quot; means Polygon; \&quot;250\&quot; means Fantom;\&quot;321\&quot; means KCC;\&quot;324\&quot; means zkSync Era; \&quot;201022\&quot; means FON;\&quot;42161\&quot; means Arbitrum; \&quot;43114\&quot; means Avalanche;\&quot;59144\&quot; means Linea Mainnet;\&quot;8453\&quot; Base;\&quot;5000\&quot; Mantle; (required)
      * @param contractAddresses NFT contract address (required)
-     * @param authorization Authorization (test: Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW...) (optional)
+     * @param authorization Authorization token in the format: Bearer &lt;token&gt; (e.g., Bearer eyJsZXZlbCI6NSwiYXBwTmFtZSI6ImF2cyIsImFwcEtleSI6IjFaW...) (optional)
      * @param tokenId tokenId (optional)
      * @return ResponseWrapperGetNftInfo
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -148,7 +148,7 @@ public class NftControllerApi {
      * 
      * @param chainId The chain_id of the blockchain.\&quot;1\&quot; means Ethereum; \&quot;10\&quot; means Optimism;\&quot;25\&quot; means Cronos;\&quot;56\&quot; means BSC;  \&quot;100\&quot; means Gnosis;\&quot;128\&quot; means HECO; \&quot;137\&quot; means Polygon; \&quot;250\&quot; means Fantom;\&quot;321\&quot; means KCC;\&quot;324\&quot; means zkSync Era; \&quot;201022\&quot; means FON;\&quot;42161\&quot; means Arbitrum; \&quot;43114\&quot; means Avalanche;\&quot;59144\&quot; means Linea Mainnet;\&quot;8453\&quot; Base;\&quot;5000\&quot; Mantle; (required)
      * @param contractAddresses NFT contract address (required)
-     * @param authorization Authorization (test: Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW...) (optional)
+     * @param authorization Authorization token in the format: Bearer &lt;token&gt; (e.g., Bearer eyJsZXZlbCI6NSwiYXBwTmFtZSI6ImF2cyIsImFwcEtleSI6IjFaW...) (optional)
      * @param tokenId tokenId (optional)
      * @return ApiResponse&lt;ResponseWrapperGetNftInfo&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -164,7 +164,7 @@ public class NftControllerApi {
      * 
      * @param chainId The chain_id of the blockchain.\&quot;1\&quot; means Ethereum; \&quot;10\&quot; means Optimism;\&quot;25\&quot; means Cronos;\&quot;56\&quot; means BSC;  \&quot;100\&quot; means Gnosis;\&quot;128\&quot; means HECO; \&quot;137\&quot; means Polygon; \&quot;250\&quot; means Fantom;\&quot;321\&quot; means KCC;\&quot;324\&quot; means zkSync Era; \&quot;201022\&quot; means FON;\&quot;42161\&quot; means Arbitrum; \&quot;43114\&quot; means Avalanche;\&quot;59144\&quot; means Linea Mainnet;\&quot;8453\&quot; Base;\&quot;5000\&quot; Mantle; (required)
      * @param contractAddresses NFT contract address (required)
-     * @param authorization Authorization (test: Bearer 81|9ihH8JzEuFu4MQ9DjWmH5WrNCPW...) (optional)
+     * @param authorization Authorization token in the format: Bearer &lt;token&gt; (e.g., Bearer eyJsZXZlbCI6NSwiYXBwTmFtZSI6ImF2cyIsImFwcEtleSI6IjFaW...) (optional)
      * @param tokenId tokenId (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call

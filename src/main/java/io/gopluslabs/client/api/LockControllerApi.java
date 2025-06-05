@@ -26,8 +26,8 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import io.gopluslabs.client.model.ResponseWrapperListGetChainsList;
-import io.gopluslabs.client.model.ResponseWrapperTokenSecurity;
+import io.gopluslabs.client.model.ResponseWrapperNftLockerResponse;
+import io.gopluslabs.client.model.ResponseWrapperTokenLockerResponse;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -35,14 +35,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class TokenControllerV1Api {
+public class LockControllerApi {
     private ApiClient apiClient;
 
-    public TokenControllerV1Api() {
+    public LockControllerApi() {
         this(Configuration.getDefaultApiClient());
     }
 
-    public TokenControllerV1Api(ApiClient apiClient) {
+    public LockControllerApi(ApiClient apiClient) {
         this.apiClient = apiClient;
     }
 
@@ -55,24 +55,33 @@ public class TokenControllerV1Api {
     }
 
     /**
-     * Build call for getChainsListUsingGET
+     * Build call for getNftLockersUsingGET
+     * @param chainId chainId (required)
+     * @param pageNum pageNum (required)
+     * @param pageSize pageSize (required)
+     * @param poolAddress poolAddress (required)
      * @param authorization Authorization token in the format: Bearer &lt;token&gt; (e.g., Bearer eyJsZXZlbCI6NSwiYXBwTmFtZSI6ImF2cyIsImFwcEtleSI6IjFaW...) (optional)
-     * @param name API name. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call getChainsListUsingGETCall(String authorization, String name, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call getNftLockersUsingGETCall(String chainId, Integer pageNum, Integer pageSize, String poolAddress, String authorization, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/api/v1/supported_chains";
+        String localVarPath = "/open/api/v1/locks/lpv3";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        if (name != null)
-        localVarQueryParams.addAll(apiClient.parameterToPair("name", name));
+        if (chainId != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("chainId", chainId));
+        if (pageNum != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("pageNum", pageNum));
+        if (pageSize != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("pageSize", pageSize));
+        if (poolAddress != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("poolAddress", poolAddress));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         if (authorization != null)
@@ -109,50 +118,75 @@ public class TokenControllerV1Api {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getChainsListUsingGETValidateBeforeCall(String authorization, String name, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call getNftLockersUsingGETValidateBeforeCall(String chainId, Integer pageNum, Integer pageSize, String poolAddress, String authorization, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        // verify the required parameter 'chainId' is set
+        if (chainId == null) {
+            throw new ApiException("Missing the required parameter 'chainId' when calling getNftLockersUsingGET(Async)");
+        }
+        // verify the required parameter 'pageNum' is set
+        if (pageNum == null) {
+            throw new ApiException("Missing the required parameter 'pageNum' when calling getNftLockersUsingGET(Async)");
+        }
+        // verify the required parameter 'pageSize' is set
+        if (pageSize == null) {
+            throw new ApiException("Missing the required parameter 'pageSize' when calling getNftLockersUsingGET(Async)");
+        }
+        // verify the required parameter 'poolAddress' is set
+        if (poolAddress == null) {
+            throw new ApiException("Missing the required parameter 'poolAddress' when calling getNftLockersUsingGET(Async)");
+        }
 
-        okhttp3.Call call = getChainsListUsingGETCall(authorization, name, progressListener, progressRequestListener);
+        okhttp3.Call call = getNftLockersUsingGETCall(chainId, pageNum, pageSize, poolAddress, authorization, progressListener, progressRequestListener);
         return call;
 
     }
 
     /**
-     * Get the list of chains supported by different functions.
+     * Get lpv3 locker info
      * 
+     * @param chainId chainId (required)
+     * @param pageNum pageNum (required)
+     * @param pageSize pageSize (required)
+     * @param poolAddress poolAddress (required)
      * @param authorization Authorization token in the format: Bearer &lt;token&gt; (e.g., Bearer eyJsZXZlbCI6NSwiYXBwTmFtZSI6ImF2cyIsImFwcEtleSI6IjFaW...) (optional)
-     * @param name API name. (optional)
-     * @return ResponseWrapperListGetChainsList
+     * @return ResponseWrapperNftLockerResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ResponseWrapperListGetChainsList getChainsListUsingGET(String authorization, String name) throws ApiException {
-        ApiResponse<ResponseWrapperListGetChainsList> resp = getChainsListUsingGETWithHttpInfo(authorization, name);
+    public ResponseWrapperNftLockerResponse getNftLockersUsingGET(String chainId, Integer pageNum, Integer pageSize, String poolAddress, String authorization) throws ApiException {
+        ApiResponse<ResponseWrapperNftLockerResponse> resp = getNftLockersUsingGETWithHttpInfo(chainId, pageNum, pageSize, poolAddress, authorization);
         return resp.getData();
     }
 
     /**
-     * Get the list of chains supported by different functions.
+     * Get lpv3 locker info
      * 
+     * @param chainId chainId (required)
+     * @param pageNum pageNum (required)
+     * @param pageSize pageSize (required)
+     * @param poolAddress poolAddress (required)
      * @param authorization Authorization token in the format: Bearer &lt;token&gt; (e.g., Bearer eyJsZXZlbCI6NSwiYXBwTmFtZSI6ImF2cyIsImFwcEtleSI6IjFaW...) (optional)
-     * @param name API name. (optional)
-     * @return ApiResponse&lt;ResponseWrapperListGetChainsList&gt;
+     * @return ApiResponse&lt;ResponseWrapperNftLockerResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ResponseWrapperListGetChainsList> getChainsListUsingGETWithHttpInfo(String authorization, String name) throws ApiException {
-        okhttp3.Call call = getChainsListUsingGETValidateBeforeCall(authorization, name, null, null);
-        Type localVarReturnType = new TypeToken<ResponseWrapperListGetChainsList>(){}.getType();
+    public ApiResponse<ResponseWrapperNftLockerResponse> getNftLockersUsingGETWithHttpInfo(String chainId, Integer pageNum, Integer pageSize, String poolAddress, String authorization) throws ApiException {
+        okhttp3.Call call = getNftLockersUsingGETValidateBeforeCall(chainId, pageNum, pageSize, poolAddress, authorization, null, null);
+        Type localVarReturnType = new TypeToken<ResponseWrapperNftLockerResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
-     * Get the list of chains supported by different functions. (asynchronously)
+     * Get lpv3 locker info (asynchronously)
      * 
+     * @param chainId chainId (required)
+     * @param pageNum pageNum (required)
+     * @param pageSize pageSize (required)
+     * @param poolAddress poolAddress (required)
      * @param authorization Authorization token in the format: Bearer &lt;token&gt; (e.g., Bearer eyJsZXZlbCI6NSwiYXBwTmFtZSI6ImF2cyIsImFwcEtleSI6IjFaW...) (optional)
-     * @param name API name. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call getChainsListUsingGETAsync(String authorization, String name, final ApiCallback<ResponseWrapperListGetChainsList> callback) throws ApiException {
+    public okhttp3.Call getNftLockersUsingGETAsync(String chainId, Integer pageNum, Integer pageSize, String poolAddress, String authorization, final ApiCallback<ResponseWrapperNftLockerResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -173,32 +207,39 @@ public class TokenControllerV1Api {
             };
         }
 
-        okhttp3.Call call = getChainsListUsingGETValidateBeforeCall(authorization, name, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<ResponseWrapperListGetChainsList>(){}.getType();
+        okhttp3.Call call = getNftLockersUsingGETValidateBeforeCall(chainId, pageNum, pageSize, poolAddress, authorization, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<ResponseWrapperNftLockerResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for tokenSecurityUsingGET1
-     * @param chainId The chain_id of the blockchain. To check the corresponding blockchain name for a given chain_id, please visit: https://docs.gopluslabs.io/reference/response-details-9 (required)
-     * @param contractAddresses The contract address of tokens. (required)
+     * Build call for getTokenLockersUsingGET
+     * @param chainId chainId (required)
+     * @param pageNum pageNum (required)
+     * @param pageSize pageSize (required)
+     * @param tokenAddress tokenAddress (required)
      * @param authorization Authorization token in the format: Bearer &lt;token&gt; (e.g., Bearer eyJsZXZlbCI6NSwiYXBwTmFtZSI6ImF2cyIsImFwcEtleSI6IjFaW...) (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call tokenSecurityUsingGET1Call(String chainId, String contractAddresses, String authorization, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call getTokenLockersUsingGETCall(String chainId, Integer pageNum, Integer pageSize, String tokenAddress, String authorization, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/api/v1/token_security/{chain_id}"
-            .replaceAll("\\{" + "chain_id" + "\\}", apiClient.escapeString(chainId.toString()));
+        String localVarPath = "/open/api/v1/locks/token";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        if (contractAddresses != null)
-        localVarQueryParams.addAll(apiClient.parameterToPair("contract_addresses", contractAddresses));
+        if (chainId != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("chainId", chainId));
+        if (pageNum != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("pageNum", pageNum));
+        if (pageSize != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("pageSize", pageSize));
+        if (tokenAddress != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("tokenAddress", tokenAddress));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         if (authorization != null)
@@ -235,61 +276,75 @@ public class TokenControllerV1Api {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call tokenSecurityUsingGET1ValidateBeforeCall(String chainId, String contractAddresses, String authorization, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call getTokenLockersUsingGETValidateBeforeCall(String chainId, Integer pageNum, Integer pageSize, String tokenAddress, String authorization, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         // verify the required parameter 'chainId' is set
         if (chainId == null) {
-            throw new ApiException("Missing the required parameter 'chainId' when calling tokenSecurityUsingGET1(Async)");
+            throw new ApiException("Missing the required parameter 'chainId' when calling getTokenLockersUsingGET(Async)");
         }
-        // verify the required parameter 'contractAddresses' is set
-        if (contractAddresses == null) {
-            throw new ApiException("Missing the required parameter 'contractAddresses' when calling tokenSecurityUsingGET1(Async)");
+        // verify the required parameter 'pageNum' is set
+        if (pageNum == null) {
+            throw new ApiException("Missing the required parameter 'pageNum' when calling getTokenLockersUsingGET(Async)");
+        }
+        // verify the required parameter 'pageSize' is set
+        if (pageSize == null) {
+            throw new ApiException("Missing the required parameter 'pageSize' when calling getTokenLockersUsingGET(Async)");
+        }
+        // verify the required parameter 'tokenAddress' is set
+        if (tokenAddress == null) {
+            throw new ApiException("Missing the required parameter 'tokenAddress' when calling getTokenLockersUsingGET(Async)");
         }
 
-        okhttp3.Call call = tokenSecurityUsingGET1Call(chainId, contractAddresses, authorization, progressListener, progressRequestListener);
+        okhttp3.Call call = getTokenLockersUsingGETCall(chainId, pageNum, pageSize, tokenAddress, authorization, progressListener, progressRequestListener);
         return call;
 
     }
 
     /**
-     * Get token&#x27;s security and risk data.
+     * Get token locker info
      * 
-     * @param chainId The chain_id of the blockchain. To check the corresponding blockchain name for a given chain_id, please visit: https://docs.gopluslabs.io/reference/response-details-9 (required)
-     * @param contractAddresses The contract address of tokens. (required)
+     * @param chainId chainId (required)
+     * @param pageNum pageNum (required)
+     * @param pageSize pageSize (required)
+     * @param tokenAddress tokenAddress (required)
      * @param authorization Authorization token in the format: Bearer &lt;token&gt; (e.g., Bearer eyJsZXZlbCI6NSwiYXBwTmFtZSI6ImF2cyIsImFwcEtleSI6IjFaW...) (optional)
-     * @return ResponseWrapperTokenSecurity
+     * @return ResponseWrapperTokenLockerResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ResponseWrapperTokenSecurity tokenSecurityUsingGET1(String chainId, String contractAddresses, String authorization) throws ApiException {
-        ApiResponse<ResponseWrapperTokenSecurity> resp = tokenSecurityUsingGET1WithHttpInfo(chainId, contractAddresses, authorization);
+    public ResponseWrapperTokenLockerResponse getTokenLockersUsingGET(String chainId, Integer pageNum, Integer pageSize, String tokenAddress, String authorization) throws ApiException {
+        ApiResponse<ResponseWrapperTokenLockerResponse> resp = getTokenLockersUsingGETWithHttpInfo(chainId, pageNum, pageSize, tokenAddress, authorization);
         return resp.getData();
     }
 
     /**
-     * Get token&#x27;s security and risk data.
+     * Get token locker info
      * 
-     * @param chainId The chain_id of the blockchain. To check the corresponding blockchain name for a given chain_id, please visit: https://docs.gopluslabs.io/reference/response-details-9 (required)
-     * @param contractAddresses The contract address of tokens. (required)
+     * @param chainId chainId (required)
+     * @param pageNum pageNum (required)
+     * @param pageSize pageSize (required)
+     * @param tokenAddress tokenAddress (required)
      * @param authorization Authorization token in the format: Bearer &lt;token&gt; (e.g., Bearer eyJsZXZlbCI6NSwiYXBwTmFtZSI6ImF2cyIsImFwcEtleSI6IjFaW...) (optional)
-     * @return ApiResponse&lt;ResponseWrapperTokenSecurity&gt;
+     * @return ApiResponse&lt;ResponseWrapperTokenLockerResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ResponseWrapperTokenSecurity> tokenSecurityUsingGET1WithHttpInfo(String chainId, String contractAddresses, String authorization) throws ApiException {
-        okhttp3.Call call = tokenSecurityUsingGET1ValidateBeforeCall(chainId, contractAddresses, authorization, null, null);
-        Type localVarReturnType = new TypeToken<ResponseWrapperTokenSecurity>(){}.getType();
+    public ApiResponse<ResponseWrapperTokenLockerResponse> getTokenLockersUsingGETWithHttpInfo(String chainId, Integer pageNum, Integer pageSize, String tokenAddress, String authorization) throws ApiException {
+        okhttp3.Call call = getTokenLockersUsingGETValidateBeforeCall(chainId, pageNum, pageSize, tokenAddress, authorization, null, null);
+        Type localVarReturnType = new TypeToken<ResponseWrapperTokenLockerResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
-     * Get token&#x27;s security and risk data. (asynchronously)
+     * Get token locker info (asynchronously)
      * 
-     * @param chainId The chain_id of the blockchain. To check the corresponding blockchain name for a given chain_id, please visit: https://docs.gopluslabs.io/reference/response-details-9 (required)
-     * @param contractAddresses The contract address of tokens. (required)
+     * @param chainId chainId (required)
+     * @param pageNum pageNum (required)
+     * @param pageSize pageSize (required)
+     * @param tokenAddress tokenAddress (required)
      * @param authorization Authorization token in the format: Bearer &lt;token&gt; (e.g., Bearer eyJsZXZlbCI6NSwiYXBwTmFtZSI6ImF2cyIsImFwcEtleSI6IjFaW...) (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call tokenSecurityUsingGET1Async(String chainId, String contractAddresses, String authorization, final ApiCallback<ResponseWrapperTokenSecurity> callback) throws ApiException {
+    public okhttp3.Call getTokenLockersUsingGETAsync(String chainId, Integer pageNum, Integer pageSize, String tokenAddress, String authorization, final ApiCallback<ResponseWrapperTokenLockerResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -310,8 +365,8 @@ public class TokenControllerV1Api {
             };
         }
 
-        okhttp3.Call call = tokenSecurityUsingGET1ValidateBeforeCall(chainId, contractAddresses, authorization, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<ResponseWrapperTokenSecurity>(){}.getType();
+        okhttp3.Call call = getTokenLockersUsingGETValidateBeforeCall(chainId, pageNum, pageSize, tokenAddress, authorization, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<ResponseWrapperTokenLockerResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
