@@ -20,7 +20,7 @@ public class GoPlusClient {
      */
     public static AccessToken getAccessToken(AccessTokenRequest request) throws ApiException {
 
-        TokenControllerApi  api =new TokenControllerApi();
+        TokenControllerApi api = new TokenControllerApi();
         api.setApiClient(createApiClient(request.getTimeout()));
 
         GetAccessTokenRequest getAccessTokenRequest = new GetAccessTokenRequest();
@@ -252,6 +252,65 @@ public class GoPlusClient {
                 request.getAuthorization()
         );
         return DefiInfo.of(defiInfoUsingGET);
+    }
+
+
+    public static SolanaTokenSecurity tokenSecurityForSolana(TokenSecurityForSolanaRequest request) throws ApiException {
+        TokenSecurityApiForSolanaBetaApi api = new TokenSecurityApiForSolanaBetaApi();
+        api.setApiClient(createApiClient(request.getTimeout()));
+        ResponseWrapperSolanaTokenSecurity solanaTokenSecurity = api.solanaTokenSecurityUsingGET(
+                request.getContractAddresses(),
+                request.getAuthorization()
+        );
+        return SolanaTokenSecurity.of(solanaTokenSecurity);
+    }
+
+    public static SolanaPrerunTx solanaPreExecution(SolanaPreExecutionRequest request) throws ApiException {
+        TransactionSimulationForSolanaApi api = new TransactionSimulationForSolanaApi();
+        api.setApiClient(createApiClient(request.getTimeout()));
+
+        SolanaPrerunTxRequest txRequest = new SolanaPrerunTxRequest();
+        txRequest.setEncodedTransaction(request.getEncodedTransaction());
+
+        ResponseWrapperSolanaPrerunTxResponse response = api.prerunTxUsingPOST(txRequest, request.getAuthorization());
+        return SolanaPrerunTx.of(response);
+    }
+
+    public static LocksTokenInfo locksTokenInfo(LocksTokenInfoRequest request) throws ApiException {
+        LockControllerApi api = new LockControllerApi();
+        api.setApiClient(createApiClient(request.getTimeout()));
+        ResponseWrapperTokenLockerResponse tokenLockersUsingGET = api.getTokenLockersUsingGET(
+                request.getChainId(),
+                request.getPageNum(),
+                request.getPageSize(),
+                request.getTokenAddress(),
+                request.getAuthorization()
+        );
+        return LocksTokenInfo.of(tokenLockersUsingGET);
+    }
+
+    public static LocksLpv3Info locksLpv3Info(LocksInfoLpv3Request request) throws ApiException {
+        LockControllerApi api = new LockControllerApi();
+        api.setApiClient(createApiClient(request.getTimeout()));
+        ResponseWrapperNftLockerResponse nftLockersUsingGET = api.getNftLockersUsingGET(
+                request.getChainId(),
+                request.getPageNum(),
+                request.getPageSize(),
+                request.getPoolAddress(),
+                request.getAuthorization()
+        );
+        return LocksLpv3Info.of(nftLockersUsingGET);
+    }
+
+
+    public static SuiTokenSecurity tokenSecurityForSui(TokenSecurityForSuiRequest request) throws ApiException {
+        TokenSecurityApiForSuiApi api = new TokenSecurityApiForSuiApi();
+        api.setApiClient(createApiClient(request.getTimeout()));
+        ResponseWrapperSuiTokenSecurity suiTokenSecurity = api.suiTokenSecurityUsingGET(
+                request.getContractAddresses(),
+                request.getAuthorization()
+        );
+        return SuiTokenSecurity.of(suiTokenSecurity);
     }
 
 
