@@ -22,19 +22,19 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 /**
- * ResponseWrapperSolanaTokenSecurityCreator
+ * ResponseWrapperSolanaTokenSecurityCreators
  */
 
 
 
-public class ResponseWrapperSolanaTokenSecurityCreator {
+public class ResponseWrapperSolanaTokenSecurityCreators {
   @SerializedName("address")
   private String address = null;
 
   @SerializedName("malicious_address")
   private Integer maliciousAddress = null;
 
-  public ResponseWrapperSolanaTokenSecurityCreator address(String address) {
+  public ResponseWrapperSolanaTokenSecurityCreators address(String address) {
     this.address = address;
     return this;
   }
@@ -52,7 +52,7 @@ public class ResponseWrapperSolanaTokenSecurityCreator {
     this.address = address;
   }
 
-  public ResponseWrapperSolanaTokenSecurityCreator maliciousAddress(Integer maliciousAddress) {
+  public ResponseWrapperSolanaTokenSecurityCreators maliciousAddress(Integer maliciousAddress) {
     this.maliciousAddress = maliciousAddress;
     return this;
   }
@@ -79,9 +79,9 @@ public class ResponseWrapperSolanaTokenSecurityCreator {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ResponseWrapperSolanaTokenSecurityCreator responseWrapperSolanaTokenSecurityCreator = (ResponseWrapperSolanaTokenSecurityCreator) o;
-    return Objects.equals(this.address, responseWrapperSolanaTokenSecurityCreator.address) &&
-        Objects.equals(this.maliciousAddress, responseWrapperSolanaTokenSecurityCreator.maliciousAddress);
+    ResponseWrapperSolanaTokenSecurityCreators responseWrapperSolanaTokenSecurityCreators = (ResponseWrapperSolanaTokenSecurityCreators) o;
+    return Objects.equals(this.address, responseWrapperSolanaTokenSecurityCreators.address) &&
+        Objects.equals(this.maliciousAddress, responseWrapperSolanaTokenSecurityCreators.maliciousAddress);
   }
 
   @Override
@@ -93,7 +93,7 @@ public class ResponseWrapperSolanaTokenSecurityCreator {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ResponseWrapperSolanaTokenSecurityCreator {\n");
+    sb.append("class ResponseWrapperSolanaTokenSecurityCreators {\n");
     
     sb.append("    address: ").append(toIndentedString(address)).append("\n");
     sb.append("    maliciousAddress: ").append(toIndentedString(maliciousAddress)).append("\n");
