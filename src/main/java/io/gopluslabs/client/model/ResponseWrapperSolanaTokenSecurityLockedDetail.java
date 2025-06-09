@@ -22,12 +22,12 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 /**
- * ResponseWrapperTokenSecurityLockedDetail
+ * ResponseWrapperSolanaTokenSecurityLockedDetail
  */
 
 
 
-public class ResponseWrapperTokenSecurityLockedDetail {
+public class ResponseWrapperSolanaTokenSecurityLockedDetail {
   @SerializedName("amount")
   private String amount = null;
 
@@ -37,7 +37,7 @@ public class ResponseWrapperTokenSecurityLockedDetail {
   @SerializedName("end_time")
   private String endTime = null;
 
-  public ResponseWrapperTokenSecurityLockedDetail amount(String amount) {
+  public ResponseWrapperSolanaTokenSecurityLockedDetail amount(String amount) {
     this.amount = amount;
     return this;
   }
@@ -55,7 +55,7 @@ public class ResponseWrapperTokenSecurityLockedDetail {
     this.amount = amount;
   }
 
-  public ResponseWrapperTokenSecurityLockedDetail optTime(String optTime) {
+  public ResponseWrapperSolanaTokenSecurityLockedDetail optTime(String optTime) {
     this.optTime = optTime;
     return this;
   }
@@ -73,7 +73,7 @@ public class ResponseWrapperTokenSecurityLockedDetail {
     this.optTime = optTime;
   }
 
-  public ResponseWrapperTokenSecurityLockedDetail endTime(String endTime) {
+  public ResponseWrapperSolanaTokenSecurityLockedDetail endTime(String endTime) {
     this.endTime = endTime;
     return this;
   }
@@ -100,10 +100,10 @@ public class ResponseWrapperTokenSecurityLockedDetail {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ResponseWrapperTokenSecurityLockedDetail responseWrapperTokenSecurityLockedDetail = (ResponseWrapperTokenSecurityLockedDetail) o;
-    return Objects.equals(this.amount, responseWrapperTokenSecurityLockedDetail.amount) &&
-        Objects.equals(this.optTime, responseWrapperTokenSecurityLockedDetail.optTime) &&
-        Objects.equals(this.endTime, responseWrapperTokenSecurityLockedDetail.endTime);
+    ResponseWrapperSolanaTokenSecurityLockedDetail responseWrapperSolanaTokenSecurityLockedDetail = (ResponseWrapperSolanaTokenSecurityLockedDetail) o;
+    return Objects.equals(this.amount, responseWrapperSolanaTokenSecurityLockedDetail.amount) &&
+        Objects.equals(this.optTime, responseWrapperSolanaTokenSecurityLockedDetail.optTime) &&
+        Objects.equals(this.endTime, responseWrapperSolanaTokenSecurityLockedDetail.endTime);
   }
 
   @Override
@@ -115,7 +115,7 @@ public class ResponseWrapperTokenSecurityLockedDetail {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ResponseWrapperTokenSecurityLockedDetail {\n");
+    sb.append("class ResponseWrapperSolanaTokenSecurityLockedDetail {\n");
     
     sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
     sb.append("    optTime: ").append(toIndentedString(optTime)).append("\n");

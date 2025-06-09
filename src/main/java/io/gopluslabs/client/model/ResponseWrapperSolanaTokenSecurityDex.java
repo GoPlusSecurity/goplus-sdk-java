@@ -24,6 +24,7 @@ import io.gopluslabs.client.model.ResponseWrapperSolanaTokenSecurityMonth;
 import io.gopluslabs.client.model.ResponseWrapperSolanaTokenSecurityWeek;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
+import java.math.BigDecimal;
 /**
  * ResponseWrapperSolanaTokenSecurityDex
  */
@@ -57,6 +58,9 @@ public class ResponseWrapperSolanaTokenSecurityDex {
 
   @SerializedName("day")
   private ResponseWrapperSolanaTokenSecurityDay day = null;
+
+  @SerializedName("burn_percent")
+  private BigDecimal burnPercent = null;
 
   @SerializedName("lp_amount")
   private String lpAmount = null;
@@ -226,6 +230,24 @@ public class ResponseWrapperSolanaTokenSecurityDex {
     this.day = day;
   }
 
+  public ResponseWrapperSolanaTokenSecurityDex burnPercent(BigDecimal burnPercent) {
+    this.burnPercent = burnPercent;
+    return this;
+  }
+
+   /**
+   * Percentage of burned LP
+   * @return burnPercent
+  **/
+  @Schema(description = "Percentage of burned LP")
+  public BigDecimal getBurnPercent() {
+    return burnPercent;
+  }
+
+  public void setBurnPercent(BigDecimal burnPercent) {
+    this.burnPercent = burnPercent;
+  }
+
   public ResponseWrapperSolanaTokenSecurityDex lpAmount(String lpAmount) {
     this.lpAmount = lpAmount;
     return this;
@@ -281,13 +303,14 @@ public class ResponseWrapperSolanaTokenSecurityDex {
         Objects.equals(this.type, responseWrapperSolanaTokenSecurityDex.type) &&
         Objects.equals(this.dexName, responseWrapperSolanaTokenSecurityDex.dexName) &&
         Objects.equals(this.day, responseWrapperSolanaTokenSecurityDex.day) &&
+        Objects.equals(this.burnPercent, responseWrapperSolanaTokenSecurityDex.burnPercent) &&
         Objects.equals(this.lpAmount, responseWrapperSolanaTokenSecurityDex.lpAmount) &&
         Objects.equals(this.feeRate, responseWrapperSolanaTokenSecurityDex.feeRate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(week, month, price, openTime, id, tvl, type, dexName, day, lpAmount, feeRate);
+    return Objects.hash(week, month, price, openTime, id, tvl, type, dexName, day, burnPercent, lpAmount, feeRate);
   }
 
 
@@ -305,6 +328,7 @@ public class ResponseWrapperSolanaTokenSecurityDex {
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    dexName: ").append(toIndentedString(dexName)).append("\n");
     sb.append("    day: ").append(toIndentedString(day)).append("\n");
+    sb.append("    burnPercent: ").append(toIndentedString(burnPercent)).append("\n");
     sb.append("    lpAmount: ").append(toIndentedString(lpAmount)).append("\n");
     sb.append("    feeRate: ").append(toIndentedString(feeRate)).append("\n");
     sb.append("}");

@@ -32,7 +32,7 @@ public class TaTokenLockerLockInfoobject {
   private String amount = null;
 
   @SerializedName("endTime")
-  private Integer endTime = null;
+  private Long endTime = null;
 
   @SerializedName("isLpToken")
   private Integer isLpToken = null;
@@ -70,7 +70,7 @@ public class TaTokenLockerLockInfoobject {
     this.amount = amount;
   }
 
-  public TaTokenLockerLockInfoobject endTime(Integer endTime) {
+  public TaTokenLockerLockInfoobject endTime(Long endTime) {
     this.endTime = endTime;
     return this;
   }
@@ -80,11 +80,11 @@ public class TaTokenLockerLockInfoobject {
    * @return endTime
   **/
   @Schema(description = "解锁时间戳")
-  public Integer getEndTime() {
+  public Long getEndTime() {
     return endTime;
   }
 
-  public void setEndTime(Integer endTime) {
+  public void setEndTime(Long endTime) {
     this.endTime = endTime;
   }
 

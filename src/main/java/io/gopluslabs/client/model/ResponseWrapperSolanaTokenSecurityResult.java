@@ -25,6 +25,7 @@ import io.gopluslabs.client.model.ResponseWrapperSolanaTokenSecurityCreator;
 import io.gopluslabs.client.model.ResponseWrapperSolanaTokenSecurityDefaultAccountStateUpgradable;
 import io.gopluslabs.client.model.ResponseWrapperSolanaTokenSecurityDex;
 import io.gopluslabs.client.model.ResponseWrapperSolanaTokenSecurityFreezable;
+import io.gopluslabs.client.model.ResponseWrapperSolanaTokenSecurityHolders;
 import io.gopluslabs.client.model.ResponseWrapperSolanaTokenSecurityLpHolders;
 import io.gopluslabs.client.model.ResponseWrapperSolanaTokenSecurityMetadata;
 import io.gopluslabs.client.model.ResponseWrapperSolanaTokenSecurityMetadataMutable;
@@ -63,7 +64,7 @@ public class ResponseWrapperSolanaTokenSecurityResult {
   private ResponseWrapperSolanaTokenSecurityTransferHookUpgradable transferHookUpgradable = null;
 
   @SerializedName("trusted_token")
-  private String trustedToken = null;
+  private Integer trustedToken = null;
 
   @SerializedName("default_account_state_upgradable")
   private ResponseWrapperSolanaTokenSecurityDefaultAccountStateUpgradable defaultAccountStateUpgradable = null;
@@ -84,7 +85,7 @@ public class ResponseWrapperSolanaTokenSecurityResult {
   private ResponseWrapperSolanaTokenSecurityTransferFee transferFee = null;
 
   @SerializedName("holders")
-  private List<ResponseWrapperSolanaTokenSecurityLpHolders> holders = null;
+  private List<ResponseWrapperSolanaTokenSecurityHolders> holders = null;
 
   @SerializedName("freezable")
   private ResponseWrapperSolanaTokenSecurityFreezable freezable = null;
@@ -230,7 +231,7 @@ public class ResponseWrapperSolanaTokenSecurityResult {
     this.transferHookUpgradable = transferHookUpgradable;
   }
 
-  public ResponseWrapperSolanaTokenSecurityResult trustedToken(String trustedToken) {
+  public ResponseWrapperSolanaTokenSecurityResult trustedToken(Integer trustedToken) {
     this.trustedToken = trustedToken;
     return this;
   }
@@ -240,11 +241,11 @@ public class ResponseWrapperSolanaTokenSecurityResult {
    * @return trustedToken
   **/
   @Schema(description = "If the token is a famous and trustworthy one. \"1\" means yes.")
-  public String getTrustedToken() {
+  public Integer getTrustedToken() {
     return trustedToken;
   }
 
-  public void setTrustedToken(String trustedToken) {
+  public void setTrustedToken(Integer trustedToken) {
     this.trustedToken = trustedToken;
   }
 
@@ -356,14 +357,14 @@ public class ResponseWrapperSolanaTokenSecurityResult {
     this.transferFee = transferFee;
   }
 
-  public ResponseWrapperSolanaTokenSecurityResult holders(List<ResponseWrapperSolanaTokenSecurityLpHolders> holders) {
+  public ResponseWrapperSolanaTokenSecurityResult holders(List<ResponseWrapperSolanaTokenSecurityHolders> holders) {
     this.holders = holders;
     return this;
   }
 
-  public ResponseWrapperSolanaTokenSecurityResult addHoldersItem(ResponseWrapperSolanaTokenSecurityLpHolders holdersItem) {
+  public ResponseWrapperSolanaTokenSecurityResult addHoldersItem(ResponseWrapperSolanaTokenSecurityHolders holdersItem) {
     if (this.holders == null) {
-      this.holders = new ArrayList<ResponseWrapperSolanaTokenSecurityLpHolders>();
+      this.holders = new ArrayList<ResponseWrapperSolanaTokenSecurityHolders>();
     }
     this.holders.add(holdersItem);
     return this;
@@ -374,11 +375,11 @@ public class ResponseWrapperSolanaTokenSecurityResult {
    * @return holders
   **/
   @Schema(description = "List of top 10 addresses holding the token and their balances.")
-  public List<ResponseWrapperSolanaTokenSecurityLpHolders> getHolders() {
+  public List<ResponseWrapperSolanaTokenSecurityHolders> getHolders() {
     return holders;
   }
 
-  public void setHolders(List<ResponseWrapperSolanaTokenSecurityLpHolders> holders) {
+  public void setHolders(List<ResponseWrapperSolanaTokenSecurityHolders> holders) {
     this.holders = holders;
   }
 
