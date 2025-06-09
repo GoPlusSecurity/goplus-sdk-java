@@ -21,7 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.gopluslabs.client.model.ResponseWrapperSolanaTokenSecurityBalanceMutableAuthority;
 import io.gopluslabs.client.model.ResponseWrapperSolanaTokenSecurityClosable;
-import io.gopluslabs.client.model.ResponseWrapperSolanaTokenSecurityCreator;
+import io.gopluslabs.client.model.ResponseWrapperSolanaTokenSecurityCreators;
 import io.gopluslabs.client.model.ResponseWrapperSolanaTokenSecurityDefaultAccountStateUpgradable;
 import io.gopluslabs.client.model.ResponseWrapperSolanaTokenSecurityDex;
 import io.gopluslabs.client.model.ResponseWrapperSolanaTokenSecurityFreezable;
@@ -48,8 +48,8 @@ public class ResponseWrapperSolanaTokenSecurityResult {
   @SerializedName("metadata")
   private ResponseWrapperSolanaTokenSecurityMetadata metadata = null;
 
-  @SerializedName("creator")
-  private List<ResponseWrapperSolanaTokenSecurityCreator> creator = null;
+  @SerializedName("creators")
+  private List<ResponseWrapperSolanaTokenSecurityCreators> creators = null;
 
   @SerializedName("lp_holders")
   private List<ResponseWrapperSolanaTokenSecurityLpHolders> lpHolders = null;
@@ -117,30 +117,30 @@ public class ResponseWrapperSolanaTokenSecurityResult {
     this.metadata = metadata;
   }
 
-  public ResponseWrapperSolanaTokenSecurityResult creator(List<ResponseWrapperSolanaTokenSecurityCreator> creator) {
-    this.creator = creator;
+  public ResponseWrapperSolanaTokenSecurityResult creators(List<ResponseWrapperSolanaTokenSecurityCreators> creators) {
+    this.creators = creators;
     return this;
   }
 
-  public ResponseWrapperSolanaTokenSecurityResult addCreatorItem(ResponseWrapperSolanaTokenSecurityCreator creatorItem) {
-    if (this.creator == null) {
-      this.creator = new ArrayList<ResponseWrapperSolanaTokenSecurityCreator>();
+  public ResponseWrapperSolanaTokenSecurityResult addCreatorsItem(ResponseWrapperSolanaTokenSecurityCreators creatorsItem) {
+    if (this.creators == null) {
+      this.creators = new ArrayList<ResponseWrapperSolanaTokenSecurityCreators>();
     }
-    this.creator.add(creatorItem);
+    this.creators.add(creatorsItem);
     return this;
   }
 
    /**
    * Contains information about the token creators.
-   * @return creator
+   * @return creators
   **/
   @Schema(description = "Contains information about the token creators.")
-  public List<ResponseWrapperSolanaTokenSecurityCreator> getCreator() {
-    return creator;
+  public List<ResponseWrapperSolanaTokenSecurityCreators> getCreators() {
+    return creators;
   }
 
-  public void setCreator(List<ResponseWrapperSolanaTokenSecurityCreator> creator) {
-    this.creator = creator;
+  public void setCreators(List<ResponseWrapperSolanaTokenSecurityCreators> creators) {
+    this.creators = creators;
   }
 
   public ResponseWrapperSolanaTokenSecurityResult lpHolders(List<ResponseWrapperSolanaTokenSecurityLpHolders> lpHolders) {
@@ -474,7 +474,7 @@ public class ResponseWrapperSolanaTokenSecurityResult {
     }
     ResponseWrapperSolanaTokenSecurityResult responseWrapperSolanaTokenSecurityResult = (ResponseWrapperSolanaTokenSecurityResult) o;
     return Objects.equals(this.metadata, responseWrapperSolanaTokenSecurityResult.metadata) &&
-        Objects.equals(this.creator, responseWrapperSolanaTokenSecurityResult.creator) &&
+        Objects.equals(this.creators, responseWrapperSolanaTokenSecurityResult.creators) &&
         Objects.equals(this.lpHolders, responseWrapperSolanaTokenSecurityResult.lpHolders) &&
         Objects.equals(this.closable, responseWrapperSolanaTokenSecurityResult.closable) &&
         Objects.equals(this.transferHook, responseWrapperSolanaTokenSecurityResult.transferHook) &&
@@ -495,7 +495,7 @@ public class ResponseWrapperSolanaTokenSecurityResult {
 
   @Override
   public int hashCode() {
-    return Objects.hash(metadata, creator, lpHolders, closable, transferHook, transferHookUpgradable, trustedToken, defaultAccountStateUpgradable, noneTransferable, defaultAccountState, mintable, balanceMutableAuthority, transferFee, holders, freezable, metadataMutable, dex, transferFeeUpgradable);
+    return Objects.hash(metadata, creators, lpHolders, closable, transferHook, transferHookUpgradable, trustedToken, defaultAccountStateUpgradable, noneTransferable, defaultAccountState, mintable, balanceMutableAuthority, transferFee, holders, freezable, metadataMutable, dex, transferFeeUpgradable);
   }
 
 
@@ -505,7 +505,7 @@ public class ResponseWrapperSolanaTokenSecurityResult {
     sb.append("class ResponseWrapperSolanaTokenSecurityResult {\n");
     
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
-    sb.append("    creator: ").append(toIndentedString(creator)).append("\n");
+    sb.append("    creators: ").append(toIndentedString(creators)).append("\n");
     sb.append("    lpHolders: ").append(toIndentedString(lpHolders)).append("\n");
     sb.append("    closable: ").append(toIndentedString(closable)).append("\n");
     sb.append("    transferHook: ").append(toIndentedString(transferHook)).append("\n");
