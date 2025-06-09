@@ -29,7 +29,7 @@ import java.io.IOException;
 
 public class TaNftLockerLockInfoobject {
   @SerializedName("endTime")
-  private Integer endTime = null;
+  private Long endTime = null;
 
   @SerializedName("lockId")
   private String lockId = null;
@@ -49,7 +49,7 @@ public class TaNftLockerLockInfoobject {
   @SerializedName("startTime")
   private Integer startTime = null;
 
-  public TaNftLockerLockInfoobject endTime(Integer endTime) {
+  public TaNftLockerLockInfoobject endTime(Long endTime) {
     this.endTime = endTime;
     return this;
   }
@@ -59,11 +59,11 @@ public class TaNftLockerLockInfoobject {
    * @return endTime
   **/
   @Schema(description = "解锁时间戳")
-  public Integer getEndTime() {
+  public Long getEndTime() {
     return endTime;
   }
 
-  public void setEndTime(Integer endTime) {
+  public void setEndTime(Long endTime) {
     this.endTime = endTime;
   }
 

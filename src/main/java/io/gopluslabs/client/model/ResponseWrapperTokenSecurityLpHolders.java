@@ -19,7 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.gopluslabs.client.model.ResponseWrapperTokenSecurityLockedDetail;
+import io.gopluslabs.client.model.ResponseWrapperSolanaTokenSecurityLockedDetail;
 import io.gopluslabs.client.model.ResponseWrapperTokenSecurityNFTList;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
@@ -48,7 +48,7 @@ public class ResponseWrapperTokenSecurityLpHolders {
   private List<ResponseWrapperTokenSecurityNFTList> nfTList = null;
 
   @SerializedName("locked_detail")
-  private List<ResponseWrapperTokenSecurityLockedDetail> lockedDetail = null;
+  private List<ResponseWrapperSolanaTokenSecurityLockedDetail> lockedDetail = null;
 
   @SerializedName("tag")
   private String tag = null;
@@ -154,14 +154,14 @@ public class ResponseWrapperTokenSecurityLpHolders {
     this.nfTList = nfTList;
   }
 
-  public ResponseWrapperTokenSecurityLpHolders lockedDetail(List<ResponseWrapperTokenSecurityLockedDetail> lockedDetail) {
+  public ResponseWrapperTokenSecurityLpHolders lockedDetail(List<ResponseWrapperSolanaTokenSecurityLockedDetail> lockedDetail) {
     this.lockedDetail = lockedDetail;
     return this;
   }
 
-  public ResponseWrapperTokenSecurityLpHolders addLockedDetailItem(ResponseWrapperTokenSecurityLockedDetail lockedDetailItem) {
+  public ResponseWrapperTokenSecurityLpHolders addLockedDetailItem(ResponseWrapperSolanaTokenSecurityLockedDetail lockedDetailItem) {
     if (this.lockedDetail == null) {
-      this.lockedDetail = new ArrayList<ResponseWrapperTokenSecurityLockedDetail>();
+      this.lockedDetail = new ArrayList<ResponseWrapperSolanaTokenSecurityLockedDetail>();
     }
     this.lockedDetail.add(lockedDetailItem);
     return this;
@@ -172,11 +172,11 @@ public class ResponseWrapperTokenSecurityLpHolders {
    * @return lockedDetail
   **/
   @Schema(description = "It is an array, decribes lock position info of this holder, only shows when \"locked\": 1. This Array may contain multiple objects for multiple locking info. (Notice:When \"locked\":0, or lock address is a black hole address,  \"locked_detail\" will be no return.)")
-  public List<ResponseWrapperTokenSecurityLockedDetail> getLockedDetail() {
+  public List<ResponseWrapperSolanaTokenSecurityLockedDetail> getLockedDetail() {
     return lockedDetail;
   }
 
-  public void setLockedDetail(List<ResponseWrapperTokenSecurityLockedDetail> lockedDetail) {
+  public void setLockedDetail(List<ResponseWrapperSolanaTokenSecurityLockedDetail> lockedDetail) {
     this.lockedDetail = lockedDetail;
   }
 
