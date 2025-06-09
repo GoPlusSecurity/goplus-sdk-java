@@ -100,7 +100,7 @@ public class GoPlusClientTest {
         InputDecodeRequest of = InputDecodeRequest.of(
                 "56",
                 "0x10ED43C718714eb63d5aA57B78B54704E256024E",
-                    "0x18cbafe500000000000000000000000000000000000000000000018d3f36640ede281bf40000000000000000000000000000000000000000000000001ea33680437e6bcd00000000000000000000000000000000000000000000000000000000000000a00000000000000000000000000c3289e4bfb8868c242833479232ff0ee4efae7800000000000000000000000000000000000000000000000000000000638f084b000000000000000000000000000000000000000000000000000000000000000200000000000000000000000031a9975f71f53d5cdeb4bf4a48b3857e3827d487000000000000000000000000bb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c",
+                "0x18cbafe500000000000000000000000000000000000000000000018d3f36640ede281bf40000000000000000000000000000000000000000000000001ea33680437e6bcd00000000000000000000000000000000000000000000000000000000000000a00000000000000000000000000c3289e4bfb8868c242833479232ff0ee4efae7800000000000000000000000000000000000000000000000000000000638f084b000000000000000000000000000000000000000000000000000000000000000200000000000000000000000031a9975f71f53d5cdeb4bf4a48b3857e3827d487000000000000000000000000bb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c",
                 "000",
                 0
         );
@@ -143,6 +143,36 @@ public class GoPlusClientTest {
                 "0x11450058d796b02eb53e65374be59cff65d3fe7f"
         );
         System.out.println(GoPlusClient.rugpullDetecting(of));
+    }
+
+    @Test
+    public void tokenSecurityForSolana() throws ApiException {
+        TokenSecurityForSolanaRequest request = TokenSecurityForSolanaRequest.of("6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN");
+        System.out.println(GoPlusClient.tokenSecurityForSolana(request));
+    }
+
+    @Test
+    public void solanaPreExecution() throws ApiException {
+        SolanaPreExecutionRequest request = SolanaPreExecutionRequest.of("");
+        System.out.println(GoPlusClient.solanaPreExecution(request));
+    }
+
+    @Test
+    public void locksTokenInfo() throws ApiException {
+        LocksTokenInfoRequest request = LocksTokenInfoRequest.of("", 1, 10, "");
+        System.out.println(GoPlusClient.locksTokenInfo(request));
+    }
+
+    @Test
+    public void locksLpv3Info() throws ApiException {
+        LocksInfoLpv3Request request = LocksInfoLpv3Request.of("", 1, 10, "");
+        System.out.println(GoPlusClient.locksLpv3Info(request));
+    }
+
+    @Test
+    public void tokenSecurityForSui() throws ApiException {
+        TokenSecurityForSuiRequest request = TokenSecurityForSuiRequest.of("0x2::sui::SUI");
+        System.out.println(GoPlusClient.tokenSecurityForSui(request));
     }
 
 }
