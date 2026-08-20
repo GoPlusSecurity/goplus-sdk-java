@@ -27,7 +27,10 @@ import java.io.IOException;
 
 
 import io.gopluslabs.client.model.ResponseWrapperNftLockerResponse;
+import io.gopluslabs.client.model.ResponseWrapperPageResponseTaNftLockerLockInfo;
+import io.gopluslabs.client.model.ResponseWrapperPageResponseV4NftLockerLockInfos;
 import io.gopluslabs.client.model.ResponseWrapperTokenLockerResponse;
+import io.gopluslabs.client.model.ResponseWrapperV4LpLockerLockInfoResp;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -54,6 +57,138 @@ public class LockControllerApi {
         this.apiClient = apiClient;
     }
 
+    /**
+     * Build call for getNftLockerLockInfosListUsingGET
+     * @param pageNum pageNum (required)
+     * @param pageSize pageSize (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public okhttp3.Call getNftLockerLockInfosListUsingGETCall(Integer pageNum, Integer pageSize, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/open/api/v1/locks/lpv3s";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        if (pageNum != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("pageNum", pageNum));
+        if (pageSize != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("pageSize", pageSize));
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "*/*"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
+                @Override
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call getNftLockerLockInfosListUsingGETValidateBeforeCall(Integer pageNum, Integer pageSize, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        // verify the required parameter 'pageNum' is set
+        if (pageNum == null) {
+            throw new ApiException("Missing the required parameter 'pageNum' when calling getNftLockerLockInfosListUsingGET(Async)");
+        }
+        // verify the required parameter 'pageSize' is set
+        if (pageSize == null) {
+            throw new ApiException("Missing the required parameter 'pageSize' when calling getNftLockerLockInfosListUsingGET(Async)");
+        }
+
+        okhttp3.Call call = getNftLockerLockInfosListUsingGETCall(pageNum, pageSize, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * get lpv3 locker infos
+     * 
+     * @param pageNum pageNum (required)
+     * @param pageSize pageSize (required)
+     * @return ResponseWrapperPageResponseTaNftLockerLockInfo
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ResponseWrapperPageResponseTaNftLockerLockInfo getNftLockerLockInfosListUsingGET(Integer pageNum, Integer pageSize) throws ApiException {
+        ApiResponse<ResponseWrapperPageResponseTaNftLockerLockInfo> resp = getNftLockerLockInfosListUsingGETWithHttpInfo(pageNum, pageSize);
+        return resp.getData();
+    }
+
+    /**
+     * get lpv3 locker infos
+     * 
+     * @param pageNum pageNum (required)
+     * @param pageSize pageSize (required)
+     * @return ApiResponse&lt;ResponseWrapperPageResponseTaNftLockerLockInfo&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<ResponseWrapperPageResponseTaNftLockerLockInfo> getNftLockerLockInfosListUsingGETWithHttpInfo(Integer pageNum, Integer pageSize) throws ApiException {
+        okhttp3.Call call = getNftLockerLockInfosListUsingGETValidateBeforeCall(pageNum, pageSize, null, null);
+        Type localVarReturnType = new TypeToken<ResponseWrapperPageResponseTaNftLockerLockInfo>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * get lpv3 locker infos (asynchronously)
+     * 
+     * @param pageNum pageNum (required)
+     * @param pageSize pageSize (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public okhttp3.Call getNftLockerLockInfosListUsingGETAsync(Integer pageNum, Integer pageSize, final ApiCallback<ResponseWrapperPageResponseTaNftLockerLockInfo> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        okhttp3.Call call = getNftLockerLockInfosListUsingGETValidateBeforeCall(pageNum, pageSize, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<ResponseWrapperPageResponseTaNftLockerLockInfo>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
     /**
      * Build call for getNftLockersUsingGET
      * @param chainId chainId (required)
@@ -367,6 +502,290 @@ public class LockControllerApi {
 
         okhttp3.Call call = getTokenLockersUsingGETValidateBeforeCall(chainId, pageNum, pageSize, tokenAddress, authorization, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ResponseWrapperTokenLockerResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for getV4NftLockerLockInfosListUsingGET
+     * @param pageNum pageNum (required)
+     * @param pageSize pageSize (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public okhttp3.Call getV4NftLockerLockInfosListUsingGETCall(Integer pageNum, Integer pageSize, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/open/api/v1/locks/lpv4s";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        if (pageNum != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("pageNum", pageNum));
+        if (pageSize != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("pageSize", pageSize));
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "*/*"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
+                @Override
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call getV4NftLockerLockInfosListUsingGETValidateBeforeCall(Integer pageNum, Integer pageSize, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        // verify the required parameter 'pageNum' is set
+        if (pageNum == null) {
+            throw new ApiException("Missing the required parameter 'pageNum' when calling getV4NftLockerLockInfosListUsingGET(Async)");
+        }
+        // verify the required parameter 'pageSize' is set
+        if (pageSize == null) {
+            throw new ApiException("Missing the required parameter 'pageSize' when calling getV4NftLockerLockInfosListUsingGET(Async)");
+        }
+
+        okhttp3.Call call = getV4NftLockerLockInfosListUsingGETCall(pageNum, pageSize, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * get lpv4 locker infos
+     * 
+     * @param pageNum pageNum (required)
+     * @param pageSize pageSize (required)
+     * @return ResponseWrapperPageResponseV4NftLockerLockInfos
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ResponseWrapperPageResponseV4NftLockerLockInfos getV4NftLockerLockInfosListUsingGET(Integer pageNum, Integer pageSize) throws ApiException {
+        ApiResponse<ResponseWrapperPageResponseV4NftLockerLockInfos> resp = getV4NftLockerLockInfosListUsingGETWithHttpInfo(pageNum, pageSize);
+        return resp.getData();
+    }
+
+    /**
+     * get lpv4 locker infos
+     * 
+     * @param pageNum pageNum (required)
+     * @param pageSize pageSize (required)
+     * @return ApiResponse&lt;ResponseWrapperPageResponseV4NftLockerLockInfos&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<ResponseWrapperPageResponseV4NftLockerLockInfos> getV4NftLockerLockInfosListUsingGETWithHttpInfo(Integer pageNum, Integer pageSize) throws ApiException {
+        okhttp3.Call call = getV4NftLockerLockInfosListUsingGETValidateBeforeCall(pageNum, pageSize, null, null);
+        Type localVarReturnType = new TypeToken<ResponseWrapperPageResponseV4NftLockerLockInfos>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * get lpv4 locker infos (asynchronously)
+     * 
+     * @param pageNum pageNum (required)
+     * @param pageSize pageSize (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public okhttp3.Call getV4NftLockerLockInfosListUsingGETAsync(Integer pageNum, Integer pageSize, final ApiCallback<ResponseWrapperPageResponseV4NftLockerLockInfos> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        okhttp3.Call call = getV4NftLockerLockInfosListUsingGETValidateBeforeCall(pageNum, pageSize, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<ResponseWrapperPageResponseV4NftLockerLockInfos>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for getV4NftLockersUsingGET
+     * @param chainId chainId (required)
+     * @param pageNum pageNum (required)
+     * @param pageSize pageSize (required)
+     * @param poolId poolId (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public okhttp3.Call getV4NftLockersUsingGETCall(String chainId, Integer pageNum, Integer pageSize, String poolId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/open/api/v1/locks/lpv4";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        if (chainId != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("chainId", chainId));
+        if (pageNum != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("pageNum", pageNum));
+        if (pageSize != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("pageSize", pageSize));
+        if (poolId != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("poolId", poolId));
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "*/*"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
+                @Override
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call getV4NftLockersUsingGETValidateBeforeCall(String chainId, Integer pageNum, Integer pageSize, String poolId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        // verify the required parameter 'chainId' is set
+        if (chainId == null) {
+            throw new ApiException("Missing the required parameter 'chainId' when calling getV4NftLockersUsingGET(Async)");
+        }
+        // verify the required parameter 'pageNum' is set
+        if (pageNum == null) {
+            throw new ApiException("Missing the required parameter 'pageNum' when calling getV4NftLockersUsingGET(Async)");
+        }
+        // verify the required parameter 'pageSize' is set
+        if (pageSize == null) {
+            throw new ApiException("Missing the required parameter 'pageSize' when calling getV4NftLockersUsingGET(Async)");
+        }
+        // verify the required parameter 'poolId' is set
+        if (poolId == null) {
+            throw new ApiException("Missing the required parameter 'poolId' when calling getV4NftLockersUsingGET(Async)");
+        }
+
+        okhttp3.Call call = getV4NftLockersUsingGETCall(chainId, pageNum, pageSize, poolId, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * get v4 nft locker info
+     * 
+     * @param chainId chainId (required)
+     * @param pageNum pageNum (required)
+     * @param pageSize pageSize (required)
+     * @param poolId poolId (required)
+     * @return ResponseWrapperV4LpLockerLockInfoResp
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ResponseWrapperV4LpLockerLockInfoResp getV4NftLockersUsingGET(String chainId, Integer pageNum, Integer pageSize, String poolId) throws ApiException {
+        ApiResponse<ResponseWrapperV4LpLockerLockInfoResp> resp = getV4NftLockersUsingGETWithHttpInfo(chainId, pageNum, pageSize, poolId);
+        return resp.getData();
+    }
+
+    /**
+     * get v4 nft locker info
+     * 
+     * @param chainId chainId (required)
+     * @param pageNum pageNum (required)
+     * @param pageSize pageSize (required)
+     * @param poolId poolId (required)
+     * @return ApiResponse&lt;ResponseWrapperV4LpLockerLockInfoResp&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<ResponseWrapperV4LpLockerLockInfoResp> getV4NftLockersUsingGETWithHttpInfo(String chainId, Integer pageNum, Integer pageSize, String poolId) throws ApiException {
+        okhttp3.Call call = getV4NftLockersUsingGETValidateBeforeCall(chainId, pageNum, pageSize, poolId, null, null);
+        Type localVarReturnType = new TypeToken<ResponseWrapperV4LpLockerLockInfoResp>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * get v4 nft locker info (asynchronously)
+     * 
+     * @param chainId chainId (required)
+     * @param pageNum pageNum (required)
+     * @param pageSize pageSize (required)
+     * @param poolId poolId (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public okhttp3.Call getV4NftLockersUsingGETAsync(String chainId, Integer pageNum, Integer pageSize, String poolId, final ApiCallback<ResponseWrapperV4LpLockerLockInfoResp> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        okhttp3.Call call = getV4NftLockersUsingGETValidateBeforeCall(chainId, pageNum, pageSize, poolId, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<ResponseWrapperV4LpLockerLockInfoResp>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

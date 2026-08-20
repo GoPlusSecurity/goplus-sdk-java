@@ -19,6 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import io.gopluslabs.client.model.ResponseWrapperTokenSecurityB20Token;
 import io.gopluslabs.client.model.ResponseWrapperTokenSecurityDex;
 import io.gopluslabs.client.model.ResponseWrapperTokenSecurityFakeToken;
 import io.gopluslabs.client.model.ResponseWrapperTokenSecurityHolders;
@@ -34,6 +35,9 @@ import java.util.List;
 
 
 public class ResponseWrapperTokenSecurityResult {
+  @SerializedName("b20_token")
+  private ResponseWrapperTokenSecurityB20Token b20Token = null;
+
   @SerializedName("note")
   private String note = null;
 
@@ -165,6 +169,24 @@ public class ResponseWrapperTokenSecurityResult {
 
   @SerializedName("token_symbol")
   private String tokenSymbol = null;
+
+  public ResponseWrapperTokenSecurityResult b20Token(ResponseWrapperTokenSecurityB20Token b20Token) {
+    this.b20Token = b20Token;
+    return this;
+  }
+
+   /**
+   * Get b20Token
+   * @return b20Token
+  **/
+  @Schema(description = "")
+  public ResponseWrapperTokenSecurityB20Token getB20Token() {
+    return b20Token;
+  }
+
+  public void setB20Token(ResponseWrapperTokenSecurityB20Token b20Token) {
+    this.b20Token = b20Token;
+  }
 
   public ResponseWrapperTokenSecurityResult note(String note) {
     this.note = note;
@@ -992,7 +1014,8 @@ public class ResponseWrapperTokenSecurityResult {
       return false;
     }
     ResponseWrapperTokenSecurityResult responseWrapperTokenSecurityResult = (ResponseWrapperTokenSecurityResult) o;
-    return Objects.equals(this.note, responseWrapperTokenSecurityResult.note) &&
+    return Objects.equals(this.b20Token, responseWrapperTokenSecurityResult.b20Token) &&
+        Objects.equals(this.note, responseWrapperTokenSecurityResult.note) &&
         Objects.equals(this.lpTotalSupply, responseWrapperTokenSecurityResult.lpTotalSupply) &&
         Objects.equals(this.lpHolders, responseWrapperTokenSecurityResult.lpHolders) &&
         Objects.equals(this.isAirdropScam, responseWrapperTokenSecurityResult.isAirdropScam) &&
@@ -1040,7 +1063,7 @@ public class ResponseWrapperTokenSecurityResult {
 
   @Override
   public int hashCode() {
-    return Objects.hash(note, lpTotalSupply, lpHolders, isAirdropScam, otherPotentialRisks, transferPausable, tradingCooldown, hiddenOwner, selfdestruct, ownerPercent, isWhitelisted, holderCount, trustList, isHoneypot, honeypotWithSameCreator, holders, dex, isOpenSource, sellTax, tokenName, fakeToken, creatorAddress, creatorPercent, isProxy, creatorBalance, isInDex, ownerBalance, totalSupply, isTrueToken, canTakeBackOwnership, isBlacklisted, ownerAddress, slippageModifiable, buyTax, externalCall, cannotSellAll, lpHolderCount, personalSlippageModifiable, isAntiWhale, isMintable, ownerChangeBalance, cannotBuy, antiWhaleModifiable, tokenSymbol);
+    return Objects.hash(b20Token, note, lpTotalSupply, lpHolders, isAirdropScam, otherPotentialRisks, transferPausable, tradingCooldown, hiddenOwner, selfdestruct, ownerPercent, isWhitelisted, holderCount, trustList, isHoneypot, honeypotWithSameCreator, holders, dex, isOpenSource, sellTax, tokenName, fakeToken, creatorAddress, creatorPercent, isProxy, creatorBalance, isInDex, ownerBalance, totalSupply, isTrueToken, canTakeBackOwnership, isBlacklisted, ownerAddress, slippageModifiable, buyTax, externalCall, cannotSellAll, lpHolderCount, personalSlippageModifiable, isAntiWhale, isMintable, ownerChangeBalance, cannotBuy, antiWhaleModifiable, tokenSymbol);
   }
 
 
@@ -1049,6 +1072,7 @@ public class ResponseWrapperTokenSecurityResult {
     StringBuilder sb = new StringBuilder();
     sb.append("class ResponseWrapperTokenSecurityResult {\n");
     
+    sb.append("    b20Token: ").append(toIndentedString(b20Token)).append("\n");
     sb.append("    note: ").append(toIndentedString(note)).append("\n");
     sb.append("    lpTotalSupply: ").append(toIndentedString(lpTotalSupply)).append("\n");
     sb.append("    lpHolders: ").append(toIndentedString(lpHolders)).append("\n");
