@@ -314,6 +314,83 @@ public class GoPlusClient {
     }
 
 
+    /**
+     * Check if the transfer between two addresses is a dust attack
+     *
+     * @param request DustAttackDetectionRequest
+     * @return DustAttackDetection
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public static DustAttackDetection dustAttackDetection(DustAttackDetectionRequest request) throws ApiException {
+        PublicControllerApi api = new PublicControllerApi();
+        api.setApiClient(createApiClient(request.getTimeout()));
+        ResponseWrapperDustAttackDetection response = api.dustAttackDetectionUsingPOST(
+                request.getBody(),
+                request.getAuthorization()
+        );
+        return DustAttackDetection.of(response);
+    }
+
+
+    /**
+     * Start an address security scan, the returned request_id is used by {@link #addressScanResult}
+     *
+     * @param request AddressScanRequest
+     * @return AddressScan
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public static AddressScan addressScan(AddressScanRequest request) throws ApiException {
+        SecWareOpenControllerApi api = new SecWareOpenControllerApi();
+        api.setApiClient(createApiClient(request.getTimeout()));
+        ResponseWrapperOpenScanAddressResp response = api.scanAddressUsingGET(
+                request.getAddress(),
+                request.getChainId(),
+                request.getAuthorization()
+        );
+        return AddressScan.of(response);
+    }
+
+
+    /**
+     * Get the result of an address security scan started by {@link #addressScan}
+     *
+     * @param request AddressScanResultRequest
+     * @return AddressScanResult
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public static AddressScanResult addressScanResult(AddressScanResultRequest request) throws ApiException {
+        SecWareOpenControllerApi api = new SecWareOpenControllerApi();
+        api.setApiClient(createApiClient(request.getTimeout()));
+        ResponseWrapperGetScanResult response = api.getScanResultUsingGET(
+                request.getRequestId(),
+                request.getAuthorization()
+        );
+        return AddressScanResult.of(response);
+    }
+
+
+    /**
+     * Get transaction security and risk data by simulating the transaction
+     *
+     * <p><b>Note:</b> this API expects a hexadecimal chain id (e.g. {@code "0x1"} for Ethereum mainnet,
+     * {@code "0x38"} for BSC), unlike {@link #tokenSecurity}, {@link #addressSecurity} and the other
+     * APIs, which take the decimal form ({@code "1"}, {@code "56"}).
+     *
+     * @param request TransactionSimulationRequest, whose chainId must be hexadecimal (e.g. {@code "0x1"})
+     * @return TransactionSimulation
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public static TransactionSimulation transactionSimulation(TransactionSimulationRequest request) throws ApiException {
+        TransactionSecurityControllerApi api = new TransactionSecurityControllerApi();
+        api.setApiClient(createApiClient(request.getTimeout()));
+        ResponseWrapperTransactionSecurityResponse response = api.getTransactionSecurityInfoUsingPOST(
+                request.getBody(),
+                request.getAuthorization()
+        );
+        return TransactionSimulation.of(response);
+    }
+
+
     private static ApiClient createApiClient(Integer timeOut) {
         ApiClient apiClient = new ApiClient();
         OkHttpClient httpClient = apiClient.getHttpClient();
