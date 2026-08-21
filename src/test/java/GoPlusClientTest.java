@@ -175,4 +175,43 @@ public class GoPlusClientTest {
         System.out.println(GoPlusClient.tokenSecurityForSui(request));
     }
 
+    @Test
+    public void dustAttackDetection() throws ApiException {
+        DustAttackDetectionRequest request = DustAttackDetectionRequest.of(
+                "0x408e41876cccdc0f92210600ef50372656052a38",
+                "0xd018e2b543a2669410537f96293590138cacedf3",
+                accessToken
+        );
+        System.out.println(GoPlusClient.dustAttackDetection(request));
+    }
+
+    @Test
+    public void addressScan() throws ApiException {
+        AddressScanRequest request = AddressScanRequest.of(
+                "0x408e41876cccdc0f92210600ef50372656052a38",
+                "1",
+                accessToken
+        );
+        System.out.println(GoPlusClient.addressScan(request));
+    }
+
+    @Test
+    public void addressScanResult() throws ApiException {
+        AddressScanResultRequest request = AddressScanResultRequest.of("", accessToken);
+        System.out.println(GoPlusClient.addressScanResult(request));
+    }
+
+    @Test
+    public void transactionSimulation() throws ApiException {
+        TransactionSimulationRequest request = TransactionSimulationRequest.of(
+                "0x1",
+                "0x408e41876cccdc0f92210600ef50372656052a38",
+                "0xd018e2b543a2669410537f96293590138cacedf3",
+                "0x",
+                "0",
+                accessToken
+        );
+        System.out.println(GoPlusClient.transactionSimulation(request));
+    }
+
 }
